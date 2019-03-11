@@ -82,13 +82,6 @@ deploy:
   branch: master
   message:
 
-backup:
-    type: git
-    theme: landscape, yilia
-    repository:
-       github: git@github.com:purenjiepurenjie.github.io.git,hexo
-       gitcafe: git@github.com:purenjiepurenjie.github.io.git,hexo
-
 jsonContent:
     meta: false
     pages: false
