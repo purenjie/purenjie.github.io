@@ -82,8 +82,10 @@ deploy:
   branch: master
   message:
 
+urlforgoogle: https://purenjie.github.io/
+
 ##自动生成sitemap
-sitemap:
+sitemap: 
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
