@@ -2,10 +2,10 @@
 title: Git 操作
 date: 2018-01-31 18:36:37
 categories: 编程
-tags: Git
+tags: git
 ---
 
-![](/img/git.png)
+![](Git操作/git.png)
 
 <!-- more -->
 
@@ -127,6 +127,8 @@ $ git remote rm				//移除远程仓库
 
 ### 创建与合并分支
 
+[创建与合并分支-廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000)
+
 ```
 Git鼓励大量使用分支：
 
@@ -142,32 +144,6 @@ Git鼓励大量使用分支：
 
 删除分支：git branch -d 
 ```
-
-
-
-`master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点：
-
-![git-br-initial](https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0)
-
-每次提交，`master`分支都会向前移动一步，这样，随着你不断提交，`master`分支的线也越来越长
-
-当我们创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
-
-![git-br-create](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0)
-
-对工作区的修改和提交就是针对`dev`分支了，比如新提交一次后，`dev`指针往前移动一步，而`master`指针不变：
-
-![git-br-dev-fd](https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849088235627813efe7649b4f008900e5365bb72323000/0)
-
-假如我们在`dev`上的工作完成了，就可以把`dev`合并到`master`上。Git怎么合并呢？最简单的方法，就是直接把`master`指向`dev`的当前提交，就完成了合并：
-
-![git-br-ff-merge](https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490883510324231a837e5d4aee844d3e4692ba50f5000/0)
-
-所以Git合并分支也很快！就改改指针，工作区内容也不变！
-
-合并完分支后，甚至可以删除`dev`分支。删除`dev`分支就是把`dev`指针给删掉，删掉后，我们就剩下了一条`master`分支：
-
-![git-br-rm](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0)
 
 ### 解决冲突
 
@@ -195,7 +171,7 @@ Git鼓励大量使用分支：
 
 所以，团队合作的分支看起来就像这样：
 
-![git-br-policy](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0)
+![git-br-policy](Git操作/2.png)
 
 ### Bug 分支
 
@@ -214,7 +190,7 @@ $ git stash pop		//恢复 stash 的内容并且删除记录
 
 如果要丢弃一个没有被合并过的分支，可以通过`git branch -D `强行删除。
 
-###　多人协作
+### 多人协作
 
 [多人协作－廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000)
 
@@ -248,7 +224,7 @@ git tag -s  -m "blablabla..."可以用PGP签名标签；
 命令git push origin :refs/tags/可以删除一个远程标签。
 ```
 
-###　使用 GitHub
+### 使用 GitHub
 
 - 在GitHub上，可以任意Fork开源仓库；
 - 自己拥有Fork后的仓库的读写权限；
