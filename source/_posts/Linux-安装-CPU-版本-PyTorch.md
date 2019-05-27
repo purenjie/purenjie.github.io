@@ -1,7 +1,7 @@
 ---
 title: Linux（deepin）安装CPU版本PyTorch
 date: 2019-04-30 19:21:28
-tags: python
+tags: pytorch
 ---
 
 ![](Linux-安装-CPU-版本-PyTorch/6.jpeg)
