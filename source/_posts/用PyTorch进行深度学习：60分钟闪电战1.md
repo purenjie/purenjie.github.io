@@ -10,6 +10,7 @@ tags:
 
 <!--more-->
 
+> 请确保已经安装 torch 和 torchvision 包，之前的[我的安装过程](https://purenjie.github.io/2019/04/30/Linux-%E5%AE%89%E8%A3%85-CPU-%E7%89%88%E6%9C%AC-PyTorch/)可供参考
 > 这基本上是 PyTorch 官方指导文档“60 分钟闪电战”的翻译版本，官方原版地址[在此](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 # 什么是 PyTorch？
