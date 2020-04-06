@@ -1,5 +1,5 @@
 ---
-title: RNN、LSTM笔记
+title: RNN笔记
 date: 2020-04-06 10:37:09
 tags: NLP
 categories: 李宏毅课程笔记
@@ -51,6 +51,51 @@ categories: 李宏毅课程笔记
 
 Keras 有支援 LSTM，所以虽然架构超级複杂，但实作起来还算容易
 GRU：简化版本的 LSTM 只有两个 Gate 参数比较少，比较不容易 overfitting
+
+# RNN 的训练
+
+在学习训练RNN时可以用梯度下降(gradient descent)方法。
+
+然而基于RNN的网络是不好训练的。损失曲面要不是平的要不就是陡峭的，不易训练。
+
+![1586164646095](RNN、LSTM笔记/1586164646095.png)
+
+RNN 的 “Error surface”  也就是Total Loss 对于参数的变化，有些地方非常平坦，但有些地方则是非常陡峭，造成可能在更新参数时，恰好跳过悬崖，发生 loss 剧烈暴增，剧烈震荡的情况
+
+在很平坦的区域 learning rate 渐渐调的比较大，如果不幸刚好不小心一脚踩在悬崖峭壁上，很大的 gradient 乘上很大的 learning rate 参数就会 update 很多，参数就飞出去了
+
+解决方法：Clipping 当 gradient 大于某一个 threshold 时，就把它限制在那个 threshold 所以现在 gradient 不会过大，参数只会飞到比较近的地方，限制住参数更新大小不飞出去
+
+**解决技巧：LSTM**
+
+![1586165057951](RNN、LSTM笔记/1586165057951.png)
+
+问：为什么我们把 RNN 换成 LSTM ?
+
+答：因为 LSTM 可以处理 Gradient Vanishing 的问题
+
+问：Why LSTM can handle gradient vanishing ? 
+
+答：RNN 跟 LSTM 在面对 memory 的处理上相当不同
+在普通的 RNN 架构中，每一个时间点 Memory 里面的值都会被洗掉覆盖掉，所以影响就消失了，
+但是 LSTM 的做法是把原本 Memoy 里面的值乘上一个值，再跟 input 是相加的，所以一但有一个值被存进 Memory 造成影响，这的影响就会被永远的留着，除非 forget gate 把 memory 洗掉，否则影响会永远留着，所以不会有 gradient vanishing 的问题。
+
+→ Forget Gate 在多数的情况下，要保持开启（不忘记）只有少数情况下， forget gate 关闭，把 memory 里面的值洗掉
+
+Gate Recurrent Unit (GRU) 只有两个 Gate，需要的参数量比较少，所以在 training 时比较好训练，他会把 input gate 跟 forget gate 连动，也就是要把存在 memory 里面的值清掉，才能把新的值存进来 “旧的不去，新的不来”！
+
+其他技巧：使用一般的 RNN (不用 LSTM)且使用 Identity matrix 来 initailize transition weight matrix 时，再搭配 ReLU 的 activation function ，会有比较好的 performance
+
+# RNN 应用
+
+- slot filling
+- 语义分析（input 一个 character sequence，output 对于整句的理解分类，例如好雷负雷）
+- 关键词提取（给 machine 一篇文章，然后自动找出这篇文章中有哪些关键词）
+- 语音识别（CTC、语音翻译）
+- document to sequence（sequence-to-sequence auto-encoder 方法）
+- 阅读理解
+- 视觉问题回答
+- 语音回答（托福测试）
 
 **参考链接**
 
