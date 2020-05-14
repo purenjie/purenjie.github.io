@@ -30,4 +30,4 @@ def resolve(url, verify=False):
     print(audio_url)
     return audio_url
 
-url = resolve('https://y.qq.com/n/yqq/song/0020YPPj0wcofU.html')
+url = resolve('https://y.qq.com/n/yqq/song/004UopHN3XV5h9.html')
