@@ -5,7 +5,7 @@ author: Solejay
 img: https://pic2.zhimg.com/80/v2-6890485c84748900d9dae824b7f7cbb1_720w.jpg
 top: false
 cover: false
-coverImg: /images/1.jpg
+coverImg: 
 toc: true
 mathjax: false
 summary: 
