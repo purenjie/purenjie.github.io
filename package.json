@@ -10,6 +10,7 @@
     "hexo-asset-image": "^0.0.3",
     "hexo-cli": "^3.1.0",
     "hexo-deployer-git": "^1.0.0",
+    "hexo-filter-github-emojis": "^2.1.0",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^0.1.3",

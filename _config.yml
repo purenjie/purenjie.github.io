@@ -135,4 +135,10 @@ permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
 
-
+# emoji 支持
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
