@@ -1,7 +1,9 @@
----
 title: deepin重装指北
-date: 2020-01-31 10:50:35
-tags: linux
+tags:
+  - linux
+  - deepin
+categories: []
+date: 2020-01-31 10:50:00
 ---
 
 ![1](deepin重装指北/1.png)

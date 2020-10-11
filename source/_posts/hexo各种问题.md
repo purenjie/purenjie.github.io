@@ -97,3 +97,48 @@ hexo.extend.filter.register('after_post_render', function(data){
 
 [hexo引用本地图片无法显示](https://blog.csdn.net/xjm850552586/article/details/84101345)
 
+### Hexo 安装
+
+```bash
+git clone git@github.com:purenjie/purenjie.github.io.git
+sudo apt-get install nodejs
+sudo npm install -g cnpm --registry=https://registry.npm.taobao.org //淘宝镜像源
+sudo cnpm install hexo-cli -g
+cnpm install
+cnpm install hexo-deployer-git --save
+```
+
+### 备份
+
+修改并本地调试好之后 `hexo clean && hexo g && hexo s` （可以在配置文件里设置 alias）
+
+```bash
+git add .
+git commit -m "这次 post 的内容"
+git push origin hexo
+
+hexo d # 部署到 master 分支
+```
+
+### 恢复
+
+```bash
+git clone https://github.com/purenjie/purenjie.github.io.git
+```
+
+[使用 hexo，如果换了电脑怎么更新博客？](https://www.zhihu.com/question/21193762)
+
+### Hexo 博客管理
+
+[Hexo Admin Plugin](https://jaredforsyth.com/hexo-admin/)
+
+```bash
+cd blog_path
+cnpm install --save hexo-admin
+hexo server -d
+```
+
+
+
+
+

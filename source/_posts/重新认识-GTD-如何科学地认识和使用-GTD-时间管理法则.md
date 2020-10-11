@@ -1,4 +1,3 @@
----
 title: 重新认识 GTD | 如何科学地认识和使用 GTD 时间管理法则
 author: Solejay
 top: false
@@ -8,11 +7,12 @@ mathjax: false
 tags:
   - 效率
   - GTD
-date: 2020-05-24 12:06:01
-img: https://gtd.smallchina.cn/img/logo.png
-coverImg: 
-summary:
+img: 'https://gtd.smallchina.cn/img/logo.png'
 categories:
+  - 读书
+date: 2020-05-24 12:06:00
+coverImg:
+summary:
 ---
 
 # 重新认识 GTD | 如何科学地认识和使用 GTD 时间管理法则

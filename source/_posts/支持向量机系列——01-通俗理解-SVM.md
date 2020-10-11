@@ -1,8 +1,9 @@
----
 title: 支持向量机系列——01.通俗理解 SVM
-date: 2019-03-08 10:56:49
-tags: SVM
-categories: 数据挖掘
+tags:
+  - SVM
+categories:
+  - 算法
+date: 2019-03-08 10:56:00
 ---
 
 支持向量机（support vector machines，SVM）是一种二类分类模型。它的作用就是将输入的样本数据分成两类。本文参考 reddit 上的一篇帖子和知乎上的回答加上一些自己的理解试图通俗地阐述支持向量机。绝大部分都是摘抄，特此注明。

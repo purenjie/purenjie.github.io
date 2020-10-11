@@ -1,4 +1,3 @@
----
 title: 使用Markdown创建印象笔记页面
 author: Solejay
 top: false
@@ -8,11 +7,11 @@ mathjax: false
 tags:
   - 印象笔记
   - 效率
-date: 2020-09-14 17:03:31
+categories: []
+date: 2020-09-14 17:03:00
 img:
 coverImg:
 summary:
-categories:
 ---
 
 ![原来的显示方式](使用Markdown创建印象笔记页面/1600074394456.png)

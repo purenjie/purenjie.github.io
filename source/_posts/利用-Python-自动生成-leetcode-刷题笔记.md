@@ -1,7 +1,9 @@
----
 title: 利用 Python 自动生成 leetcode 刷题笔记
-date: 2019-04-13 11:56:52
-tags: python
+tags:
+  - python
+categories:
+  - 编程
+date: 2019-04-13 11:56:00
 ---
 
 通过运行脚本自动生成如下格式 Markdown 文件
