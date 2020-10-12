@@ -1,4 +1,3 @@
----
 title: gitee+hugo博客搭建
 author: Solejay
 top: false
@@ -8,13 +7,13 @@ mathjax: false
 tags:
   - hugo
   - gitee
-date: 2020-10-11 21:36:42
-img: https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=299634975,2536544645&fm=26&gp=0.jpg
+img: >-
+  https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=299634975,2536544645&fm=26&gp=0.jpg
+categories: []
+date: 2020-10-11 21:36:00
 coverImg:
 summary:
-categories:
 ---
-
 ## Hugo 构建
 
 ### Hugo 安装
@@ -87,29 +86,63 @@ git push -u origin master
 
 ```bash
 git checkout --orphan hugo
-cd public
-git add .
-git commit -m "first post"
+```
+
+创建脚本 `hugo.sh` 并执行
+
+```bash
+#!/bin/sh
+
+if [[ $(git status -s) ]]
+then
+    echo "The working directory is dirty. Please commit any pending changes."
+    exit 1;
+fi
+
+echo "Deleting old publication"
+rm -rf public
+mkdir public
+rm -rf .git/worktrees/public/
+
+echo "Checking out hugo branch into public"
+git worktree add -B hugo public origin/hugo
+
+echo "Removing existing files"
+rm -rf public/*
+
+echo "Generating site"
+hugo
+
+echo "Updating hugo branch"
+cd public && git add --all && git commit -m "Publishing to hugo (publish.sh)"
+
+echo "Push to origin"
 git push origin hugo
 ```
 
-- 进入 [Gitee](https://gitee.com/) 创建的仓库页面，从`服务`栏里选择 `Gitee Pages`，部署分支选择 `hugo`，然后点击`启动`
+- 进入 [Gitee](https://gitee.com/) 创建的仓库页面，从 `服务` 栏里选择 `Gitee Pages`，部署分支选择 `hugo`，然后点击 `启动`
 
-**辣鸡 Gitee，不管用哪个分支都不行，部署还慢的一匹，爷不整了！**
+## 博客更新
+
+1. 本地推送
+
+```bash
+hugo new posts/name.md
+hugo server -D
+
+git add .
+git commit -m ""
+git push origin master
+
+./hugo.sh
+```
+
+2. Gitee 更新
+
+进入 [pages](https://gitee.com/solejay/solejay/pages) 页面点击 `更新`
 
 **参考资料**
 
 [Hugo+Gitee 搭建个人博客](https://zhuanlan.zhihu.com/p/184625753)
 
 [如何使用 Hugo 在 GitHub Pages 上搭建免费个人网站](https://zhuanlan.zhihu.com/p/37752930)
-
-
-
-
-
-
-
-
-
-
-
