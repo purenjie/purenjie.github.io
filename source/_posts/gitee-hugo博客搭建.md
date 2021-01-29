@@ -7,8 +7,7 @@ mathjax: false
 tags:
   - hugo
   - gitee
-img: >-
-  https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=299634975,2536544645&fm=26&gp=0.jpg
+img: 
 categories: []
 date: 2020-10-11 21:36:00
 coverImg:

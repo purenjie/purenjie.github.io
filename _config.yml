@@ -74,6 +74,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: yilia
 theme: hexo-theme-matery
+# theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
