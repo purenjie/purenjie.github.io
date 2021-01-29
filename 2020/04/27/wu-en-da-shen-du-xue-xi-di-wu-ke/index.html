@@ -1,0 +1,1452 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="吴恩达深度学习课程第五课笔记——序列模型, SoleJay">
+    <meta name="description" content>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>吴恩达深度学习课程第五课笔记——序列模型 | SoleJay</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SoleJay</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SoleJay</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/self_featureimages/0.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">吴恩达深度学习课程第五课笔记——序列模型</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/深度学习/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/神经网络/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                            <a href="/tags/吴恩达/">
+                                <span class="chip bg-color">吴恩达</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP笔记/" class="post-category">
+                                NLP笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-27
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-28
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    13.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    54 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第五门课-序列模型-Sequence-Models"><a href="#第五门课-序列模型-Sequence-Models" class="headerlink" title="第五门课 序列模型 (Sequence Models)"></a>第五门课 序列模型 (Sequence Models)</h1><h2 id="第一周-循环序列模型（Recurrent-Neural-Networks）"><a href="#第一周-循环序列模型（Recurrent-Neural-Networks）" class="headerlink" title="第一周 循环序列模型（Recurrent Neural Networks）"></a>第一周 循环序列模型（Recurrent Neural Networks）</h2><h3 id="1-1-为什么选择序列模型？（Why-Sequence-Models-）"><a href="#1-1-为什么选择序列模型？（Why-Sequence-Models-）" class="headerlink" title="1.1 为什么选择序列模型？（Why Sequence Models?）"></a>1.1 为什么选择序列模型？（Why Sequence Models?）</h3><p>序列模型能够应用在许多领域，例如：</p>
+<p><img src="https://img-blog.csdn.net/20180305154333482?" alt="序列模型应用"></p>
+<p>这些序列模型基本都属于监督式学习，输入 x 和输出 y 不一定都是序列模型。如果都是序列模型的话，模型长度不一定完全一致。</p>
+<h3 id="1-2-数学符号（Notation）"><a href="#1-2-数学符号（Notation）" class="headerlink" title="1.2 数学符号（Notation）"></a>1.2 数学符号（Notation）</h3><p><strong>Harry Potter and Hermione Granger invented a new spell.</strong></p>
+<p>对于输入 x，表示为：<br>$$<br>[x^{&lt;1&gt;}\ \ x^{&lt;2&gt;}\ \ x^{&lt;3&gt;}\ \ x^{&lt;4&gt;}\ \ x^{&lt;5&gt;}\ \ x^{&lt;6&gt;}\ \ x^{&lt;7&gt;}\ \ x^{&lt;8&gt;}\ \ x^{&lt;9&gt;}]<br>$$<br>$x^{<t>}$ 表示序列对应位置的输入，$T_{x}$ 表示输入序列长度。</t><!--9--><!--8--><!--7--><!--6--><!--5--><!--4--><!--3--><!--2--><!--1--></p>
+<p>该句话包含 9 个单词，输出 y 即为 1 x 9 向量，每位表征对应单词是否为人名的一部分，1 表示是，0 表示否。很明显，该句话中 “Harry”，“Potter”，“Hermione”，“Granger” 均是人名成分，所以，对应的输出 y 可表示为：<br>$$<br>y=[1\ \ 1\ \ 0\ \ 1\ \ 1\ \ 0\ \ 0\ \ 0\ \ 0]<br>$$<br> $y^{<t>}$ 表示序列对应位置的输出， $T_{y}$ 表示输出序列长度，则 $1\leq t\leq T_y$。</t></p>
+<p>$x^{<t>}$ 用 one-hot 编码表示，首先定义词库找出单词对应索引，然后用高维词库对应的高维向量表示。</t></p>
+<p>如果出现词汇表之外的单词，可以使用 UNK 或其他字符串来表示。</p>
+<p>对于多样本，以上序列模型对应的命名规则可表示为：$X^{(i)<t>}$，$y^{(i)<t>}$，$T^{(i)}<em>{x}$，$T^{(i)}</em>{y}$ 。其中，i 表示第 i 个样本。不同样本的 $T^{(i)}<em>{x}$ 或 $T^{(i)}</em>{y}$ 都有可能不同。</t></t></p>
+<h3 id="1-3-循环神经网络模型（Recurrent-Neural-Network-Model）"><a href="#1-3-循环神经网络模型（Recurrent-Neural-Network-Model）" class="headerlink" title="1.3 循环神经网络模型（Recurrent Neural Network Model）"></a>1.3 循环神经网络模型（Recurrent Neural Network Model）</h3><p>对于序列模型，如果使用标准的神经网络，其模型结构如下：</p>
+<p><img src="https://img-blog.csdn.net/20180305180556590?" alt="标准神经网络"></p>
+<p>使用标准的神经网络模型存在两个问题：</p>
+<ol>
+<li>不同样本的输入序列长度或输出序列长度不同，即 $T_x^{(i)}\neq T_x^{(j)}$，$T_y^{(i)}\neq T_y^{(j)}$，造成模型难以统一。解决办法之一是<strong>设定一个最大序列长度</strong>，对每个输入和输出序列补零并统一到最大长度。但是<strong>这种做法实际效果并不理想</strong>。</li>
+<li>第二个问题，也是主要问题，这种标准神经网络结构<strong>无法共享序列不同 $x^{<t>}$ 之间的特征</t></strong>。例如，如果某个 $x^{<t>}$ 即 “Harry” 是人名成分，那么句子其它位置出现了 “Harry”，也很可能也是人名。这是共享特征的结果，如同 CNN 网络特点一样。但是，上图所示的网络不具备共享特征的能力。值得一提的是，共享特征还有助于减少神经网络中的参数数量，一定程度上减小了模型的计算复杂度。例如上图所示的标准神经网络，假设每个 $x^{<t>}$ 扩展到最大序列长度为 100，且词汇表长度为 10000，则输入层就已经包含了 10000 x 100 个神经元了，权重参数很多，运算量将是庞大的。</t></t></li>
+</ol>
+<p>标准的神经网络不适合解决序列模型问题，而循环神经网络（RNN）是专门用来解决序列模型问题的。RNN 模型结构如下：</p>
+<p><img src="https://img-blog.csdn.net/20180305203908747?" alt="RNN 结构"></p>
+<p>序列模型从左到右，依次传递，此例中，$T_x=T_y$。$x^{<t>}$ 到之间 $y^{<t>}$ 是隐藏神经元。$a^{<t>}$ 会传入到第 t+1 个元素中，作为输入。其中，$a^{&lt;0&gt;}$  一般为零向量。<!--0--></t></t></t></p>
+<p>RNN 模型包含三类权重系数，分别是 $W_{ax}, W_{aa}, W_{ya}$。且<strong>不同元素之间同一位置共享同一权重系数</strong>。</p>
+<p><img src="https://img-blog.csdn.net/20180305212325555?" alt="三类权重系数"></p>
+<p>RNN 的正向传播（Forward Propagation）过程为：<br>$$<br>a^{<t>}=g(W_{aa}\cdot a^{<t-1>}+W_{ax}\cdot x^{<t>}+ba)<br>$$</t></t-1></t></p>
+<p>$$<br>\hat y^{<t>}=g(W_{ya}\cdot a^{<t>}+b_y)<br>$$</t></t></p>
+<p>其中，g(⋅) 表示激活函数，不同的问题需要使用不同的激活函数。</p>
+<p>为了简化表达式，可以对 $a^{<t>}$ 项进行整合：<br>$$<br>W_{aa}\cdot a^{<t-1>}+W_{ax}\cdot x^{<t>}=[W_{aa}\ \ W_{ax}]\left[<br>\begin{matrix}<br>a^{<t-1>} \<br>x^{<t>}<br>\end{matrix}<br>\right]\rightarrow W_a[a^{<t-1>},x^{<t>}]<br>$$<br>则正向传播可表示为：<br>$$<br>a^{<t>}=g(W_a[a^{<t-1>},x^{<t>}]+b_a)<br>$$</t></t-1></t></t></t-1></t></t-1></t></t-1></t></p>
+<p>$$<br>\hat y^{<t>}=g(W_{y}\cdot a^{<t>}+b_y)<br>$$</t></t></p>
+<p>值得一提的是，以上所述的 RNN 为单向 RNN，即按照从左到右顺序，单向进行，$\hat y^{<t>}$ 只与左边的元素有关。但是，有时候 $\hat y^{<t>}$ 也可能与右边元素有关。例如下面两个句子中，单凭前三个单词，无法确定 “Teddy” 是否为人名，必须根据右边单词进行判断。</t></t></p>
+<p>He said, “Teddy Roosevelt was a great President.”</p>
+<p>He said, “Teddy bears are on sale!”</p>
+<p>因此，有另外一种 RNN 结构是双向 RNN，简称为 BRNN。$\hat y^{<t>}$ 与左右元素均有关系，我们之后再详细介绍。</t></p>
+<h3 id="1-4-通过时间的反向传播（Backpropagation-through-time）"><a href="#1-4-通过时间的反向传播（Backpropagation-through-time）" class="headerlink" title="1.4 通过时间的反向传播（Backpropagation through time）"></a>1.4 通过时间的反向传播（Backpropagation through time）</h3><p>针对上面识别人名的例子，经过 RNN 正向传播，单个元素的 Loss function 为：<br>$$<br>L^{<t>}(\hat y^{<t>},y^{<t>})=-y^{<t>}log\ \hat y^{<t>}-(1-y^{<t>})log\ (1-\hat y^{<t>})<br>$$<br>该样本所有元素的 Loss function 为：<br>$$<br>L(\hat y,y)=\sum_{t=1}^{T_y}L^{<t>}(\hat y^{<t>},y^{<t>})<br>$$<br>然后，反向传播（Backpropagation）过程就是从右到左分别计算 $L(\hat y,y)$ 对参数 $W_{a}$，$W_{y}$，$b_{a}$， $b_{y}$ 的偏导数。思路与做法与标准的神经网络是一样的。一般可以通过成熟的深度学习框架自动求导，例如 PyTorch、Tensorflow 等。这种从右到左的求导过程被称为 Backpropagation through time。</t></t></t></t></t></t></t></t></t></t></p>
+<p><img src="http://www.ai-start.com/dl2017/images/71a0ed918704f6d35091d8b6d60793e4.png" alt="反向传播示意图"></p>
+<p><img src="http://www.ai-start.com/dl2017/images/rnn_cell_backprop.png" alt="反向传播示意图"></p>
+<h3 id="1-5-不同类型的循环神经网络（Different-types-of-RNNs）"><a href="#1-5-不同类型的循环神经网络（Different-types-of-RNNs）" class="headerlink" title="1.5 不同类型的循环神经网络（Different types of RNNs）"></a>1.5 不同类型的循环神经网络（Different types of <strong>RNN</strong>s）</h3><p>以上介绍的例子中，$T_x=T_y$。但是在很多 RNN 模型中，Tx 是不等于 Ty 的。例如第 1 节介绍的许多模型都是Tx≠Ty。根据 Tx 与 Ty 的关系，RNN 模型包含以下几个类型：</p>
+<ul>
+<li>Many to many: Tx=Ty(命名实体识别)</li>
+<li>Many to many: Tx≠Ty(机器翻译)</li>
+<li>Many to one: Tx&gt;1,Ty=1(情感分类)</li>
+<li>One to many: Tx=1,Ty&gt;1(音乐生成)</li>
+<li>One to one: Tx=1,Ty=1(标准的神经网络，一个样本对应一个输出)</li>
+</ul>
+<p>不同类型相应的示例结构如下：</p>
+<p><img src="https://img-blog.csdn.net/20180306101623714?" alt="RNN不同类型结构"></p>
+<h3 id="1-6-语言模型和序列生成（Language-model-and-sequence-generation）"><a href="#1-6-语言模型和序列生成（Language-model-and-sequence-generation）" class="headerlink" title="1.6 语言模型和序列生成（Language model and sequence generation）"></a>1.6 语言模型和序列生成（Language model and sequence generation）</h3><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/28080127" target="_blank" rel="noopener">语言模型</a>：<strong>语言模型就是用来计算一个句子的概率的模型，也就是判断一句话是否是人话的概率？</strong></p>
+</blockquote>
+<p>语言模型是自然语言处理（NLP）中最基本和最重要的任务之一。使用 RNN 能够很好地建立需要的不同语言风格的语言模型。</p>
+<p>什么是语言模型呢？举个例子，在语音识别中，某句语音有两种翻译：</p>
+<p>The apple and pair salad.</p>
+<p>The apple and pear salad.</p>
+<p>很明显，第二句话更有可能是正确的翻译。语言模型实际上会计算出这两句话各自的出现概率。比如第一句话概率为 $10^{−13}$，第二句话概率为 $10^{−10}$。也就是说，利用语言模型得到各自语句的概率，选择概率最大的语句作为正确的翻译。概率计算的表达式为：<br>$$<br>P(y^{&lt;1&gt;},y^{&lt;2&gt;},\cdots,y^{&lt;T_y&gt;})<br>$$<br>如何使用 RNN 构建语言模型？首先，我们需要一个足够大的训练集，训练集由大量的单词语句语料库（corpus）构成。然后，对 corpus 的每句话进行切分词（tokenize）。做法就跟第 2 节介绍的一样，建立 vocabulary，对每个单词进行 one-hot 编码。<!--2--><!--1--></p>
+<p>准备好训练集并对语料库进行切分词等处理之后，接下来构建相应的 RNN 模型。</p>
+<p><img src="https://img-blog.csdn.net/20180306150119313?" alt="RNN 模型"></p>
+<p>语言模型的 RNN 结构如上图所示，$x^{&lt;1&gt;}$ 和 $a^{&lt;0&gt;}$ 均为零向量。Softmax 输出层 $\hat y^{&lt;1&gt;}$ 表示出现该语句第一个单词的概率，softmax 输出层表 $\hat y^{&lt;2&gt;}$ 示在第一个单词基础上出现第二个单词的概率，即条件概率，以此类推，最后是出现 $&lt; EOS &gt;$ 的条件概率。<!--2--><!--1--><!--0--><!--1--></p>
+<p>单个元素的 softmax loss function 为：<br>$$<br>L^{<t>}(\hat y^{<t>},y^{<t>})=-\sum_iy_i^{<t>}log\ \hat y_i^{<t>}<br>$$<br>该样本所有元素的 Loss function 为：<br>$$<br>L(\hat y,y)=\sum_tL^{<t>}(\hat y^{<t>},y^{<t>})<br>$$<br>对语料库的每条语句进行 RNN 模型训练，最终得到的模型可以根据给出语句的前几个单词预测其余部分，将语句补充完整。例如给出 <strong>“Cats average 15”</strong>，RNN 模型可能预测完整的语句是 <strong>“Cats average 15 hours of sleep a day.”</strong>。</t></t></t></t></t></t></t></t></p>
+<p>最后补充一点，整个语句出现的概率等于语句中所有元素出现的条件概率乘积。例如某个语句包含 $y^{&lt;1&gt;},y^{&lt;2&gt;},y^{&lt;3&gt;}$ 则整个语句出现的概率为：<br>$$<br>P(y^{&lt;1&gt;},y^{&lt;2&gt;},y^{&lt;3&gt;})=P(y^{&lt;1&gt;})\cdot P(y^{&lt;2&gt;}|y^{&lt;1&gt;})\cdot P(y^{&lt;3&gt;}|y^{&lt;1&gt;},y^{&lt;2&gt;})<br>$$<!--2--><!--1--><!--3--><!--1--><!--2--><!--1--><!--3--><!--2--><!--1--><!--3--><!--2--><!--1--></p>
+<h3 id="1-7-对新序列采样（Sampling-novel-sequences）"><a href="#1-7-对新序列采样（Sampling-novel-sequences）" class="headerlink" title="1.7 对新序列采样（Sampling novel sequences）"></a>1.7 对新序列采样（Sampling novel sequences）</h3><p>利用训练好的 RNN 语言模型，可以进行新的序列采样，从而随机产生新的语句。与上一节介绍的一样，相应的 RNN 模型如下所示：</p>
+<p><img src="https://img-blog.csdn.net/20180306200452515?" alt="RNN 模型"></p>
+<p>首先，从第一个元素输出 $\hat y^{&lt;1&gt;}$ 的 softmax 分布中随机选取一个 word 作为新语句的首单词。然后，作 $y^{&lt;1&gt;}$ 为 $x^{&lt;2&gt;}$ ，得到  $\hat y^{&lt;2&gt;}$  的 softmax 分布。从中选取概率最大的 word 作为  $y^{&lt;2&gt;}$ ，继续将 $y^{&lt;2&gt;}$ 作为  $x^{&lt;3&gt;}$ ，以此类推。直到产生 $&lt; EOS &gt;$ 结束符，则标志语句生成完毕。当然，也可以设定语句长度上限，达到长度上限即停止生成新的单词。最终，根据随机选择的首单词，RNN 模型会生成一条新的语句。<!--3--><!--2--><!--2--><!--2--><!--2--><!--1--><!--1--></p>
+<p>以上介绍的是 word level RNN，即每次生成单个 word，语句由多个 words 构成。另外一种情况是 character level RNN，即词汇表由单个英文字母或字符组成，如下所示：<br>$$<br>Vocabulay=[a,b,c,\cdots,z,.,;,\ ,0,1,\cdots,9,A,B,\cdots,Z]<br>$$<br>Character level RNN 与 word level RNN 不同的是，$\hat y^{<t>}$ 由单个字符组成而不是 word。训练集中的每句话都当成是由许多字符组成的。</t></p>
+<ul>
+<li>优点：character level RNN 能有效避免遇到词汇表中不存在的单词 $&lt; UNK &gt;$。</li>
+<li>缺点：由于是字符表征，每句话的字符数量很大，这种大的跨度不利于寻找语句前部分和后部分之间的依赖性。另外，character level RNN 的在训练时的计算量也是庞大的。基于这些缺点，目前 character level RNN 的应用并不广泛，但是在特定应用下仍然有发展的趋势。</li>
+</ul>
+<h3 id="1-8-循环神经网络的梯度消失（Vanishing-gradients-with-RNNs）"><a href="#1-8-循环神经网络的梯度消失（Vanishing-gradients-with-RNNs）" class="headerlink" title="1.8 循环神经网络的梯度消失（Vanishing gradients with RNNs）"></a>1.8 循环神经网络的梯度消失（Vanishing gradients with <strong>RNN</strong>s）</h3><p>语句中可能存在跨度很大的依赖关系，即某个 word 可能与它距离较远的某个 word 具有强依赖关系。例如下面这两条语句：</p>
+<p>The cat, which already ate fish, was full.</p>
+<p>The cats, which already ate fish, were full.</p>
+<p>第一句话中，was 受 cat 影响；第二句话中，were 受 cats 影响。它们之间都跨越了很多单词。而<strong>一般的 RNN 模型每个元素受其周围附近的影响较大，难以建立跨度较大的依赖性（long-term dependicies）</strong>。上面两句话的这种依赖关系，由于跨度很大，普通的 RNN 网络容易出现梯度消失，捕捉不到它们之间的依赖，造成语法错误。</p>
+<p>另一方面，RNN 也可能出现梯度爆炸的问题，即 gradient 过大。常用的解决办法是设定一个阈值，一旦梯度最大值达到这个阈值，就对整个梯度向量进行尺度缩小。这种做法被称为 gradient clipping。</p>
+<h3 id="1-9-GRU-单元（Gated-Recurrent-Unit（GRU））"><a href="#1-9-GRU-单元（Gated-Recurrent-Unit（GRU））" class="headerlink" title="1.9 GRU 单元（Gated Recurrent Unit（GRU））"></a>1.9 <strong>GRU</strong> 单元（Gated Recurrent Unit（<strong>GRU</strong>））</h3><blockquote>
+<p>GRU 的基本思想是通过加入门，扑捉非常长范围的依赖</p>
+</blockquote>
+<p>RNN 的隐藏层单元结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180306215009737?" alt="RNN 单元结构"><br>$$<br>a^{<t>}=tanh(W_a[a^{<t-1>},x^{<t>}]+b_a)<br>$$<br>为了解决梯度消失问题，对上述单元进行修改，添加了记忆单元，构建 GRU，如下图所示：</t></t-1></t></p>
+<p><img src="https://img-blog.csdn.net/20180306222806695?" alt="GRU 单元结构"></p>
+<p>相应的表达式为：<br>$$<br>\tilde c^{<t>}=tanh(W_c[c^{<t-1>},x^{<t>}]+b_c)<br>$$</t></t-1></t></p>
+<p>$$<br>\Gamma_u=\sigma(W_u[c^{<t-1>},x^{<t>}]+b_u)<br>$$</t></t-1></p>
+<p>$$<br>c^{<t>}=\Gamma<em>\tilde c^{<t>}+(1-\Gamma_u)</t></em>c^{<t-1>}<br>$$</t-1></t></p>
+<p>其中，$c^{<t-1>}=a^{<t-1>}$，$c^{<t>}=a^{<t>}$。$\Gamma_u$ 意为 gate，记忆单元。当 $\Gamma_u=1$ 时，代表更新；当 $\Gamma_u=0$ 时，代表记忆，保留之前的模块输出。这一点跟 CNN 中的 ResNets 的作用有点类似。因此，$\Gamma_u$ 能够保证 RNN 模型中跨度很大的依赖关系不受影响，消除梯度消失问题。</t></t></t-1></t-1></p>
+<p>上面介绍的是简化的 GRU 模型，完整的 GRU 添加了另外一个 gate，即 $\Gamma_r$，表达式如下：<br>$$<br>\tilde c^{<t>}=tanh(W_c[\Gamma_r*c^{<t-1>},x^{<t>}]+b_c)<br>$$</t></t-1></t></p>
+<p>$$<br>\Gamma_u=\sigma(W_u[c^{<t-1>},x^{<t>}]+b_u)<br>$$</t></t-1></p>
+<p>$$<br>\Gamma_r=\sigma(W_r[c^{<t-1>},x^{<t>}]+b_r)<br>$$</t></t-1></p>
+<p>$$<br>c^{<t>}=\Gamma<em>\tilde c^{<t>}+(1-\Gamma_u)</t></em>c^{<t-1>}<br>$$</t-1></t></p>
+<p>$$<br>a^{<t>}=c^{<t>}<br>$$</t></t></p>
+<p>注意，以上表达式中的∗∗表示元素相乘，而非矩阵相乘。</p>
+<h3 id="1-10-长短期记忆（LSTM（long-short-term-memory）unit）"><a href="#1-10-长短期记忆（LSTM（long-short-term-memory）unit）" class="headerlink" title="1.10 长短期记忆（LSTM（long short term memory）unit）"></a>1.10 长短期记忆（<strong>LSTM</strong>（long short term memory）unit）</h3><p>LSTM 是另一种更强大的解决梯度消失问题的方法。它对应的 RNN 隐藏层单元结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180307093928657?" alt="LSTM 单元结构"></p>
+<p>GRU 和 LSTM 公式对比图</p>
+<p><img src="http://www.ai-start.com/dl2017/images/9456d50c55cf0408a3fb2b6e903d85d6.png" alt="GRU &amp; LSTM"><br>$$<br>\tilde c^{<t>}=tanh(W_c[a^{<t-1>},x^{<t>}]+b_c)<br>$$</t></t-1></t></p>
+<p>$$<br>\Gamma_u=\sigma(W_u[a^{<t-1>},x^{<t>}]+b_u) (Update Gate)<br>$$</t></t-1></p>
+<p>$$<br>\Gamma_f=\sigma(W_f[a^{<t-1>},x^{<t>}]+b_f) (ForgetGate)<br>$$</t></t-1></p>
+<p>$$<br>\Gamma_o=\sigma(W_o[a^{<t-1>},x^{<t>}]+b_o) (OutputGate)<br>$$</t></t-1></p>
+<p>$$<br>c^{<t>}=\Gamma_u<em>\tilde c^{<t>}+\Gamma_f</t></em>c^{<t-1>}<br>$$</t-1></t></p>
+<p>$$<br>a^{<t>}=\Gamma_o*c^{<t>}<br>$$</t></t></p>
+<p>LSTM 包含三个 gates：$\Gamma_u$，$\Gamma_f$，$\Gamma_o$，分别对应 update gate，forget gate 和 output gate。</p>
+<h3 id="1-11-双向循环神经网络（Bidirectional-RNN）"><a href="#1-11-双向循环神经网络（Bidirectional-RNN）" class="headerlink" title="1.11 双向循环神经网络（Bidirectional RNN）"></a>1.11 双向循环神经网络（Bidirectional <strong>RNN</strong>）</h3><blockquote>
+<p>BRNN 对应位置的输出同时接受前面和后面的激活函数值，通过前向和反向过程获取句子整体信息。</p>
+</blockquote>
+<p>He said, “Teddy bears are on sale!”</p>
+<p>He said, “Teddy Roosevelt was a great President!”</p>
+<p>我们在第 3 节中简单提过 Bidirectional RNN，它的结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180307110502804?" alt="BRNN 结构"></p>
+<p>BRNN 对应的输出 $y^{<t>}$ 表达式为：<br>$$<br>\hat y^{<t>}=g(W_{y}[a^{\rightarrow <t>},a^{\leftarrow <t>}]+b_y)<br>$$<br>BRNN 能够同时对序列进行双向处理，性能大大提高。但是计算量较大，且在处理实时语音时，需要等到完整的一句话结束时才能进行分析。</t></t></t></t></p>
+<h3 id="1-12-深层循环神经网络（Deep-RNNs）"><a href="#1-12-深层循环神经网络（Deep-RNNs）" class="headerlink" title="1.12 深层循环神经网络（Deep RNNs）"></a>1.12 深层循环神经网络（Deep <strong>RNN</strong>s）</h3><p>Deep RNNs 由多层 RNN 组成，其结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180307135925557?" alt="Deep RNNs"></p>
+<p>与 DNN 一样，用上标 [l] 表示层数。Deep RNNs 中 $a^{[l]<t>}$ 的表达式为：<br>$$<br>a^{[l]<t>}=g(W_a^{[l]}[a^{[l]<t-1>},a^{[l-1]<t>}]+b_a^{[l]})<br>$$<br>当前节点接收同一层的前一个和同一时间的下面一个作为输入。</t></t-1></t></t></p>
+<p>我们知道 DNN 层数可达 100 多，而 Deep RNNs 一般没有那么多层，3 层 RNNs 已经较复杂了。</p>
+<p>另外一种 Deep RNNs 结构是每个输出层上还有一些垂直单元，如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180307142001127?" alt="更深的 DNN"></p>
+<h2 id="第二周-自然语言处理与词嵌入（Natural-Language-Processing-and-Word-Embeddings）"><a href="#第二周-自然语言处理与词嵌入（Natural-Language-Processing-and-Word-Embeddings）" class="headerlink" title="第二周 自然语言处理与词嵌入（Natural Language Processing and Word Embeddings）"></a>第二周 自然语言处理与词嵌入（Natural Language Processing and Word Embeddings）</h2><h3 id="2-1-词汇表征（Word-Representation）"><a href="#2-1-词汇表征（Word-Representation）" class="headerlink" title="2.1 词汇表征（Word Representation）"></a>2.1 词汇表征（Word Representation）</h3><blockquote>
+<p>one-hot 编码相关性差，数据稀疏——&gt;特征表示可以表征很多特征，得到单词之间的相关性</p>
+</blockquote>
+<p>上节课我们介绍过表征单词的方式是首先建立一个较大的词汇表（例如 10000），然后使用 one-hot 的方式对每个单词进行编码。例如单词 Man，Woman，King，Queen，Apple，Orange 分别出现在词汇表的第 5391，9853，4914，7157，456，6257 的位置</p>
+<p>这中 one-hot 表征单词的方法最大的缺点就是<strong>每个单词都是独立的、正交的，无法知道不同单词之间的相似程度</strong>。例如 Apple 和 Orange 都是水果，词性相近，但是单从 one-hot 编码上来看，内积为零，无法知道二者的相似性。<strong>在 NLP 中，我们更希望能掌握不同单词之间的相似程度</strong>。</p>
+<p>因此，我们可以使用<strong>特征表征（Featurized representation）</strong>的方法对每个单词进行编码。也就是使用一个特征向量表征单词，特征向量的每个元素都是对该单词某一特征的量化描述，量化范围可以是 [-1,1] 之间。特征表征的例子如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180322093858543?" alt="特征表示"></p>
+<p>特征向量的长度依情况而定，特征元素越多则对单词表征得越全面。这里的特征向量长度设定为 300。使用特征表征之后，词汇表中的每个单词都可以使用对应的 300 x 1 的向量来表示，该向量的每个元素表示该单词对应的某个特征值。</p>
+<p>这种特征表征的优点是<strong>根据特征向量能清晰知道不同单词之间的相似程度</strong>，例如 Apple 和 Orange 之间的相似度较高，很可能属于同一类别。这种单词 “类别” 化的方式，大大提高了有限词汇量的泛化能力。这种特征化单词的操作被称为 Word Embeddings，即单词嵌入。</p>
+<p>值得一提的是，这里特征向量的每个特征元素含义是具体的，对应到实际特征，例如性别、年龄等。而在实际应用中，特征向量很多特征元素并不一定对应到有物理意义的特征，是比较抽象的。但是，这并不影响对每个单词的有效表征，同样能比较不同单词之间的相似性。</p>
+<p>每个单词都由高维特征向量表征，为了可视化不同单词之间的相似性，可以使用降维操作，例如 <strong>t-SNE 算法</strong>，将 300D 降到 2D 平面上。如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180322101436429?" alt="降维可视化"></p>
+<p>从上图可以看出相似的单词分布距离较近，从而也证明了 Word Embeddings 能有效表征单词的关键特征。</p>
+<h3 id="2-2-使用词嵌入（Using-Word-Embeddings）"><a href="#2-2-使用词嵌入（Using-Word-Embeddings）" class="headerlink" title="2.2 使用词嵌入（Using Word Embeddings）"></a>2.2 使用词嵌入（Using Word Embeddings）</h3><blockquote>
+<p>Word Embedding 对于小样本数据具有很好的效果，使用预训练模型得到词的向量表示时就包含很多特征信息，这样即使样本数量不多也能捕获词之间的相关性和相似度。迁移学习可以很好地应用到这里。但是对于语言模型和机器翻译作用不大，因为两者有大量数据可以通过深度学习模型训练。</p>
+</blockquote>
+<p>之前我们介绍过 Named entity 识别的例子，每个单词采用的是 one-hot 编码。如下图所示，因为 “orange farmer” 是份职业，很明显 “Sally Johnson” 是一个人名。</p>
+<p><img src="https://img-blog.csdn.net/2018032213525864?" alt="NER"></p>
+<p>如果采用 featurized representation 对每个单词进行编码，再构建该 RNN 模型。对于一个新的句子：</p>
+<p><strong>Robert Lin is an apple farmer</strong></p>
+<p>由于这两个句子中，“apple” 与 “orange” 特征向量很接近，很容易能判断出 “Robert Lin” 也是一个人名。这就是 featurized representation 的优点之一。</p>
+<p>可以看出，featurized representation 的优点是可以减少训练样本的数目，前提是对海量单词建立特征向量表述（word embedding）。这样，即使训练样本不够多，测试时遇到陌生单词，例如 “durian cultivator”，根据之前海量词汇特征向量就判断出 “durian” 也是一种水果，与 “apple” 类似，而 “cultivator” 与 “farmer” 也很相似。从而得到与 “durian cultivator” 对应的应该也是一个人名。这种做法将单词用不同的特征来表示，即使是训练样本中没有的单词，也可以根据 word embedding 的结果得到与其词性相近的单词，从而得到与该单词相近的结果，有效减少了训练样本的数量。</p>
+<p>featurized representation 的特性使得很多 NLP 任务能方便地进行迁移学习。方法是：</p>
+<ul>
+<li>从海量词汇库中学习 word embeddings，即所有单词的特征向量。或者从网上下载预训练好的 word embeddings。</li>
+<li>使用较少的训练样本，将 word embeddings 迁移到新的任务中。</li>
+<li>（可选）：继续使用新数据微调 word embeddings。</li>
+</ul>
+<p>建议仅当训练样本足够大的时候，再进行上述第三步。</p>
+<p>word embeddings 与人脸特征编码有很多相似性。人脸图片经过 Siamese 网络，得到其特征向量 f(x)，这点跟 word embedding 是类似的。二者不同的是 Siamese 网络输入的人脸图片可以是数据库之外的；而 word embedding 一般都是已建立的词汇库中的单词，非词汇库单词统一用 $<unk>$ 表示。</unk></p>
+<h3 id="2-3-词嵌入的特性（Properties-of-Word-Embeddings）"><a href="#2-3-词嵌入的特性（Properties-of-Word-Embeddings）" class="headerlink" title="2.3 词嵌入的特性（Properties of Word Embeddings）"></a>2.3 词嵌入的特性（Properties of Word Embeddings）</h3><p>Word embeddings 可以帮助我们找到不同单词之间的相似类别关系。如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180322211419261?" alt="相似度关系"></p>
+<p>上例中，特征维度是 4 维的，分别是 [Gender, Royal, Age, Food]。常识地，“Man” 与 “Woman” 的关系类比于 “King” 与 “Queen” 的关系。而利用 Word embeddings 可以找到这样的对应类比关系。</p>
+<p>我们将 “Man” 的 embedding vector 与 “Woman” 的 embedding vector 相减：<br>$$<br>e_{man}-e_{woman}=\left[<br>\begin{matrix}<br>-1 \<br>0.01 \<br>0.03 \<br>0.09<br>\end{matrix}<br>\right]-\left[<br>\begin{matrix}<br>1 \<br>0.02 \<br>0.02 \<br>0.01<br>\end{matrix}<br>\right]\approx\left[<br>\begin{matrix}<br>-2 \<br>0 \<br>0 \<br>0<br>\end{matrix}<br>\right]<br>$$<br>类似地，我们将 “King” 的 embedding vector 与 “Queen” 的 embedding vector 相减：<br>$$<br>e_{king}-e_{queen}=\left[<br>\begin{matrix}<br>-0.95 \<br>0.93 \<br>0.70 \<br>0.02<br>\end{matrix}<br>\right]-\left[<br>\begin{matrix}<br>0.97 \<br>0.95 \<br>0.69 \<br>0.01<br>\end{matrix}<br>\right]\approx\left[<br>\begin{matrix}<br>-2 \<br>0 \<br>0 \<br>0<br>\end{matrix}<br>\right]<br>$$<br>相减结果表明，“Man” 与 “Woman” 的主要区别是性别，“King” 与 “Queen” 也是一样。</p>
+<p>一般地，A 类比于 B 相当于 C 类比于 “？”，这类问题可以使用 embedding vector 进行运算。</p>
+<p><img src="https://img-blog.csdn.net/2018032221344573?" alt="向量计算"></p>
+<p>如上图所示，根据等式 $e_{man}-e_{woman}\approx e_{king}-e_?$ 得：<br>$$<br>e_?=e_{king}-e_{man}+e_{woman}<br>$$<br>利用相似函数计算可能性最大的 $e_{?}$</p>
+<p>关于相似函数，比较常用的是<strong>余弦相似度（cosine similarity）</strong>。其表达式为：<br>$$<br>Sim(u,v)=\frac{u^Tv}{||u||\cdot ||v||}<br>$$<br>还可以计算 Euclidian distance 来比较相似性，即 $||u−v||^{2}$。距离越大，相似性越小。</p>
+<p>词嵌入的一个显著成果就是，可学习的类比关系的一般性。举个例子，它能学会 <strong>man</strong> 对于 <strong>woman</strong> 相当于 <strong>boy</strong> 对于 <strong>girl</strong>，因为 <strong>man</strong> 和 <strong>woman</strong> 之间和 <strong>king</strong> 和 <strong>queen</strong> 之间，还有 <strong>boy</strong> 和 <strong>girl</strong> 之间的向量差在 <strong>gender</strong>（ <strong>性别</strong>）这一维都是一样的。它还能学习 <strong>Canada</strong>（ <strong>加拿大</strong>）的首都是 <strong>Ottawa</strong>（ <strong>渥太华</strong>），而渥太华对于加拿大相当于 <strong>Nairobi</strong>（ <strong>内罗毕</strong>）对于 <strong>Kenya</strong>（ <strong>肯尼亚</strong>），这些都是国家中首都城市名字。它还能学习 <strong>big</strong> 对于 <strong>bigger</strong> 相当于 <strong>tall</strong> 对于 <strong>taller</strong>，还能学习 <strong>Yen</strong>（ <strong>円</strong>）对于 <strong>Janpan</strong>（ <strong>日本</strong>），<strong>円</strong>是日本的货币单位，相当于 <strong>Ruble</strong>（ <strong>卢比</strong>）对于 <strong>Russia</strong>（ <strong>俄罗斯</strong>）。这些东西都能够学习，只要你在大型的文本语料库上实现一个词嵌入学习算法，只要从足够大的语料库中进行学习，它就能自主地发现这些模式。</p>
+<h3 id="2-4-嵌入矩阵（Embedding-Matrix）"><a href="#2-4-嵌入矩阵（Embedding-Matrix）" class="headerlink" title="2.4 嵌入矩阵（Embedding Matrix）"></a>2.4 嵌入矩阵（Embedding Matrix）</h3><p>假设某个词汇库包含了 10000 个单词，每个单词包含的特征维度为 300，那么表征所有单词的 embedding matrix 维度为 300 x 10000，用 E 来表示。某单词 w 的 one-hot 向量表示为 $O_{w}$，维度为 10000 x 1，则该单词的 embedding vector 表达式为：<br>$$<br>e_w=E\cdot O_w<br>$$<br>因此，只要知道了 embedding matrix E，就能计算出所有单词的 embedding vector ewew。后面我们将重点介绍如何求出 E。</p>
+<p>值得一提的是，上述这种矩阵乘积运算 $E⋅O_{w}$ 效率并不高，矩阵维度很大，且$O_{w}$ 大部分元素为零。通常做法是直接从 E 中选取第 w 列作为 $e_{w}$ 即可。</p>
+<h3 id="2-5-学习词嵌入（Learning-Word-Embeddings）"><a href="#2-5-学习词嵌入（Learning-Word-Embeddings）" class="headerlink" title="2.5 学习词嵌入（Learning Word Embeddings）"></a>2.5 学习词嵌入（Learning Word Embeddings）</h3><blockquote>
+<p>通过上下文预测某个位置的词，输入为 context，目标为 target</p>
+</blockquote>
+<p>embedding matrix E 可以通过构建自然语言模型，运用梯度下降算法得到。举个简单的例子，输入样本是下面这句话：</p>
+<p><strong>I want a glass of orange (juice).</strong></p>
+<p>通过这句话的前 6 个单词，预测最后的单词 “juice”。E 未知待求，每个单词可用 embedding vector $e_{w}$ 表示。构建的神经网络模型结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180323142329406?" alt="神经网络模型"></p>
+<p>神经网络输入层包含 6 个 embedding vactors，每个 embedding vector 维度是 300，则输入层总共有 1800 个输入。Softmax 层有 10000 个概率输出，与词汇表包含的单词数目一致。正确的输出 label 是 “juice”。其中 $E,W^{[1]},b^{[1]},W^{[2]},b^{[2]}$ 为待求值。对足够的训练例句样本，运用梯度下降算法，迭代优化，最终求出 embedding matrix E。</p>
+<p>这种算法的效果还不错，能够保证具有相似属性单词的 embedding vector 相近。</p>
+<p>为了让神经网络输入层数目固定，可以选择只取预测单词的前 4 个单词作为输入，例如该句中只选择 “a glass of orange” 四个单词作为输入。当然，这里的 4 是超参数，可调。</p>
+<p>一般地，我们把输入叫做 context，输出叫做 target。对应到上面这句话里：</p>
+<ul>
+<li><strong>context: a glass of orange</strong></li>
+<li><strong>target: juice</strong></li>
+</ul>
+<p>关于 context 的选择有多种方法：</p>
+<ul>
+<li><strong>target 前 n 个单词或后 n 个单词，n 可调</strong></li>
+<li><strong>target 前 1 个单词</strong></li>
+<li><strong>target 附近某 1 个单词（Skip-Gram）</strong></li>
+</ul>
+<p>事实证明，不同的 context 选择方法都能计算出较准确的 embedding matrix E。</p>
+<h3 id="2-6-Word2Vec"><a href="#2-6-Word2Vec" class="headerlink" title="2.6 Word2Vec"></a>2.6 Word2Vec</h3><p>上一小节我们介绍了 context 和 target 的选择方法，比较流行的是采用 Skip-Gram 模型。以下面这句话为例：</p>
+<p><strong>I want a glass of orange juice to go along with my cereal.</strong></p>
+<p>Skip-Gram 模型的做法是：首先随机选择一个单词作为 context，例如 “orange”；然后使用一个宽度为 5 或 10（自定义）的滑动窗，在 context 附近选择一个单词作为 target，可以是 “juice”、“glass”、“my” 等等。最终得到了多个 context—target 对作为监督式学习样本。</p>
+<p>训练的过程是构建自然语言模型，经过 softmax 单元的输出为：<br>$$<br>\hat y=\frac{e^{\theta_t^T\cdot e_c}}{\sum_{j=1}^{10000}e^{\theta_j^T\cdot e_c}}<br>$$<br>其中，$\theta_t$ 为 target 对应的参数，$e_{c}$ 为 context 的 embedding vector，且 $e_c=E\cdot O_c$。</p>
+<p>相应的 loss function 为：<br>$$<br>L(\hat y,y)=-\sum_{i=1}^{10000}y_ilog\ \hat y_i<br>$$<br>这是常用的 <strong>softmax</strong> 损失函数，y 就是只有一个 1 其他都是 0 的 <strong>one-hot</strong> 向量，如果目标词是 <strong>juice</strong>，那么第 4834 个元素就是 1，其余是 0。类似的 $\hat y$ 是一个从 <strong>softmax</strong> 单元输出的 10,000 维的向量，这个向量是所有可能目标词的概率。</p>
+<p>然后，运用梯度下降算法，迭代优化，最终得到 embedding matrix E。如果优化这个关于所有这些参数的损失函数，你就会得到一个较好的嵌入向量集，这个就叫做 <strong>Skip-Gram</strong> 模型。它把一个像 <strong>orange</strong> 这样的词作为输入，并预测这个词从左数或从右数的某个词，预测上下文词的前面一些或者后面一些是什么词。</p>
+<p>实际上使用这个算法会遇到一些问题，首要的问题就是计算速度。主要因为 softmax 输出单元为 10000 个，$\hat y$ 计算公式中包含了大量的求和运算。</p>
+<p>这里有一些解决方案，如分级（<strong>hierarchical</strong>）的 <strong>softmax</strong> 分类器和 <strong>负采样</strong>（ <strong>Negative Sampling</strong>）。</p>
+<p>解决的办法之一是使用 hierarchical softmax classifier，即树形分类器。其结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180323155552404?" alt="hierarchical softmax classifier"></p>
+<p>这种树形分类器是一种二分类。与之前的 softmax 分类器不同，它在每个数节点上对目标单词进行区间判断，最终定位到目标单词。这好比是猜数字游戏，数字范围 0～100。我们可以先猜 50，如果分类器给出目标数字比 50 大，则继续猜 75，以此类推，每次从数据区间中部开始。这种树形分类器最多需要 log N 步就能找到目标单词，N 为单词总数。</p>
+<p>实际应用中，对树形分类器做了一些改进。改进后的树形分类器是非对称的，通常选择把比较常用的单词放在树的顶层，而把不常用的单词放在树的底层。这样更能提高搜索速度。(哈夫曼树)</p>
+<p>最后提一点，关于 context 的采样，需要注意的是如果使用均匀采样，那么一些常用的介词、冠词，例如 the, of, a, and, to 等出现的概率更大一些。但是，这些单词的 embedding vectors 通常不是我们最关心的，我们更关心例如 orange, apple， juice 等这些名词等。所以，实际应用中，一般不选择随机均匀采样的方式来选择 context，而是使用其它算法来处理这类问题。</p>
+<p><strong>CBOW</strong> 是从原始语句推测目标字词；而 <strong>Skip-Gram</strong> 正好相反，是从目标字词推测出原始语句。<strong>CBOW</strong> 对小型数据库比较合适，而 <strong>Skip-Gram</strong> 在大型语料中表现更好。 上面为 CBOW，下面为 Skip-Gram</p>
+<p><img src="http://www.ai-start.com/dl2017/images/cbow.jpg" alt="CBOW"></p>
+<p><img src="http://www.ai-start.com/dl2017/images/skipgram.jpg" alt="Skip-Gram"></p>
+<p>而刚才讲的 <strong>Skip-Gram</strong> 模型，关键问题在于 <strong>softmax</strong> 这个步骤的计算成本非常昂贵，因为它需要在分母里对词汇表中所有词求和。通常情况下，<strong>Skip-Gram</strong> 模型用到更多点。在下个视频中，我会展示给你一个算法，它修改了训练目标使其可以运行得更有效，因此它可以让你应用在一个更大的训练集上面，也可以学到更好的词嵌入。</p>
+<h3 id="2-7-负采样（Negative-Sampling）"><a href="#2-7-负采样（Negative-Sampling）" class="headerlink" title="2.7 负采样（Negative Sampling）"></a>2.7 负采样（Negative Sampling）</h3><p>Negative sampling 是另外一种有效的求解 embedding matrix EE 的方法。它的做法是判断选取的 context word 和 target word 是否构成一组正确的 context-target 对，一般包含一个正样本和 k 个负样本。例如，“orange” 为 context word，“juice” 为 target word，很明显 “orange juice” 是一组 context-target 对，为正样本，相应的 target label 为 1。若 “orange” 为 context word 不变，target word 随机选择 “king”、“book”、“the” 或者 “of” 等。这些都不是正确的 context-target 对，为负样本，相应的 target label 为 0。</p>
+<p><img src="https://img-blog.csdn.net/20180326145224196?" alt="negative sampling"></p>
+<p>一般地，固定某个 context word 对应的负样本个数 k 一般遵循：</p>
+<ul>
+<li>若训练样本较小，k 一般选择 5～20；</li>
+<li>若训练样本较大，k 一般选择 2～5 即可。</li>
+</ul>
+<p>Negative sampling 的数学模型为：<br>$$<br>P(y=1|c,t)=\sigma(\theta^T_t\cdot e_c)<br>$$<br>其中，σ 表示 sigmoid 激活函数。</p>
+<p>很明显，negative sampling 某个固定的正样本对应 k 个负样本，即模型总共包含了 k+1 个 binary classification。对比之前介绍的 10000 个输出单元的 softmax 分类，negative sampling 转化为 k+1 个二分类问题，计算量要小很多，大大提高了模型运算速度。</p>
+<p>最后提一点，关于如何选择负样本对应的 target 单词，可以使用随机选择的方法。但有资料提出一个更实用、效果更好的方法，就是根据该词出现的频率进行选择，相应的概率公式为：<br>$$<br>P(w_i)=\frac{f(w_i)^{\frac34}}{\sum_j^{10000}f(w_j)^{\frac34}}<br>$$<br>其中，$f(w_{i})$ 表示单词 $w_{i}$ 在单词表中出现的概率。</p>
+<h3 id="2-8-GloVe-词向量（GloVe-Word-Vectors）"><a href="#2-8-GloVe-词向量（GloVe-Word-Vectors）" class="headerlink" title="2.8 GloVe 词向量（GloVe Word Vectors）"></a>2.8 GloVe 词向量（GloVe Word Vectors）</h3><p>GloVe 算法引入了一个新的参数：</p>
+<ul>
+<li><strong>$X_{ij}$: 表示 i 出现在 j 之前的次数，即 i 和 j 同时出现的次数。</strong></li>
+</ul>
+<p>其中，i 表示 context，j 表示 target。一般地，如果不限定 context 一定在 target 的前面，则有对称关系 $X_{ij}=X_{ji}$；如果有限定先后，则 $X_{ij}\neq X_{ji}$。接下来的讨论中，我们默认存在对称关系 $X_{ij}=X_{ji}$。</p>
+<p>GloVe 模型的 loss function 为：<br>$$<br>L=\sum_{i=1}^{10000}\sum_{j=1}^{10000}(\theta_i^Te_j-log X_{ij})^2<br>$$<br>从上式可以看出，若两个词的 embedding vector 越相近，同时出现的次数越多，则对应的 loss 越小。</p>
+<p>为了防止出现 “log 0”，即两个单词不会同时出现，无相关性的情况，对 loss function 引入一个权重因子 $f(X_{ij})$：<br>$$<br>L=\sum_{i=1}^{10000}\sum_{j=1}^{10000}f(X_{ij})(\theta_i^Te_j-log X_{ij})^2<br>$$<br>当 $X_{ij}=0$ 时，权重因子 $f(X_{ij})=0$。这种做法直接忽略了无任何相关性的 context 和 target，只考虑 $X_{ij}&gt;0$ 的情况。</p>
+<p>出现频率较大的单词相应的权重因子 $f(X_{ij})$ 较大，出现频率较小的单词相应的权重因子 $f(X_{ij})$ 较小一些。具体的权重因子 $f(X_{ij})$ 选取方法可查阅相关论文资料。</p>
+<p>一般地，引入偏移量，则 loss function 表达式为：<br>$$<br>L=\sum_{i=1}^{10000}\sum_{j=1}^{10000}f(X_{ij})(\theta_i^Te_j+b_i+b_j’-log X_{ij})^2<br>$$<br>值得注意的是，参数 $\theta_i$和 $e_{j}$是对称的。使用优化算法得到所有参数之后，最终的 $e_{w}$ 可表示为：<br>$$<br>e_w=\frac{e_w+\theta_w}{2}<br>$$<br>最后提一点的是，无论使用 Skip-Gram 模型还是 GloVe 模型等等，计算得到的 embedding matrix EE 的每一个特征值不一定对应有实际物理意义的特征值，如 gender，age 等。</p>
+<h3 id="2-9-情感分类（Sentiment-Classification）"><a href="#2-9-情感分类（Sentiment-Classification）" class="headerlink" title="2.9 情感分类（Sentiment Classification）"></a>2.9 情感分类（Sentiment Classification）</h3><p>情感分类一般是根据一句话来判断其喜爱程度，例如 1～5 星分布。如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180326202534765?" alt="情感分类评价"></p>
+<p>情感分类问题的一个主要挑战是缺少足够多的训练样本。而 Word embedding 恰恰可以帮助解决训练样本不足的问题。</p>
+<p>首先介绍使用 word embedding 解决情感分类问题的一个简单模型算法。</p>
+<p><img src="https://img-blog.csdn.net/20180326204007800?" alt="词向量取平均"></p>
+<p>如上图所示，这句话的 4 个单词分别用 embedding vector 表示。$e_{8928},e_{2468},e_{4694},e_{3180}$ 计算均值，这样得到的平均向量的维度仍是 300。最后经过 softmax 输出 1～5 星。这种模型结构简单，计算量不大，不论句子长度多长，都使用平均的方式得到 300D 的 embedding vector。该模型实际表现较好。</p>
+<p>但是，这种简单模型的缺点是使用平均方法，没有考虑句子中单词出现的次序，忽略其位置信息。而有时候，不同单词出现的次序直接决定了句意，即情感分类的结果。例如下面这句话：</p>
+<p><strong>Completely lacking in good taste, good service, and good ambience.</strong></p>
+<p>虽然这句话中包含了 3 个 “good”，但是其前面出现了 “lacking”，很明显这句话句意是 negative 的。如果使用上面介绍的平均算法，则很可能会错误识别为 positive 的，因为忽略了单词出现的次序。</p>
+<p>为了解决这一问题，情感分类的另一种模型是 RNN。</p>
+<p><img src="https://img-blog.csdn.net/20180326214816799?" alt="RNN 考虑词序"></p>
+<p>该 RNN 模型是典型的 many-to-one 模型，考虑单词出现的次序，能够有效识别句子表达的真实情感。</p>
+<p>值得一提的是使用 word embedding，能够有效提高模型的泛化能力，即使训练样本不多，也能保证模型有不错的性能。</p>
+<h3 id="2-10-词嵌入除偏（Debiasing-Word-Embeddings）"><a href="#2-10-词嵌入除偏（Debiasing-Word-Embeddings）" class="headerlink" title="2.10 词嵌入除偏（Debiasing Word Embeddings）"></a>2.10 词嵌入除偏（Debiasing Word Embeddings）</h3><p>Word embeddings 中存在一些性别、宗教、种族等偏见或者歧视。例如下面这两句话：</p>
+<p>Man: Woman —— King: Queen</p>
+<p>Man: Computer programmer —— Woman: Homemaker</p>
+<p>Father: Doctor —— Mother: Nurse</p>
+<p>很明显，第二句话和第三句话存在性别偏见，因为 Woman 和 Mother 也可以是 Computer programmer 和 Doctor。</p>
+<p>以性别偏见为例，我们来探讨下如何消除 word embeddings 中偏见。</p>
+<p><img src="https://img-blog.csdn.net/20180326221231416?" alt="确定偏见方向"></p>
+<p>首先，确定偏见 bias 的方向。方法是对所有性别对立的单词求差值，再平均。上图展示了 bias direction 和 non-bias direction。<br>$$<br>bias\ direction=\frac1N ((e_{he}-e_{she})+(e_{male}-e_{female})+\cdots)<br>$$<br>然后，单词中立化（Neutralize）。将需要消除性别偏见的单词投影到 non-bias direction 上去，消除 bias 维度，例如 babysitter，doctor 等。</p>
+<p><img src="https://img-blog.csdn.net/20180326222015490?" alt="中立化"></p>
+<p>最后，均衡对（Equalize pairs）。让性别对立单词与上面的中立词距离相等，具有同样的相似度。例如让 grandmother 和 grandfather 与 babysitter 的距离同一化。</p>
+<p><img src="https://img-blog.csdn.net/20180326222932855?" alt="均衡对"></p>
+<p>值得注意的是，掌握哪些单词需要中立化非常重要。一般来说，大部分英文单词，例如职业、身份等都需要中立化，消除 embedding vector 中性别这一维度的影响。</p>
+<h2 id="第三周-序列模型和注意力机制（Sequence-models-amp-Attention-mechanism）"><a href="#第三周-序列模型和注意力机制（Sequence-models-amp-Attention-mechanism）" class="headerlink" title="第三周 序列模型和注意力机制（Sequence models &amp; Attention mechanism）"></a><strong>第三周 序列模型和注意力机制（</strong>Sequence models &amp; Attention mechanism<strong>）</strong></h2><h3 id="3-1-基础模型（Basic-Models）"><a href="#3-1-基础模型（Basic-Models）" class="headerlink" title="3.1 基础模型（Basic Models）"></a>3.1 基础模型（Basic Models）</h3><p>Sequence to sequence（序列）模型在<strong>机器翻译</strong>和<strong>语音识别</strong>方面都有着广泛的应用。下面，我们来看一个机器翻译的简单例子：</p>
+<p><img src="https://img-blog.csdn.net/20180402102943247?" alt="语言翻译"></p>
+<p>针对该机器翻译问题，可以使用 “编码网络（encoder network）”+“解码网络（decoder network）” 两个 RNN 模型组合的形式来解决。encoder network 将输入语句编码为一个特征向量，传递给 decoder network，完成翻译。具体模型结构如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20180402105516405?" alt="encoder netword + decoder network"></p>
+<p>其中，encoder vector 代表了输入语句的编码特征。encoder network 和 decoder network 都是 RNN 模型，可使用 GRU 或 LSTM 单元。这种 “编码网络（encoder network）”+“解码网络（decoder network）” 的模型，在实际的机器翻译应用中有着不错的效果。</p>
+<p>这种模型也可以应用到图像捕捉领域。图像捕捉，即捕捉图像中主体动作和行为，描述图像内容。例如下面这个例子，根据图像，捕捉图像内容。</p>
+<p><img src="https://img-blog.csdn.net/20180402111305733?" alt="图像捕捉"></p>
+<p>首先，可以将图片输入到 CNN，例如使用预训练好的 AlexNet，删去最后的 softmax 层，保留至最后的全连接层。则该全连接层就构成了一个图片的特征向量（编码向量），表征了图片特征信息。</p>
+<p><img src="https://img-blog.csdn.net/20180402112324842?" alt="图像捕捉"></p>
+<p>然后，将 encoder vector 输入至 RNN，即 decoder network 中，进行解码翻译。</p>
+<p><img src="https://img-blog.csdn.net/20180402133655200?" alt="解码翻译"></p>
+<h3 id="3-2-选择最可能的句子（Picking-the-most-likely-sentence）"><a href="#3-2-选择最可能的句子（Picking-the-most-likely-sentence）" class="headerlink" title="3.2 选择最可能的句子（Picking the most likely sentence）"></a>3.2 选择最可能的句子（Picking the most likely sentence）</h3><p>Sequence to sequence machine translation 模型与我们第一节课介绍的 language 模型有一些相似，但也存在不同之处。二者模型结构如下所示：</p>
+<p><img src="https://img-blog.csdn.net/20180402141623315?" alt="语言模型和 seq2seq 模型"></p>
+<p><strong>Language model 是自动生成一条完整语句，语句是随机的。</strong>而 <strong>machine translation model 是根据输入语句，进行翻译，生成另外一条完整语句。</strong>上图中，绿色部分表示 encoder network，紫色部分表示 decoder network。decoder network 与 language model 是相似的，encoder network 可以看成是 language model 的 $a^{&lt;0&gt;}$，是模型的一个条件。也就是说，在输入语句的条件下，生成正确的翻译语句。因此，<strong>machine translation 可以看成是有条件的语言模型（conditional language model）</strong>。这就是二者之间的区别与联系。<!--0--></p>
+<p>所以，machine translation 的目标就是根据输入语句，作为条件，找到最佳翻译语句，使其概率最大：<br>$$<br>max\ P(y^{&lt;1&gt;},y^{&lt;2&gt;},\cdots,y^{&lt;T_y&gt;}|x^{&lt;1&gt;},x^{&lt;2&gt;},\cdots,x^{&lt;T_x&gt;})<br>$$<br>例如，本节笔记开始介绍的例子，列举几个模型可能得到的翻译：<!--2--><!--1--><!--2--><!--1--></p>
+<p><img src="https://img-blog.csdn.net/20180402144830584?" alt="翻译结果"></p>
+<p>显然，第一条翻译 “Jane is visiting Africa in September.” 最为准确。那我们的优化目标就是要让这条翻译对应的 $P(y^{&lt;1&gt;},\cdots,y^{&lt;T_y&gt;}|x)$ 最大化。<!--1--></p>
+<p>实现优化目标的方法之一是使用<strong>贪婪搜索（greedy search）</strong>。Greedy search 根据条件，每次只寻找一个最佳单词作为翻译输出，力求把每个单词都翻译准确。例如，首先根据输入语句，找到第一个翻译的单词 “Jane”，然后再找第二个单词 “is”，再继续找第三个单词 “visiting”，以此类推。这也是其 “贪婪” 名称的由来。</p>
+<blockquote>
+<p>概率更高并不代表翻译更准确；所有单词组合的运算成本太高</p>
+</blockquote>
+<p>Greedy search 存在一些缺点。首先，因为 greedy search 每次只搜索一个单词，没有考虑该单词前后关系，概率选择上有可能会出错。例如，上面翻译语句中，第三个单词 “going” 比 “visiting” 更常见，模型很可能会错误地选择了 “going”，而错失最佳翻译语句。其次，greedy search 大大增加了运算成本，降低运算速度。</p>
+<p>因此，greedy search 并不是最佳的方法。下一小节，我们将介绍 Beam Search，使用近似最优的查找方式，最大化输出概率，寻找最佳的翻译语句。</p>
+<h3 id="3-3-集束搜索（Beam-Search）"><a href="#3-3-集束搜索（Beam-Search）" class="headerlink" title="3.3 集束搜索（Beam Search）"></a>3.3 集束搜索（Beam Search）</h3><blockquote>
+<ol>
+<li>每次找出 B 个概率最大的单词，且每轮更新</li>
+<li>本轮概率由前面的概率拆解乘积计算</li>
+</ol>
+</blockquote>
+<p>Greedy search 每次是找出预测概率最大的单词，而 beam search 则是每次找出预测概率最大的 B 个单词。其中，参数 B 表示取概率最大的单词个数，可调。本例中，令 B=3。</p>
+<p>按照 beam search 的搜索原理，首先，先从词汇表中找出翻译的第一个单词概率最大的 B 个预测单词。例如上面的例子中，预测得到的第一个单词为：in，jane，september。</p>
+<p><img src="https://img-blog.csdn.net/20180408205545859?" alt="step 1"></p>
+<p>概率表示为：$P(\hat y^{&lt;1&gt;} | x)$<!--1--></p>
+<p>然后，再分别以 in，jane，september 为条件，计算每个词汇表单词作为预测第二个单词的概率。从中选择概率最大的 3 个作为第二个单词的预测值，得到：in september，jane is，jane visits。</p>
+<p><img src="https://img-blog.csdn.net/20180408211118818?" alt="step 2"></p>
+<p>概率表示为： $P(\hat y^{&lt;2&gt;}|x,\hat y^{&lt;1&gt;})$<!--1--><!--2--></p>
+<p>此时，得到的前两个单词的 3 种情况的概率为：<br>$$<br>P(\hat y^{&lt;1&gt;},\hat y^{&lt;2&gt;}|x)=P(\hat y^{&lt;1&gt;} | x)\cdot P(\hat y^{&lt;2&gt;}|x,\hat y^{&lt;1&gt;})<br>$$<br>接着，再预测第三个单词。方法一样，分别以 in september，jane is，jane visits 为条件，计算每个词汇表单词作为预测第三个单词的概率。从中选择概率最大的 3 个作为第三个单词的预测值，得到：in september jane，jane is visiting，jane visits africa。<!--1--><!--2--><!--1--><!--2--><!--1--></p>
+<p><img src="https://img-blog.csdn.net/20180408212504710?" alt="step 3"></p>
+<p>概率表示为：$P(\hat y^{&lt;3&gt;}|x,\hat y^{&lt;1&gt;},\hat y^{&lt;2&gt;})$<!--2--><!--1--><!--3--></p>
+<p>此时，得到的前三个单词的 3 种情况的概率为：<br>$$<br>P(\hat y^{&lt;1&gt;},\hat y^{&lt;2&gt;},\hat y^{&lt;3&gt;}|x)=P(\hat y^{&lt;1&gt;} | x)\cdot P(\hat y^{&lt;2&gt;}|x,\hat y^{&lt;1&gt;})\cdot P(\hat y^{&lt;3&gt;}|x,\hat y^{&lt;1&gt;},\hat y^{&lt;2&gt;})<br>$$<br>以此类推，每次都取概率最大的三种预测。最后，选择概率最大的那一组作为最终的翻译语句。<!--2--><!--1--><!--3--><!--1--><!--2--><!--1--><!--3--><!--2--><!--1--></p>
+<p>Jane is visiting Africa in September.</p>
+<p>值得注意的是，如果参数 B=1，则就等同于 greedy search。实际应用中，可以根据不同的需要设置 B 为不同的值。一般 B 越大，机器翻译越准确，但同时也会增加计算复杂度。</p>
+<h3 id="3-4-改进集束搜索（Refinements-to-Beam-Search）"><a href="#3-4-改进集束搜索（Refinements-to-Beam-Search）" class="headerlink" title="3.4 改进集束搜索（Refinements to Beam Search）"></a>3.4 改进集束搜索（Refinements to Beam Search）</h3><blockquote>
+<ol>
+<li>多个概率乘积造成数值下溢——&gt;取对数运算</li>
+<li>目标函数倾向短句——&gt;归一化处理</li>
+<li>加入归一化因子（试探性但是效果好）</li>
+<li>beam search 相比 BFS、DFS，速度更快，但是不能保证最优</li>
+</ol>
+</blockquote>
+<p>Beam search 中，最终机器翻译的概率是乘积的形式：<br>$$<br>arg\ max\prod_{t=1}^{T_y} P(\hat y^{<t>}|x,\hat y^{&lt;1&gt;},\cdots,\hat y^{<t-1>})<br>$$<br>多个概率相乘可能会使乘积结果很小，远小于 1，造成<strong>数值下溢</strong>。为了解决这个问题，可以对上述乘积形式进行<strong>取对数 log 运算</strong>，即：<br>$$<br>arg\ max\sum_{t=1}^{T_y} P(\hat y^{<t>}|x,\hat y^{&lt;1&gt;},\cdots,\hat y^{<t-1>})<br>$$<br>因为取对数运算，将乘积转化为求和形式，避免了数值下溢，使得<strong>数据更加稳定有效</strong>。</t-1><!--1--></t></t-1><!--1--></t></p>
+<p>这种概率表达式还存在一个问题，就是机器翻译的单词越多，乘积形式或求和形式得到的概率就越小，这样会造成模型倾向于选择单词数更少的翻译语句，使机器翻译受单词数目的影响，这显然是不太合适的。因此，一种改进方式是进行长度归一化，消除语句长度影响。<br>$$<br>arg\ max\ \frac{1}{T_y}\sum_{t=1}^{T_y} P(\hat y^{<t>}|x,\hat y^{&lt;1&gt;},\cdots,\hat y^{<t-1>})<br>$$<br>实际应用中，通常会引入归一化因子 α：<br>$$<br>arg\ max\ \frac{1}{T_y^{\alpha}}\sum_{t=1}^{T_y} P(\hat y^{<t>}|x,\hat y^{&lt;1&gt;},\cdots,\hat y^{<t-1>})<br>$$<br>若 α=1，则完全进行长度归一化；若 α=0，则不进行长度归一化。一般令 α=0.7，效果不错。</t-1><!--1--></t></t-1><!--1--></t></p>
+<p>值得一提的是，与 BFS (Breadth First Search) 、DFS (Depth First Search) 算法不同，beam search 运算速度更快，但是并不保证一定能找到正确的翻译语句。</p>
+<h3 id="3-5-集束搜索的误差分析（Error-analysis-in-beam-search）"><a href="#3-5-集束搜索的误差分析（Error-analysis-in-beam-search）" class="headerlink" title="3.5 集束搜索的误差分析（Error analysis in beam search）"></a>3.5 集束搜索的误差分析（Error analysis in beam search）</h3><blockquote>
+<p>误差分析应该从整体到局部，找到合适的评判标准来区别是哪个部分出现了问题，再深入部分去优化改进。</p>
+</blockquote>
+<p>Beam search 是一种近似搜索算法。实际应用中，如果机器翻译效果不好，需要通过错误分析，判断是 RNN 模型问题还是 beam search 算法问题。</p>
+<p>一般来说，增加训练样本、增大 beam search 参数 B 都能提高准确率。但是，这种做法并不能得到我们期待的性能，且并不实际。</p>
+<p>首先，为待翻译语句建立人工翻译，记为 $y^{∗}$。在 RNN 模型上使用 beam search 算法，得到机器翻译，记为 $\hat y$。显然，人工翻译 $y^{∗}$ 最为准确。</p>
+<p>Jane visite l’Afrique en septembre.</p>
+<p>Human: Jane visits Africa in September.     $y^{∗}$<br>Algorithm: Jane visited Africa last September.     $\hat y$</p>
+<p>这样，整个模型包含两部分：RNN 和 beam search 算法。</p>
+<p>然后，将输入语句输入到 RNN 模型中，分别计算输出是  $y^{∗}$ 的概率 $P(y^*|x)$ 和 $\hat y$ 的概率 $P(\hat y|x)$。</p>
+<p>接下来就是比较 $P(y^*|x)$和 $P(\hat y|x)$的大小。</p>
+<ul>
+<li>$P(y^*|x)&gt;P(\hat y|x)$：Beam search 算法有误</li>
+<li>$P(y^*|x)&lt; P(\hat y|x)$：RNN 模型有误</li>
+</ul>
+<p>如果 beam search 算法表现不佳，可以调试参数 B；若 RNN 模型不好，则可以增加网络层数，使用正则化，增加训练样本数目等方法来优化。</p>
+<h3 id="3-6-Bleu-得分（选修）（Bleu-Score-optional-）"><a href="#3-6-Bleu-得分（选修）（Bleu-Score-optional-）" class="headerlink" title="3.6 Bleu 得分（选修）（Bleu Score (optional)）"></a>3.6 Bleu 得分（选修）（Bleu Score (optional)）</h3><blockquote>
+<p>单一实数评估指标（<strong>a single real number evaluation metric</strong>）对于问题的解决至关重要，它指出了解决问题的核心在哪里。</p>
+<p>评价标准包括两部分， precision 和 BP，对应到 Precision 和 Recall，Precision 倾向于保守选择，却会使得 Recall 值变小，通过引入 BP 惩罚短句优化翻译结果</p>
+</blockquote>
+<p>使用 bleu score，对机器翻译进行打分。</p>
+<p>首先，对原语句建立人工翻译参考，一般有多个人工翻译（利用验证集火测试集）。例如下面这个例子：</p>
+<p>French: Le chat est sur le tapis.</p>
+<p>Reference 1: The cat is on the mat.</p>
+<p>Reference 2: There is a cat on the mat.</p>
+<p>上述两个人工翻译都是正确的，作为参考。相应的机器翻译如下所示：</p>
+<p>French: Le chat est sur le tapis.</p>
+<p>Reference 1: The cat is on the mat.</p>
+<p>Reference 2: There is a cat on the mat.</p>
+<p>MT output: the the the the the the the.</p>
+<p>如上所示，机器翻译为 “the the the the the the the.”，效果很差。Bleu Score 的宗旨是机器翻译越接近参考的人工翻译，其得分越高，方法原理就是<strong>看机器翻译的各个单词是否出现在参考翻译中</strong>。</p>
+<p>最简单的准确度评价方法是看机器翻译的每个单词是否出现在参考翻译中。显然，上述机器翻译的每个单词都出现在参考翻译里，准确率为 $\frac77=1$，其中，分母为机器翻译单词数目，分子为相应单词是否出现在参考翻译中。但是，这种方法很不科学，并不可取。</p>
+<p>另外一种评价方法是看机器翻译单词出现在参考翻译单个语句中的次数，取最大次数。上述例子对应的准确率为2727，其中，分母为机器翻译单词数目，分子为相应单词出现在参考翻译中的次数（分子为 2 是因为 “the” 在参考 1 中出现了两次）。这种评价方法较为准确。</p>
+<p>上述两种方法都是对单个单词进行评价。按照 beam search 的思想，另外一种更科学的打分方法是 bleu score on bigrams，即同时对两个连续单词进行打分。仍然是上面那个翻译例子：</p>
+<p>French: Le chat est sur le tapis.</p>
+<p>Reference 1: The cat is on the mat.</p>
+<p>Reference 2: There is a cat on the mat.</p>
+<p>MT output: The cat the cat on the mat.</p>
+<p>对 MIT output 进行分解，得到的 bigrams 及其出现在 MIT output 中的次数 count 为：</p>
+<p>the cat: 2</p>
+<p>cat the: 1</p>
+<p>cat on: 1</p>
+<p>on the: 1</p>
+<p>the mat: 1</p>
+<p>然后，统计上述 bigrams 出现在参考翻译单个语句中的次数（取最大次数）$count_{clip}$ 为：</p>
+<p>the cat: 1</p>
+<p>cat the: 0</p>
+<p>cat on: 1</p>
+<p>on the: 1</p>
+<p>the mat: 1</p>
+<p>相应的 bigrams precision 为：$\frac{count_{clip}}{count}=\frac{1+0+1+1+1}{2+1+1+1+1}=\frac46=\frac23$</p>
+<p>如果是 n 个连续单词，相应的 n-grams precision 为：</p>
+<p><img src="https://img-blog.csdn.net/20180409212110400?" alt=""></p>
+<p>通常，对上式进行指数处理，并引入参数因子 brevity penalty，记为 BP。顾名思义，BP 是为了 “惩罚” 机器翻译语句过短而造成的得分 “虚高” 的情况。<br>$$<br>p=BP\cdot exp(\frac1n\sum_{i=1}^np_i)<br>$$<br>其中，BP 值由机器翻译长度和参考翻译长度共同决定。</p>
+<p><img src="https://img-blog.csdn.net/20180409213147733?" alt=""></p>
+<h3 id="3-7-注意力模型直观理解（Attention-Model-Intuition）"><a href="#3-7-注意力模型直观理解（Attention-Model-Intuition）" class="headerlink" title="3.7 注意力模型直观理解（Attention Model Intuition）"></a>3.7 注意力模型直观理解（Attention Model Intuition）</h3><blockquote>
+<p>对需要翻译的句子，让神经网络只注意一部分输入（类似于滑动窗口），此外窗口内单词分配权重，表示单词对当前翻译结果的影响程度，一部分一部分地翻译，避免长句翻译效果不佳的问题。</p>
+</blockquote>
+<p>如果原语句很长，要对整个语句输入 RNN 的编码网络和解码网络进行翻译，则效果不佳。相应的 bleu score 会随着单词数目增加而逐渐降低。</p>
+<p><img src="https://img-blog.csdn.net/2018040921580480?" alt="长句翻译"></p>
+<p>对待长语句，正确的翻译方法是将长语句分段，每次只对长语句的一部分进行翻译。人工翻译也是采用这样的方法，高效准确。也就是说，每次翻译只注重一部分区域，这种方法使得 bleu score 不太受语句长度的影响。</p>
+<p><img src="https://img-blog.csdn.net/20180409220252876?" alt="分段翻译"></p>
+<p>根据这种 “局部聚焦” 的思想，建立相应的<strong>注意力模型（attention model）</strong>。</p>
+<p><img src="https://img-blog.csdn.net/2018040922250974?" alt="注意力模型(BRNN)"></p>
+<p>如上图所示，attention model 仍由类似的编码网络（下）和解码网络（上）构成。其中，$S^{<t>}$ 由原语句附近单元共同决定，原则上说，离得越近，注意力权重（attention weights）越大，相当于在你当前的注意力区域有个滑动窗。</t></p>
+<h3 id="3-8-注意力模型（Attention-Model）"><a href="#3-8-注意力模型（Attention-Model）" class="headerlink" title="3.8 注意力模型（Attention Model）"></a>3.8 注意力模型（Attention Model）</h3><blockquote>
+<p>当前单元的输入由（1）前一个状态的输出 $S^{<t-1>}$ 和（2）原始输入加权 C 组成</t-1></p>
+<p>（2）原始输入加权 C：</p>
+<ol>
+<li>C 由权重×单词求和得到</li>
+<li>注意力权重 $\alpha^{&lt;t,t’&gt;}$ 之和为 1——softmax 思想引入 $e^{&lt;t,t’&gt;}$</li>
+<li>$e^{&lt;t,t’&gt;}$ 由神经网络输入(1)前一个状态的输出(2)当前单词训练得到</li>
+</ol>
+</blockquote>
+<p><img src="http://www.ai-start.com/dl2017/images/1e6b86a4e3690b4a0c6b8146ffa2f791.png" alt="注意力机制参数汇总"></p>
+<p>Attention model 中选择双向 RNN，可以使用 GRU 单元或者 LSTM。由于是双向 RNN，每个 $a^{<t'>}$ 表示：
+$$
+a^{<t'>}=(a^{\rightarrow <t'>},a^{\leftarrow <t'>})<br>$$<br>RNN 编码生成特征，注意力权重用 α 表示，C 是各个 RNN 神经元经过注意力权重得到的参数值。例如，$\alpha^{&lt;1,t’&gt;}$ 表示机器翻译的第一个单词 “jane” 对应的第 t’个 RNN 神经元，$C^{&lt;1&gt;}$ 表示机器翻译第一个单词 “jane” 对应的解码网络输入参数。满足：<br>$$<br>\sum_{t’}\alpha^{&lt;1,t’&gt;}=1<br>$$<!--1--></t'></t'></t'></t'></p>
+<p>$$<br>C^{&lt;1&gt;}=\sum_{t’}\alpha^{&lt;1,t’&gt;}\cdot a^{&lt;t’&gt;}<br>$$<!--1--></p>
+<p>也就是说，<strong>$\alpha^{&lt;t,t’&gt;}$ 表示输出 $\hat y^{<t>}$ 应该对 $\alpha^{&lt;t’&gt;}$ 付出多少注意力</t></strong>。</p>
+<p>为了让 $\alpha^{&lt;t,t’&gt;}$ 之和为 1，利用 softamx 思想，引入参数 $e^{&lt;t,t’&gt;}$，使得：<br>$$<br>\alpha^{&lt;t,t’&gt;}=\frac{e^{&lt;t,t’&gt;}}{\sum_{t’}^{Tx}e^{&lt;t,t’&gt;}}<br>$$<br>这样，只要求出 $e^{&lt;t,t’&gt;}$，就能得到 $\alpha^{&lt;t,t’&gt;}$。</p>
+<p>如何求出 $e^{&lt;t,t’&gt;}$ 呢？方法是建立一个简单的神经网络，如下图所示。输入是 $S^{<t-1>}$  和 $\alpha^{<t'>}$, 输出是 $ e^{<t,t'>}$。</t,t'></t'></t-1></p>
+<p><img src="https://img-blog.csdn.net/20180410211712325?" alt="求解 $e^{<t,t'>}$"></p>
+<p>然后，利用梯度下降算法迭代优化，计算得到 $e^{&lt;t,t’&gt;}$ 和 $\alpha^{&lt;t,t’&gt;}$。</p>
+<p>Attention model 的一个缺点是其计算量较大，若输入句子长度为 $T_x$，输出句子长度为 $T_y$，则计算时间约为 $T_x*T_y$。但是，其性能提升很多，计算量大一些也是可以接受的。</p>
+<p>有趣的是，Attention model 在图像捕捉方面也有应用。</p>
+<p>Attention model 能有效处理很多机器翻译问题，例如下面的时间格式归一化：</p>
+<p><img src="https://img-blog.csdn.net/20180410213056900?" alt="时间格式化"></p>
+<p>下图将注意力权重可视化：</p>
+<p><img src="https://img-blog.csdn.net/20180410213329730?" alt="注意力权重可视化"></p>
+<p>上图中，颜色越白表示注意力权重越大，颜色越深表示权重越小。可见，输出语句单词与其输入语句单词对应位置的注意力权重较大，即对角线附近。</p>
+<h3 id="3-9-语音识别（Speech-recognition）"><a href="#3-9-语音识别（Speech-recognition）" class="headerlink" title="3.9 语音识别（Speech recognition）"></a>3.9 语音识别（Speech recognition）</h3><p>深度学习中，语音识别的输入是声音，量化成时间序列。更一般地，可以把信号转化为频域信号，即声谱图（spectrogram），再进入 RNN 模型进行语音识别。</p>
+<p><img src="https://img-blog.csdn.net/20180410214538405?" alt="语音识别"></p>
+<p>之前，语言学家们会将语音中每个单词分解成多个音素（phoneme），构建更精准的传统识别算法。但在 end-to-end 深度神经网络模型中，一般不需要这么做也能得到很好的识别效果。通常训练样本很大，需要上千上万个小时的语音素材。</p>
+<p>语音识别的注意力模型（attention model）如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/2018041022125464?" alt="注意力模型"></p>
+<p>一般来说，语音识别的输入时间序列都比较长，例如是 10s 语音信号，采样率为 100Hz，则语音长度为 1000。而翻译的语句通常很短，例如 “the quick brown fox”，包含 19 个字符。这时候，Tx 与 Ty 差别很大。为了让 $T_x=T_y$，可以把输出相应字符重复并加入空白（blank），形如：</p>
+<p>其中，下划线”_“表示空白，”⊔“表示两个单词之间的空字符。这种写法的一个基本准则是<strong>没有被空白符”_“分割的重复字符将被折叠到一起，即表示一个字符。</strong></p>
+<p>这样，加入了重复字符和空白符、空字符，可以让输出长度也达到 1000，即 $T_x=T_y$。这种模型被称为 CTC（Connectionist temporal classification）。</p>
+<p><img src="https://img-blog.csdn.net/20180410223250625?" alt="CTC"></p>
+<h3 id="3-10-触发字检测（Trigger-Word-Detection）"><a href="#3-10-触发字检测（Trigger-Word-Detection）" class="headerlink" title="3.10 触发字检测（Trigger Word Detection）"></a>3.10 触发字检测（Trigger Word Detection）</h3><p>触发字检测（Trigger Word Detection）在很多产品中都有应用，操作方法就是说出触发字通过语音来启动相应的设备。例如 Amazon Echo 的触发字是”Alexa“，百度 DuerOS 的触发字是” 小度你好 “，Apple Siri 的触发字是”Hey Siri“，Google Home 的触发字是”Okay Google“。</p>
+<p>触发字检测系统可以使用 RNN 模型来建立。如下图所示，输入语音中包含一些触发字，其余都是非触发字。RNN 检测到触发字后输出 1，非触发字输出 0。这样训练的 RNN 模型就能实现触发字检测。</p>
+<p><img src="https://img-blog.csdn.net/20180411102522415?" alt="RNN 触发词检测"></p>
+<p>但是这种模型有一个缺点，就是通常<strong>训练样本语音中的触发字较非触发字数目少得多，即正负样本分布不均</strong>。一种解决办法是<strong>在出现一个触发字时，将其附近的 RNN 都输出 1</strong>。这样就简单粗暴地增加了正样本。</p>
+<p><img src="https://img-blog.csdn.net/20180411103552354?" alt="解决正负样本不均"></p>
+<p>总结一下我们对序列模型的学习。我们学了 <strong>RNN</strong>，包括 <strong>GRU</strong> 和 <strong>LSTM</strong>，然后在上一周我们学了词嵌入（<strong>word embeddings</strong>），以及它们如何学习词汇的表达（<strong>how they learn representations of words</strong>）。在这周还学了注意力模型（<strong>the attention model</strong>）以及如何使用它来处理音频数据（<strong>audio data</strong>）。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Solejay</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-wu-ke/">https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-wu-ke/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Solejay</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/深度学习/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/神经网络/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                                <a href="/tags/吴恩达/">
+                                    <span class="chip bg-color">吴恩达</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/08/si-yue-xiao-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/self_featureimages/20.png" class="responsive-img" alt="四月小结">
+                        
+                        <span class="card-title">四月小结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/思考/" class="post-category">
+                                    思考
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/每月小结/">
+                        <span class="chip bg-color">每月小结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/27/wu-en-da-shen-du-xue-xi-di-san-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/self_featureimages/14.png" class="responsive-img" alt="吴恩达深度学习课程第三课笔记——结构化机器学习项目">
+                        
+                        <span class="card-title">吴恩达深度学习课程第三课笔记——结构化机器学习项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP笔记/" class="post-category">
+                                    NLP笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/神经网络/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/吴恩达/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">SoleJay</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/purenjie?tab=repositories" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:prj960827@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

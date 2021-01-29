@@ -1,0 +1,1289 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="吴恩达深度学习课程第三课笔记——结构化机器学习项目, SoleJay">
+    <meta name="description" content>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>吴恩达深度学习课程第三课笔记——结构化机器学习项目 | SoleJay</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SoleJay</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SoleJay</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/self_featureimages/14.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">吴恩达深度学习课程第三课笔记——结构化机器学习项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/深度学习/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/神经网络/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                            <a href="/tags/吴恩达/">
+                                <span class="chip bg-color">吴恩达</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP笔记/" class="post-category">
+                                NLP笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-27
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-28
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    31 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第三门课-结构化机器学习项目（Structuring-Machine-Learning-Projects）"><a href="#第三门课-结构化机器学习项目（Structuring-Machine-Learning-Projects）" class="headerlink" title="第三门课 结构化机器学习项目（Structuring Machine Learning Projects）"></a>第三门课 结构化机器学习项目（Structuring Machine Learning Projects）</h1><h2 id="第一周-机器学习（ML）策略（1）（ML-strategy（1））"><a href="#第一周-机器学习（ML）策略（1）（ML-strategy（1））" class="headerlink" title="第一周 机器学习（ML）策略（1）（ML strategy（1））"></a>第一周 机器学习（ML）策略（1）（ML strategy（1））</h2><h3 id="1-1-为什么是-ML-策略？（Why-ML-Strategy-）"><a href="#1-1-为什么是-ML-策略？（Why-ML-Strategy-）" class="headerlink" title="1.1 为什么是 ML 策略？（Why ML Strategy?）"></a>1.1 为什么是 ML 策略？（Why ML Strategy?）</h3><p>当我们最初得到一个深度神经网络模型时，我们可能希望从很多方面来对它进行优化，例如：</p>
+<p>Collect more data</p>
+<p>Collect more diverse training set</p>
+<p>Train algorithm longer with gradient descent</p>
+<p>Try Adam instead of gradient descent</p>
+<p>Try bigger network</p>
+<p>Try smaller network</p>
+<p>Try dropout</p>
+<p>Add L2 regularization</p>
+<p>Network architecture: Activation functions, #hidden units…</p>
+<p>可选择的方法很多，也很复杂、繁琐。盲目选择、尝试不仅耗费时间而且可能收效甚微。因此，使用快速、有效的策略来优化机器学习模型是非常必要的。</p>
+<h3 id="1-2-正交化（Orthogonalization）"><a href="#1-2-正交化（Orthogonalization）" class="headerlink" title="1.2 正交化（Orthogonalization）"></a>1.2 正交化（Orthogonalization）</h3><blockquote>
+<p>控制变量法，让自己的优化有迹可循，多变量变化就不知道是哪个起作用了。</p>
+</blockquote>
+<p>机器学习中有许多参数、超参数需要调试。通过每次只调试一个参数，保持其它参数不变，而得到的模型某一性能改变是一种最常用的调参策略，我们称之为正交化方法（Orthogonalization）。</p>
+<p>Orthogonalization 的核心在于每次调试一个参数只会影响模型的某一个性能。例如老式电视机旋钮，每个旋钮就对应一个功能，调整旋钮会调整对应的功能，而不会影响其它功能。也就是说彼此旋钮之间是互不影响的，是正交的，这也是 Orthogonalization 名称的由来。这种方法能够让我们更快更有效地进行机器学习模型的调试和优化。</p>
+<p>对应到机器学习监督式学习模型中，可以大致分成四个独立的 “功能”，每个 “功能” 对应一些可调节的唯一的旋钮。四个 “功能” 如下：</p>
+<ul>
+<li><strong>Fit training set well on cost function</strong></li>
+<li><strong>Fit dev set well on cost function</strong></li>
+<li><strong>Fit test set well on cost function</strong></li>
+<li><strong>Performs well in real world</strong></li>
+</ul>
+<p>其中，第一条优化训练集可以通过使用更复杂 NN，使用 Adam 等优化算法来实现；第二条优化验证集可以通过正则化，采用更多训练样本来实现；第三条优化测试集可以通过使用更多的验证集样本来实现；第四条提升实际应用模型可以通过更换验证集，使用新的 cost function 来实现。概括来说，每一种 “功能” 对应不同的调节方法。而这些调节方法（旋钮）只会对应一个 “功能”，是正交的。</p>
+<p>顺便提一下，early stopping 在模型功能调试中并不推荐使用。因为 early stopping 在提升验证集性能的同时降低了训练集的性能。也就是说 early stopping 同时影响两个 “功能”，不具有独立性、正交性。</p>
+<h3 id="1-3-单一数字评估指标（Single-number-evaluation-metric）"><a href="#1-3-单一数字评估指标（Single-number-evaluation-metric）" class="headerlink" title="1.3 单一数字评估指标（Single number evaluation metric）"></a>1.3 单一数字评估指标（Single number evaluation metric）</h3><p>构建、优化机器学习模型时，单值评价指标非常必要。有了量化的单值评价指标后，我们就能根据这一指标比较不同超参数对应的模型的优劣，从而选择最优的那个模型。</p>
+<p>举个例子，比如有 A 和 B 两个模型，它们的准确率（Precision）和召回率（Recall）分别如下：</p>
+<p><img src="https://img-blog.csdn.net/20171113160716628?" alt="分类器效果"></p>
+<p>如果只看 Precision 的话，B 模型更好。如果只看 Recall 的话，A 模型更好。实际应用中，我们通常使用单值评价指标 F1 Score 来评价模型的好坏。F1 Score 综合了 Precision 和 Recall 的大小，计算方法如下：</p>
+<p><a href="https://blog.csdn.net/quiet_girl/article/details/70830796" target="_blank" rel="noopener">参考链接</a></p>
+<p>True Positive (真正，TP)：将正类预测为正类数</p>
+<p>True Negative (真负，TN)：将负类预测为负类数</p>
+<p>False Positive (假正，FP)：将负类预测为正类数误报 (Type I error)</p>
+<p>False Negative (假负，FN)：将正类预测为负类数→漏报 (Type II error)<br>$$<br>Precision=\frac{TP}{TP+FP}<br>$$</p>
+<p>$$<br>Recall=\frac{TP}{TP+FN}<br>$$</p>
+<p>$$<br>F1=\frac{2PR}{P+R}<br>$$</p>
+<p>然后得到了 A 和 B 模型各自的 F1 Score：</p>
+<p><img src="https://img-blog.csdn.net/20171113161842574?" alt="F1 Score"></p>
+<p>从 F1 Score 来看，A 模型比 B 模型更好一些。通过引入单值评价指标 F1 Score，很方便对不同模型进行比较。</p>
+<p>除了 <strong>F1 Score</strong> 之外，我们还可以使用<strong>平均值</strong>作为单值评价指标来对模型进行评估。如下图所示，A, B, C, D, E, F 六个模型对不同国家样本的错误率不同，可以计算其平均性能，然后选择平均错误率最小的那个模型（C 模型）。</p>
+<p><img src="https://img-blog.csdn.net/20171113163112581?" alt="平均值评估"></p>
+<h3 id="1-4-满足指标和优化指标（Satisficing-and-optimizing-metrics）"><a href="#1-4-满足指标和优化指标（Satisficing-and-optimizing-metrics）" class="headerlink" title="1.4 满足指标和优化指标（Satisficing and optimizing metrics）"></a>1.4 满足指标和优化指标（Satisficing and optimizing metrics）</h3><p>有时候，要把所有的性能指标都综合在一起，构成单值评价指标是比较困难的。解决办法是，我们可以把某些性能作为<strong>优化指标（Optimizing metic）</strong>，寻求最优化值；而某些性能作为<strong>满意指标（Satisficing metic）</strong>，只要满足阈值就行了。</p>
+<p>举个猫类识别的例子，有 A，B，C 三个模型，各个模型的 Accuracy 和 Running time 如下表中所示：</p>
+<p><img src="https://img-blog.csdn.net/20171113171230472?" alt="两个评价指标时"></p>
+<p>Accuracy 和 Running time 这两个性能不太合适综合成单值评价指标。因此，我们可以将 Accuracy 作为优化指标（Optimizing metic），将 Running time 作为满意指标（Satisficing metic）。也就是说，给 Running time 设定一个阈值，在其满足阈值的情况下，选择 Accuracy 最大的模型。如果设定 Running time 必须在 100ms 以内，那么很明显，模型 C 不满足阈值条件，首先剔除；模型 B 相比较模型 A 而言，Accuracy 更高，性能更好。</p>
+<p>概括来说，性能指标（Optimizing metic）是需要优化的，越优越好；而满意指标（Satisficing metic）只要满足设定的阈值就好了。</p>
+<h3 id="1-5-训练-开发-测试集划分（Train-dev-test-distributions）"><a href="#1-5-训练-开发-测试集划分（Train-dev-test-distributions）" class="headerlink" title="1.5 训练 / 开发 / 测试集划分（Train/dev/test distributions）"></a>1.5 训练 / 开发 / 测试集划分（Train/dev/test distributions）</h3><p>Train/dev/test sets 如何设置对机器学习的模型训练非常重要，合理设置能够大大提高模型训练效率和模型质量。</p>
+<p>原则上<strong>应该尽量保证 dev sets 和 test sets 来源于同一分布且都反映了实际样本的情况</strong>。如果 dev sets 和 test sets 不来自同一分布，那么我们从 dev sets 上选择的 “最佳” 模型往往不能够在 test sets 上表现得很好。这就好比我们在 dev sets 上找到最接近一个靶的靶心的箭，但是我们 test sets 提供的靶心却远远偏离 dev sets 上的靶心，结果这支肯定无法射中 test sets 上的靶心位置。</p>
+<p><img src="https://img-blog.csdn.net/20171113204424247?" alt="学习的靶心和目标的靶心偏离"></p>
+<h3 id="1-6-开发集和测试集的大小（Size-of-dev-and-test-sets）"><a href="#1-6-开发集和测试集的大小（Size-of-dev-and-test-sets）" class="headerlink" title="1.6 开发集和测试集的大小（Size of dev and test sets）"></a>1.6 开发集和测试集的大小（Size of dev and test sets）</h3><p>在之前的课程中我们已经介绍过，当样本数量不多（小于一万）的时候，通常将 Train/dev/test sets 的比例设为 60%/20%/20%，在没有 dev sets 的情况下，Train/test sets 的比例设为 70%/30%。当样本数量很大（百万级别）的时候，通常将相应的比例设为 98%/1%/1% 或者 99%/1%。</p>
+<p>对于 dev sets 数量的设置，应该遵循的准则是<strong>通过 dev sets 能够检测不同算法或模型的区别</strong>，以便选择出更好的模型。</p>
+<p>对于 test sets 数量的设置，应该遵循的准则是<strong>通过 test sets 能够反映出模型在实际中的表现</strong>。</p>
+<p>实际应用中，可能只有 train/dev sets，而没有 test sets。这种情况也是允许的，只要算法模型没有对 dev sets 过拟合。但是，条件允许的话，<strong>最好是有 test sets，实现无偏估计。</strong></p>
+<h3 id="1-7-什么时候该改变开发-测试集和指标？（When-to-change-dev-test-sets-and-metrics）"><a href="#1-7-什么时候该改变开发-测试集和指标？（When-to-change-dev-test-sets-and-metrics）" class="headerlink" title="1.7 什么时候该改变开发 / 测试集和指标？（When to change dev/test sets and metrics）"></a>1.7 什么时候该改变开发 / 测试集和指标？（When to change dev/test sets and metrics）</h3><p>算法模型的评价标准有时候需要根据实际情况进行动态调整，目的是让算法模型在实际应用中有更好的效果。</p>
+<p>举个猫类识别的例子。初始的评价标准是错误率，算法 A 错误率为 3%，算法 B 错误率为 5%。显然，A 更好一些。但是，实际使用时发现算法 A 会通过一些色情图片，但是 B 没有出现这种情况。从用户的角度来说，他们可能更倾向选择 B 模型，虽然 B 的错误率高一些。这时候，我们就需要改变之前单纯只是使用错误率作为评价标准，而考虑新的情况进行改变。例如增加色情图片的权重，增加其代价。</p>
+<p>原来的 cost function：<br>$$<br>J=\frac1m\sum_{i=1}^mL(\hat y^{(i)},y^{(i)})<br>$$<br>更改评价标准后的 cost function：<br>$$<br>J=\frac{1}{w^{(i)}}\sum_{i=1}^mw^{(i)}L(\hat y^{(i)},y^{(i)})<br>$$</p>
+<p>$$<br>w^{(i)}=\begin{cases}<br>        1, &amp; x^{(i)}\ is\ non-porn\<br>        10, &amp; x^{(i)}\ is\ porn<br>    \end{cases}<br>$$</p>
+<p>概括来说，机器学习可分为两个过程：</p>
+<ul>
+<li><strong>Define a metric to evaluate classifiers</strong></li>
+<li><strong>How to do well on this metric</strong></li>
+</ul>
+<p>也就是说，第一步是找靶心，第二步是通过训练，射中靶心。但是在训练的过程中可能会根据实际情况改变算法模型的评价标准，进行动态调整。</p>
+<p>另外一个需要动态改变评价标准的情况是 dev/test sets 与实际使用的样本分布不一致。比如猫类识别样本图像分辨率差异。</p>
+<p><img src="https://img-blog.csdn.net/20171114094708310?" alt="训练验证集和显示测试集分布不同"></p>
+<h3 id="1-8-为什么是人的表现？（Why-human-level-performance-）"><a href="#1-8-为什么是人的表现？（Why-human-level-performance-）" class="headerlink" title="1.8 为什么是人的表现？（Why human-level performance?）"></a>1.8 为什么是人的表现？（Why human-level performance?）</h3><p>机器学习模型的表现通常会跟人类水平表现作比较，如下图所示：</p>
+<p><img src="https://img-blog.csdn.net/20171115090646865?" alt="机器表现与人类水平"></p>
+<p>图中，横坐标是训练时间，纵坐标是准确性。机器学习模型经过训练会不断接近 human-level performance 甚至超过它。但是，超过 human-level performance 之后，准确性会上升得比较缓慢，最终不断接近理想的最优情况，我们称之为 bayes optimal error。理论上任何模型都不能超过它，bayes optimal error 代表了最佳表现。</p>
+<p>机器学习的进展往往相当快，直到你超越人类的表现之前一直很快，当你超越人类的表现时，有时进展会变慢，主要由两个原因：</p>
+<ol>
+<li>人类水平在很多任务中离贝叶斯最优错误率已经不远了，当你超越人类的表现之后也许没有太多的空间继续改善了。</li>
+<li>只要你的表现比人类的表现更差，那么实际上可以使用某些工具来提高性能。一旦你超越了人类的表现，这些工具就没那么好用了。（人工标注、人工错误率分析、更好地理解偏差/方差）</li>
+</ol>
+<h3 id="1-9-可避免偏差（Avoidable-bias）"><a href="#1-9-可避免偏差（Avoidable-bias）" class="headerlink" title="1.9 可避免偏差（Avoidable bias）"></a>1.9 可避免偏差（Avoidable bias）</h3><p>实际应用中，要看 human-level error，training error 和 dev error 的相对值。</p>
+<p>例如猫类识别的例子中，如果 human-level error 为 1%，training error 为 8%，dev error 为 10%。由于 training error 与 human-level error 相差 7%，dev error 与 training error 只相差 2%，所以目标是尽量在训练过程中减小 training error，即减小偏差 bias。</p>
+<p>如果图片很模糊，肉眼也看不太清，human-level error 提高到 7.5%。这时，由于 training error 与 human-level error 只相差 0.5%，dev error 与 training error 只相差 2%，所以目标是尽量在训练过程中减小 dev error，即方差 variance。这是相对而言的。</p>
+<p>对于物体识别这类 CV 问题，human-level error 是很低的，很接近理想情况下的 bayes optimal error。因此，上面例子中的 1% 和 7.5% 都可以近似看成是两种情况下对应的 bayes optimal error。<strong>实际应用中，我们一般会用 human-level error 代表 bayes optimal error。</strong></p>
+<p>通常，我们把 training error 与 human-level error 之间的差值称为 bias，也称作 <strong>avoidable bias</strong>；</p>
+<p>把 dev error 与 training error 之间的差值称为 <strong>variance</strong>。根据 bias 和 variance 值的相对大小，选择接下来优化的方向是 bias 还是 variance</p>
+<h3 id="1-10-理解人的表现（Understanding-human-level-performance）"><a href="#1-10-理解人的表现（Understanding-human-level-performance）" class="headerlink" title="1.10 理解人的表现（Understanding human-level performance）"></a>1.10 理解人的表现（Understanding human-level performance）</h3><p>我们说过 human-level performance 能够代表 bayes optimal error。但是，human-level performance 如何定义呢？举个医学图像识别的例子，不同人群的 error 有所不同：</p>
+<ul>
+<li>Typical human : 3% error</li>
+<li>Typical doctor : 1% error</li>
+<li>Experienced doctor : 0.7% error</li>
+<li>Team of experienced doctors : 0.5% error</li>
+</ul>
+<p>不同人群他们的错误率不同。一般来说，我们将表现最好的那一组，即 Team of experienced doctors 作为 human-level performance。那么，这个例子中，human-level error 就为 0.5%。但是实际应用中，不同人可能选择的 human-level performance 基准是不同的，这会带来一些影响。</p>
+<p>假如该模型 training error 为 0.7%，dev error 为 0.8%。如果选择 Team of experienced doctors，即 human-level error 为 0.5%，则 bias 比 variance 更加突出。如果选择 Experienced doctor，即 human-level error 为 0.7%，则 variance 更加突出。也就是说，选择什么样的 human-level error，有时候会影响 bias 和 variance 值的相对变化。当然这种情况一般只会在模型表现很好，接近 bayes optimal error 的时候出现。越接近 bayes optimal error，模型越难继续优化，因为这时候的 human-level performance 可能是比较模糊难以准确定义的。</p>
+<h3 id="1-11-超过人的表现（Surpassing-human-level-performance）"><a href="#1-11-超过人的表现（Surpassing-human-level-performance）" class="headerlink" title="1.11 超过人的表现（Surpassing human- level performance）"></a>1.11 超过人的表现（Surpassing human- level performance）</h3><p>对于自然感知类问题，例如视觉、听觉等，机器学习的表现不及人类。但是在很多其它方面，机器学习模型的表现已经超过人类了，包括：</p>
+<ul>
+<li>Online advertising</li>
+<li>Product recommendations</li>
+<li>Logistics(predicting transit time)</li>
+<li>Loan approvals</li>
+</ul>
+<p>实际上，机器学习模型超过 human-level performance 是比较困难的。但是只要提供足够多的样本数据，训练复杂的神经网络，模型预测准确性会大大提高，很有可能接近甚至超过 human-level performance。值得一提的是当算法模型的表现超过 human-level performance 时，很难再通过人的直觉来解决如何继续提高算法模型性能的问题。<strong>因为不知道真正的 bayes optimal error 是多少，也就不知道该优化 bias 还是 variance。</strong></p>
+<h3 id="1-12-改善你的模型的表现（Improving-your-model-performance）"><a href="#1-12-改善你的模型的表现（Improving-your-model-performance）" class="headerlink" title="1.12 改善你的模型的表现（Improving your model performance）"></a>1.12 改善你的模型的表现（Improving your model performance）</h3><p>提高机器学习模型性能主要要解决两个问题：avoidable bias 和 variance。我们之前介绍过，training error 与 human-level error 之间的差值反映的是 avoidable bias，dev error 与 training error 之间的差值反映的是 variance。</p>
+<p>解决 avoidable bias 的常用方法包括：</p>
+<ul>
+<li>Train bigger model</li>
+<li>Train longer/better optimization algorithms: momentum, RMSprop, Adam</li>
+<li>NN architecture/hyperparameters search</li>
+</ul>
+<p>解决 variance 的常用方法包括：</p>
+<ul>
+<li>More data</li>
+<li>Regularization: L2, dropout, data augmentation</li>
+<li>NN architecture/hyperparameters search</li>
+</ul>
+<h2 id="第二周：机器学习策略（2）-ML-Strategy-2"><a href="#第二周：机器学习策略（2）-ML-Strategy-2" class="headerlink" title="第二周：机器学习策略（2）(ML Strategy (2))"></a>第二周：机器学习策略（2）(ML Strategy (2))</h2><h3 id="2-1-进行误差分析（Carrying-out-error-analysis）"><a href="#2-1-进行误差分析（Carrying-out-error-analysis）" class="headerlink" title="2.1 进行误差分析（Carrying out error analysis）"></a>2.1 进行误差分析（Carrying out error analysis）</h3><blockquote>
+<p>类似混淆矩阵的思想，快速分析误差的原因并进行针对性的优化</p>
+</blockquote>
+<p>对已经建立的机器学习模型进行错误分析（error analysis）十分必要，而且有针对性地、正确地进行 error analysis 更加重要。</p>
+<p>举个例子，猫类识别问题，已经建立的模型的错误率为 10%。为了提高正确率，我们发现该模型会将一些狗类图片错误分类成猫。一种常规解决办法是扩大狗类样本，增强模型对够类（负样本）的训练。但是，这一过程可能会花费几个月的时间，耗费这么大的时间成本到底是否值得呢？也就是说扩大狗类样本，重新训练模型，对提高模型准确率到底有多大作用？这时候我们就需要进行 error analysis，帮助我们做出判断。</p>
+<p>方法很简单，我们可以从分类错误的样本中统计出狗类的样本数量。根据狗类样本所占的比重，判断这一问题的重要性。假如狗类样本所占比重仅为 5%，即时我们花费几个月的时间扩大狗类样本，提升模型对其识别率，改进后的模型错误率最多只会降低到 9.5%。相比之前的 10%，并没有显著改善。我们把这种性能限制称为 ceiling on performance。相反，假如错误样本中狗类所占比重为 50%，那么改进后的模型错误率有望降低到 5%，性能改善很大。因此，值得去花费更多的时间扩大狗类样本。</p>
+<p>这种 error analysis 虽然简单，但是能够避免花费大量的时间精力去做一些对提高模型性能收效甚微的工作，让我们专注解决影响模型正确率的主要问题，十分必要。</p>
+<p>这种 error analysis 可以同时评估多个影响模型性能的因素，通过各自在错误样本中所占的比例来判断其重要性。例如，猫类识别模型中，可能有以下几个影响因素：</p>
+<ul>
+<li>Fix pictures of dogs being recognized as cats</li>
+<li>Fix great cats(lions, panthers, etc…) being misrecognized</li>
+<li>Improve performance on blurry images</li>
+</ul>
+<p>通常来说，比例越大，影响越大，越应该花费时间和精力着重解决这一问题。这种 error analysis 让我们改进模型更加有针对性，从而提高效率。</p>
+<h3 id="2-2-清除标注错误的数据（Cleaning-up-Incorrectly-labeled-data）"><a href="#2-2-清除标注错误的数据（Cleaning-up-Incorrectly-labeled-data）" class="headerlink" title="2.2 清除标注错误的数据（Cleaning up Incorrectly labeled data）"></a>2.2 清除标注错误的数据（Cleaning up Incorrectly labeled data）</h3><blockquote>
+<p>通常训练集标注错误可以忽略，因为深度学习健壮性较好。验证集和测试集标注错误时关注所占比例，所占比例高时需要修改，所占比例低时不是优先考虑的优化对象。</p>
+</blockquote>
+<p>监督式学习中，训练样本有时候会出现输出 y 标注错误的情况，即 incorrectly labeled examples。如果这些 label 标错的情况是随机性的（random errors），DL 算法对其包容性是比较强的，即健壮性好，一般可以直接忽略，无需修复。然而，如果是系统错误（systematic errors），这将对 DL 算法造成影响，降低模型性能。刚才说的是训练样本中出现 incorrectly labeled data，如果是 dev/test sets 中出现 incorrectly labeled data，该怎么办呢？</p>
+<p>方法很简单，利用上节内容介绍的 error analysis，统计 dev sets 中所有分类错误的样本中 incorrectly labeled data 所占的比例。根据该比例的大小，决定是否需要修正所有 incorrectly labeled data，还是可以忽略。举例说明，若：</p>
+<p>Overall dev set error: 10%</p>
+<p>Errors due incorrect labels: 0.6%</p>
+<p>Errors due to other causes: 9.4%</p>
+<p>上面数据表明 Errors due incorrect labels 所占的比例仅为 0.6%，占 dev set error 的 6%，而其它类型错误占 dev set error 的 94%。因此，这种情况下，可以忽略 incorrectly labeled data。</p>
+<p>如果优化 DL 算法后，出现下面这种情况：</p>
+<p>Overall dev set error: 2%</p>
+<p>Errors due incorrect labels: 0.6%</p>
+<p>Errors due to other causes: 1.4%</p>
+<p>上面数据表明 Errors due incorrect labels 所占的比例依然为 0.6%，但是却占 dev set error 的 30%，而其它类型错误占 dev set error 的 70%。因此，这种情况下，incorrectly labeled data 不可忽略，需要手动修正。</p>
+<p>我们知道，dev set 的主要作用是在不同算法之间进行比较，选择错误率最小的算法模型。但是，如果有 incorrectly labeled data 的存在，当不同算法错误率比较接近的时候，我们无法仅仅根据 Overall dev set error 准确指出哪个算法模型更好，必须修正 incorrectly labeled data。</p>
+<p>关于修正 incorrect dev/test set data，有几条建议：</p>
+<p>Apply same process to your dev and test sets to make sure they continue to come from the same distribution</p>
+<p>Consider examining examples your algorithm got right as well as ones it got wrong</p>
+<p>Train and dev/test data may now come from slightly different distributions</p>
+<h3 id="2-3-快速搭建你的第一个系统，并进行迭代（Build-your-first-system-quickly-then-iterate）"><a href="#2-3-快速搭建你的第一个系统，并进行迭代（Build-your-first-system-quickly-then-iterate）" class="headerlink" title="2.3 快速搭建你的第一个系统，并进行迭代（Build your first system quickly, then iterate）"></a>2.3 快速搭建你的第一个系统，并进行迭代（Build your first system quickly, then iterate）</h3><blockquote>
+<p>快速构建，反复迭代。</p>
+</blockquote>
+<p>对于如何构建一个机器学习应用模型，Andrew 给出的建议是先快速构建第一个简单模型，然后再反复迭代优化。</p>
+<ul>
+<li>Set up dev/test set and metric</li>
+<li>Build initial system quickly</li>
+<li>Use Bias/Variance analysis &amp; Error analysis to prioritize next steps</li>
+</ul>
+<p>我鼓励你们搭建快速而粗糙的实现，然后用它做偏差 / 方差分析，用它做错误分析，然后用分析结果确定下一步优先要做的 方向。</p>
+<h3 id="2-4-使用来自不同分布的数据，进行训练和测试（Training-and-testing-on-different-distributions）"><a href="#2-4-使用来自不同分布的数据，进行训练和测试（Training-and-testing-on-different-distributions）" class="headerlink" title="2.4 使用来自不同分布的数据，进行训练和测试（Training and testing on different distributions）"></a>2.4 使用来自不同分布的数据，进行训练和测试（Training and testing on different distributions）</h3><p>当 train set 与 dev/test set 不来自同一个分布的时候，我们应该如何解决这一问题，构建准确的机器学习模型呢？</p>
+<p>以猫类识别为例，train set 来自于网络下载（webpages），图片比较清晰；dev/test set 来自用户手机拍摄（mobile app），图片比较模糊。假如 train set 的大小为 200000，而 dev/test set 的大小为 10000，显然 train set 要远远大于 dev/test set。</p>
+<p>虽然 dev/test set 质量不高，但是模型最终主要应用在对这些模糊的照片的处理上。面对 train set 与 dev/test set 分布不同的情况，有两种解决方法。</p>
+<ol>
+<li>完全混合，随机分配。不符合现实情况，效果不好</li>
+</ol>
+<p>第一种方法是将 train set 和 dev/test set 完全混合，然后在随机选择一部分作为 train set，另一部分作为 dev/test set。例如，混合 210000 例样本，然后随机选择 205000 例样本作为 train set，2500 例作为 dev set，2500 例作为 test set。这种做法的优点是实现 train set 和 dev/test set 分布一致，缺点是 dev/test set 中 webpages 图片所占的比重比 mobile app 图片大得多。例如 dev set 包含 2500 例样本，大约有 2381 例来自 webpages，只有 119 例来自 mobile app。这样，dev set 的算法模型对比验证，仍然主要由 webpages 决定，实际应用的 mobile app 图片所占比重很小，达不到验证效果。因此，这种方法并不是很好。</p>
+<ol start="2">
+<li><strong>dev/test set 分一部分给 train set，dev/test set 剩下的作为 dev/test set</strong></li>
+</ol>
+<p>第二种方法是将原来的 train set 和一部分 dev/test set 组合当成 train set，剩下的 dev/test set 分别作为 dev set 和 test set。例如，200000 例 webpages 图片和 5000 例 mobile app 图片组合成 train set，剩下的 2500 例 mobile app 图片作为 dev set，2500 例 mobile app 图片作为 test set。其关键在于 dev/test set 全部来自于 mobile app。这样保证了验证集最接近实际应用场合。这种方法较为常用，而且性能表现比较好。</p>
+<h3 id="2-5-数据分布不匹配时，偏差与方差的分析（Bias-and-Variance-with-mismatched-data-distributions）"><a href="#2-5-数据分布不匹配时，偏差与方差的分析（Bias-and-Variance-with-mismatched-data-distributions）" class="headerlink" title="2.5 数据分布不匹配时，偏差与方差的分析（Bias and Variance with mismatched data distributions）"></a>2.5 数据分布不匹配时，偏差与方差的分析（Bias and Variance with mismatched data distributions）</h3><blockquote>
+<p>数据分布不匹配时分布也可能是影响模型效果，不能确定是否是 variance 的问题。分布不匹配时再分出 train-dev set，同分布下看训练集的 variance 问题。training-dev error 与 dev error 的差值看 data mismatch 问题。</p>
+</blockquote>
+<p>我们之前介绍过，根据 human-level error、training error 和 dev error 的相对值可以判定是否出现了 bias 或者 variance。但是，需要注意的一点是，<strong>如果 train set 和 dev/test set 来源于不同分布，则无法直接根据相对值大小来判断</strong>。例如某个模型 human-level error 为 0%，training error 为 1%，dev error 为 10%。根据我们之前的理解，显然该模型出现了 variance。但是，training error 与 dev error 之间的差值 9% 可能来自算法本身（variance），也可能来自于样本分布不同。比如 dev set 都是很模糊的图片样本，本身就难以识别，跟算法模型关系不大。因此不能简单认为出现了 variance。</p>
+<p><strong>在可能伴有 train set 与 dev/test set 分布不一致的情况下，定位是否出现 variance 的方法是设置 train-dev set。</strong>Andrew 给 train-dev set 的定义是：“Same distribution as training set, but not used for training.” 也就是说，从原来的 train set 中分割出一部分作为 train-dev set，train-dev set 不作为训练模型使用，而是与 dev set 一样用于验证。</p>
+<p>这样，我们就有 training error、training-dev error 和 dev error 三种 error。其中，training error 与 training-dev error 的差值反映了 variance；training-dev error 与 dev error 的差值反映了 data mismatch problem，即样本分布不一致。</p>
+<p>总结一下 human-level error、training error、training-dev error、dev error 以及 test error 之间的差值关系和反映的问题：</p>
+<p><img src="https://img-blog.csdn.net/20171123102507240?" alt="差值间的问题"></p>
+<p>一般情况下，human-level error、training error、training-dev error、dev error 以及 test error 的数值是递增的，但是也会出现 dev error 和 test error 下降的情况。这主要可能是因为训练样本比验证 / 测试样本更加复杂，难以训练。</p>
+<h3 id="2-6-处理数据不匹配问题（Addressing-data-mismatch）"><a href="#2-6-处理数据不匹配问题（Addressing-data-mismatch）" class="headerlink" title="2.6 处理数据不匹配问题（Addressing data mismatch）"></a>2.6 处理数据不匹配问题（Addressing data mismatch）</h3><blockquote>
+<p>手动分析理解训练接和验证集/测试集分布的不同；增加验证集/测试集分布的数据给训练集</p>
+<p>人工数据合成有一个问题在于只用一个小的数据集去合成大的数据集（人类无法辨别）是否会让模型对小数据集过拟合？</p>
+</blockquote>
+<p>关于如何解决 train set 与 dev/test set 样本分布不一致的问题，有两条建议：</p>
+<ul>
+<li><strong>Carry out manual error analysis to try to understand difference between training dev/test sets</strong></li>
+<li><strong>Make training data more similar; or collect more data similar to dev/test sets</strong></li>
+</ul>
+<p>为了让 train set 与 dev/test set 类似，我们可以使用人工数据合成的方法（artificial data synthesis）。例如说话人识别问题，实际应用场合（dev/test set）是包含背景噪声的，而训练样本 train set 很可能没有背景噪声。为了让 train set 与 dev/test set 分布一致，我们可以在 train set 上人工添加背景噪声，合成类似实际场景的声音。这样会让模型训练的效果更准确。但是，需要注意的是，我们不能给每段语音都增加同一段背景噪声，这样会出现对背景噪音的过拟合，效果不佳。这就是人工数据合成需要注意的地方。</p>
+<h3 id="2-7-迁移学习（Transfer-learning）"><a href="#2-7-迁移学习（Transfer-learning）" class="headerlink" title="2.7 迁移学习（Transfer learning）"></a>2.7 迁移学习（Transfer learning）</h3><blockquote>
+<p>相同类型输入下，目标数据比较少时，可以用数据多的模型进行修改弥补数据不足难以很好地提取特征的问题。应用场合的三点：相同输入、量级碾压、特征相同（相似）</p>
+</blockquote>
+<p><strong>深度学习非常强大的一个功能之一就是有时候你可以将已经训练好的模型的一部分知识（网络结构）直接应用到另一个类似模型中去。</strong>比如我们已经训练好一个猫类识别的神经网络模型，那么我们可以直接把该模型中的一部分网络结构应用到使用 X 光片预测疾病的模型中去。这种学习方法被称为迁移学习（Transfer Learning）。</p>
+<p>如果我们已经有一个训练好的神经网络，用来做图像识别。现在，我们想要构建另外一个通过 X 光片进行诊断的模型。迁移学习的做法是无需重新构建新的模型，而是利用之前的神经网络模型，只改变样本输入、输出以及输出层的权重系数 $W^{[L]},\ b^{[L]}$。也就是说对新的样本 (X,Y)，重新训练输出层权重系数 $W^{[L]},\ b^{[L]}$，而其它层所有的权重系数 $W^{[l]},\ b^{[l]}$ 保持不变。</p>
+<p><img src="https://img-blog.csdn.net/20171123160012172?" alt="迁移学习示例"></p>
+<p>迁移学习，重新训练权重系数，如果需要构建新模型的样本数量较少，那么可以像刚才所说的，只训练输出层的权重系数 $W^{[L]},\ b^{[L]}$，保持其它层所有的权重系数 $W^{[l]},\ b^{[l]}$ 不变。这种做法相对来说比较简单。如果样本数量足够多，那么也可以只保留网络结构，重新训练所有层的权重系数。这种做法使得模型更加精确，因为毕竟样本对模型的影响最大。选择哪种方法通常由数据量决定。</p>
+<p>顺便提一下，如果重新训练所有权重系数，初始 $W^{[l]},\ b^{[l]}$ 由之前的模型训练得到，这一过程称为 pre-training。之后，不断调试、优化 $W^{[l]},\ b^{[l]}$ 的过程称为 fine-tuning。<strong>pre-training 和 fine-tuning 分别对应上图中的黑色箭头和红色箭头。</strong></p>
+<p><img src="https://img-blog.csdn.net/20171124141447596?" alt="pre-training 和 fine-tuning"></p>
+<p>总体来说，迁移学习的应用场合主要包括三点：</p>
+<ul>
+<li><strong>Task A and B have the same input x</strong>.（图像或语音语聊）</li>
+<li><strong>You have a lot more data for Task A than Task B.</strong></li>
+<li><strong>Low level features from A could be helpful for learning B.</strong>（图像检测中边缘检测、语音识别中声波频率）</li>
+</ul>
+<h3 id="2-8-多任务学习（Multi-task-learning）"><a href="#2-8-多任务学习（Multi-task-learning）" class="headerlink" title="2.8 多任务学习（Multi-task learning）"></a>2.8 多任务学习（Multi-task learning）</h3><blockquote>
+<p>多任务学习是使用单个神经网络模型来实现多个任务（如图片识别），使用频率不如迁移学习。</p>
+</blockquote>
+<p>顾名思义，多任务学习（multi-task learning）就是构建神经网络同时执行多个任务。这跟二元分类或者多元分类都不同，多任务学习类似将多个神经网络融合在一起，用一个网络模型来实现多种分类效果。如果有 C 个，那么输出 y 的维度是 (C,1)。例如汽车自动驾驶中，需要实现的多任务为行人、车辆、交通标志和信号灯。如果检测出汽车和交通标志，则 y 为：<br>$$<br>y=<br>\left[<br> \begin{matrix}<br>   0\<br>   1\<br>   1\<br>   0<br>  \end{matrix}<br>  \right]<br>$$<br>多任务学习模型的 cost function 为：<br>$$<br>\frac1m\sum_{i=1}^m\sum_{j=1}^cL(\hat y_j^{(i)},y_j^{(i)})<br>$$<br>其中，j 表示任务下标，总有 c 个任务。对应的 loss function 为：<br>$$<br>L(\hat y_j^{(i)},y_j^{(i)})=-y_j^{(i)}log\ \hat y_j^{(i)}-(1-y_j^{(i)})log\ (1-\hat y_j^{(i)})<br>$$<br>值得一提的是，Multi-task learning 与 Softmax regression 的区别在于 Softmax regression 是 single label 的，即输出向量 y 只有一个元素为 1；而 Multi-task learning 是 multiple labels 的，即输出向量 y 可以有多个元素为 1。</p>
+<p>多任务学习是使用单个神经网络模型来实现多个任务。实际上，也可以分别构建多个神经网络来实现。但是，如果各个任务之间是相似问题（例如都是图片类别检测），则可以使用多任务学习模型。另外，多任务学习中，可能存在训练样本 Y 某些 label 空白的情况，这并不影响多任务模型的训练。</p>
+<p>总体来说，多任务学习的应用场合主要包括三点：</p>
+<ul>
+<li>Training on a set of tasks that could benefit from having shared lower-level features.</li>
+<li>Usually: Amount of data you have for each task is quite similar.</li>
+<li>Can train a big enough neural network to do well on all the tasks.</li>
+</ul>
+<p>顺便提一下，迁移学习和多任务学习在实际应用中，迁移学习使用得更多一些。</p>
+<h3 id="2-9-什么是端到端的深度学习？（What-is-end-to-end-deep-learning-）"><a href="#2-9-什么是端到端的深度学习？（What-is-end-to-end-deep-learning-）" class="headerlink" title="2.9 什么是端到端的深度学习？（What is end-to-end deep learning?）"></a>2.9 什么是端到端的深度学习？（What is end-to-end deep learning?）</h3><blockquote>
+<p>有些场景端到端学习可以得到很好的效果，省略手工设计，但是有的场景因为数据不够多，还是需要 multi-step 的过程来过渡（或者效果已经很好了）</p>
+</blockquote>
+<p>端到端（end-to-end）深度学习就是将所有不同阶段的数据处理系统或学习系统模块组合在一起，用一个单一的神经网络模型来实现所有的功能。它将所有模块混合在一起，只关心输入和输出。</p>
+<p>以语音识别为例，传统的算法流程和 end-to-end 模型的区别如下：</p>
+<p><img src="https://img-blog.csdn.net/20171127134439086?" alt="端到端学习"></p>
+<p>如果训练样本足够大，神经网络模型足够复杂，那么 end-to-end 模型性能比传统机器学习分块模型更好。实际上，end-to-end 让神经网络模型内部去自我训练模型特征，自我调节，增加了模型整体契合度。</p>
+<h3 id="2-10-是否要使用端到端的深度学习？（Whether-to-use-end-to-end-learning-）"><a href="#2-10-是否要使用端到端的深度学习？（Whether-to-use-end-to-end-learning-）" class="headerlink" title="2.10 是否要使用端到端的深度学习？（Whether to use end-to-end learning?）"></a>2.10 是否要使用端到端的深度学习？（Whether to use end-to-end learning?）</h3><blockquote>
+<p>手工设计是一把双刃剑，可能对模型效果有提升也可能让机器学习无用的特征。有大量数据时可以考虑端到端，但是数据量少的时候（比如比赛）特征工程还是很重要的。</p>
+</blockquote>
+<p>end-to-end 深度学习有优点也有缺点。</p>
+<p>优点：</p>
+<ul>
+<li>Let the data speak</li>
+<li>Less hand-designing of components needed</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>May need large amount of data</li>
+<li>Excludes potentially useful hand-designed</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Solejay</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-san-ke/">https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-san-ke/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Solejay</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/深度学习/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/神经网络/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                                <a href="/tags/吴恩达/">
+                                    <span class="chip bg-color">吴恩达</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/04/27/wu-en-da-shen-du-xue-xi-di-wu-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/self_featureimages/0.png" class="responsive-img" alt="吴恩达深度学习课程第五课笔记——序列模型">
+                        
+                        <span class="card-title">吴恩达深度学习课程第五课笔记——序列模型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP笔记/" class="post-category">
+                                    NLP笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/神经网络/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/吴恩达/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/23/du-shu-tong-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.pixabay.com/photo/2018/01/18/20/43/literature-3091212_960_720.jpg" class="responsive-img" alt="读书统计">
+                        
+                        <span class="card-title">读书统计</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/读书/" class="post-category">
+                                    读书
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/读书统计/">
+                        <span class="chip bg-color">读书统计</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">SoleJay</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/purenjie?tab=repositories" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:prj960827@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
