@@ -138,7 +138,6 @@ cnpm install --save hexo-admin
 hexo server -d
 ```
 
+### Hexo 读书电影页面
 
-
-
-
+[Hexo 加入豆瓣读书页面](https://tding.top/archives/c7ba3a41.html)
