@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://purenjie.github.io/2020/04/08/hexo-ge-chong-wen-ti/</loc>
+    <lastmod>2021-02-02</lastmod>
+  </url>
+  <url>
     <loc>https://purenjie.github.io/2021/01/29/jia-xing-qin-mi-guan-xi-du-shu-bi-ji/</loc>
     <lastmod>2021-01-29</lastmod>
   </url>
@@ -45,11 +49,11 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2019/04/03/kao-yan-hui-wang/</loc>
+    <loc>https://purenjie.github.io/2018/01/31/fan-qie-gong-zuo-fa-tu-jie/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2018/01/31/fan-qie-gong-zuo-fa-tu-jie/</loc>
+    <loc>https://purenjie.github.io/2019/04/03/kao-yan-hui-wang/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -73,15 +77,15 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2019/01/10/zui-da-lian-xu-zi-xu-lie-he-de-wen-ti/</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
     <loc>https://purenjie.github.io/2019/05/30/you-dian-shi-luo/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
     <loc>https://purenjie.github.io/2020/09/06/zui-jin-de-ri-cheng-guan-li/</loc>
+    <lastmod>2021-01-28</lastmod>
+  </url>
+  <url>
+    <loc>https://purenjie.github.io/2019/01/10/zui-da-lian-xu-zi-xu-lie-he-de-wen-ti/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -97,11 +101,11 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2018/02/18/qing-shang/</loc>
+    <loc>https://purenjie.github.io/2020/04/13/si-nian-shi-yi-chong-hen-xuan-de-dong-xi/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/13/si-nian-shi-yi-chong-hen-xuan-de-dong-xi/</loc>
+    <loc>https://purenjie.github.io/2018/02/18/qing-shang/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -113,11 +117,11 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2019/05/25/wu-en-da-shen-du-xue-xue-xi-di-er-zhou-bi-ji/</loc>
+    <loc>https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-wu-ke/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-wu-ke/</loc>
+    <loc>https://purenjie.github.io/2019/05/25/wu-en-da-shen-du-xue-xue-xi-di-er-zhou-bi-ji/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -125,11 +129,11 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/10/wu-en-da-shen-du-xue-xi-di-yi-ke/</loc>
+    <loc>https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-san-ke/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/27/wu-en-da-shen-du-xue-xi-di-san-ke/</loc>
+    <loc>https://purenjie.github.io/2020/04/10/wu-en-da-shen-du-xue-xi-di-yi-ke/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -149,19 +153,19 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/14/chong-shi-qie-lao-lei-de-yi-tian/</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
     <loc>https://purenjie.github.io/2020/05/14/jia-ru-wo-cai-wu-zi-you-liao/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/05/29/gao-xiao-xue-xi-zhi-dao-du-shu-bi-ji/</loc>
+    <loc>https://purenjie.github.io/2020/04/14/chong-shi-qie-lao-lei-de-yi-tian/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
     <loc>https://purenjie.github.io/2020/09/14/shi-yong-markdown-chuang-jian-yin-xiang-bi-ji-ye-mian/</loc>
+    <lastmod>2021-01-28</lastmod>
+  </url>
+  <url>
+    <loc>https://purenjie.github.io/2020/05/29/gao-xiao-xue-xi-zhi-dao-du-shu-bi-ji/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -170,10 +174,6 @@
   </url>
   <url>
     <loc>https://purenjie.github.io/2019/08/05/zhong-shen-cheng-chang-du-shu-bi-ji/</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
-    <loc>https://purenjie.github.io/2020/04/08/hexo-ge-chong-wen-ti/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -201,15 +201,11 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/21/20200421/</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
     <loc>https://purenjie.github.io/2020/10/03/202009-yue-zong-jie/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2020/04/20/20200420/</loc>
+    <loc>https://purenjie.github.io/2020/04/21/20200421/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
@@ -217,15 +213,19 @@
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
+    <loc>https://purenjie.github.io/2020/04/20/20200420/</loc>
+    <lastmod>2021-01-28</lastmod>
+  </url>
+  <url>
     <loc>https://purenjie.github.io/2020/01/05/2019-nian-zong-jie/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2017/12/31/2017-nian-zong-jie/</loc>
+    <loc>https://purenjie.github.io/2018/12/31/2018-nian-zong-jie/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
   <url>
-    <loc>https://purenjie.github.io/2018/12/31/2018-nian-zong-jie/</loc>
+    <loc>https://purenjie.github.io/2017/12/31/2017-nian-zong-jie/</loc>
     <lastmod>2021-01-28</lastmod>
   </url>
 </urlset> 
