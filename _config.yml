@@ -162,6 +162,6 @@ douban:
 menu:
   Home: /
   Archives: /archives
-  Books: /books     #This is your books page
-  Movies: /movies   #This is your movies page
+  读书: /books     #This is your books page
+  电影: /movies   #This is your movies page
 
