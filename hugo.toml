@@ -1,0 +1,117 @@
+baseURL = ""
+title = "Solejay Blog"
+
+theme = "puppet"
+publishDir = "dist"
+
+copyright = "Copyright &copy; Solejay 2024"
+paginate = 7
+languageCode = "zh-CN"
+defaultContentLanguage = "zh"
+
+hasCJKLanguage = true
+enableInlineShortcodes = true
+enableEmoji = true
+
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+disqusShortname = ""
+googleAnalytics = ""
+
+[outputs]
+home = ["HTML", "JSON", "RSS"]
+
+# prevent build failures when using Hugo's template _internal/opengraph.html 
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[markup]
+[markup.highlight]
+noClasses = true
+codeFences = true
+guessSyntax = true
+lineNos = true
+lineNumbersInTable = false
+style = "github-dark"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -100
+[[menu.main]]
+identifier = "tech"
+name = "Tech"
+url = "/series/tech/"
+weight = 10
+[[menu.main]]
+identifier = "think"
+name = "Think"
+url = "/series/think/"
+weight = 20
+[[menu.main]]
+identifier = "archive"
+name = "Archive"
+url = "/archive/"
+weight = 40
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 50
+
+[params]
+author = "Solejay"
+description = "「世上只有一种英雄主义，就是认清生活的真相之后依然热爱生活」"
+keywords = ""
+img_home = "https://images.unsplash.com/photo-1724268509055-d4053632de47?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+img_404 = "https://images.unsplash.com/photo-1584824388173-4df14ba64472?q=80&w=3648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+useFaviconGenerator = true
+
+# Add your file to assets folder
+# (assets/js/custom.js, assets/css/custom.css)
+# include by `js/custom.js` and `css/custom.css`
+custom_js = ["js/lightbox-option.js"]
+custom_css = ["css/scrollbar.css"]
+
+[params.sidebar]
+enable = true
+# Avatar will be overwritten by gravatar image if `gravatarEmail` is filled
+# gravatarEmail = ""
+# avatar = "/img/pic-me.jpeg"
+
+[[params.sidebarBios]]
+bio = "做个有趣的人"
+[[params.sidebarBios]]
+bio = "偶尔假深沉，时而真发疯"
+[[params.sidebarBios]]
+bio = "间歇性踌躇满志，持续性混吃等死"
+
+[params.social]
+github = "purenjie"
+weibo = "u/5731067919"
+rss = true
+
+# [[params.friends]]
+# name = "我的CSDN"
+# url = "https://blog.csdn.net/m0_37991005"
+
+# See https://giscus.app/
+[params.giscus]
+enable = false
+repo = ""
+repo_id = ""
+category = ""
+category_id = ""
+input_position = "top"
+theme = "light_tritanopia"
+lang = "en"
