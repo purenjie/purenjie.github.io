@@ -19,5 +19,5 @@ git push origin master
 4. 同步到服务器
 
 ```bash
-rsync -avuz --progress --delete dist/ root@tencent_server:/home/lighthouse/blog
+rsync -avuz --progress --delete dist/ solejay@racknerd:/var/www/blog
 ```
