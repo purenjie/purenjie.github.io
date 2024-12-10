@@ -19,5 +19,5 @@ git push origin master
 4. 同步到服务器
 
 ```bash
-rsync -avuz --progress --delete dist/ solejay@racknerd:/var/www/blog
+rsync -avuz --progress --delete -e 'ssh -p 1202' dist/ root@104.168.120.15:/var/www/blog
 ```
