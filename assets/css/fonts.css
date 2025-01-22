@@ -1,7 +1,7 @@
 /* 声明字体 */
 @font-face {
     font-family: 'LXGWWENKAI';  /* 这里的名字可以自定义 */
-    src: url('/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');     /* TTF 格式 */
+    src: url('/fonts/lxgw-wenkai-regular-v1.245.1-subset-gb2312.woff2') format('truetype');     /* TTF 格式 */
     font-weight: normal;
     font-style: normal;
     font-display: swap;  /* 优化字体加载策略 */
