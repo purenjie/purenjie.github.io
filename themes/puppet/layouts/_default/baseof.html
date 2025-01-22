@@ -42,6 +42,18 @@
 
   <script src={{ "js/lazysizes.min.js" | relURL }}></script>
 
+  {{ if .Site.Config.Services.GoogleAnalytics.ID }}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}');
+  </script>
+  {{ end }}
+
   <!-- custom js -->
   {{- range .Site.Params.custom_js -}}
   {{ $custom_template := resources.Get . }}

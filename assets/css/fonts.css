@@ -1,0 +1,46 @@
+/* 声明字体 */
+@font-face {
+    font-family: 'LXGWWENKAI';  /* 这里的名字可以自定义 */
+    src: url('/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');     /* TTF 格式 */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;  /* 优化字体加载策略 */
+}
+
+/* 应用字体到全站 */
+body {
+    font-family: 'LXGWWENKAI', sans-serif;
+}
+
+/* 确保特定内容区域也使用这个字体 */
+.content,
+.post-content,
+.page-content,
+article,
+.post-title,
+.site-title,
+.post-meta,
+.post-summary,
+.homepage-content,
+.nav-links,
+.menu,
+h1, h2, h3, h4, h5, h6,
+p {
+    font-family: 'LXGWWENKAI', sans-serif !important;
+}
+
+/* 排除图标字体 */
+.fab,
+.fas,
+.far,
+.fal,
+.fad,
+.fa,
+.fa-stack,
+i[class^="fa"],
+i[class*=" fa-"],
+.icon,
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", FontAwesome !important;
+}

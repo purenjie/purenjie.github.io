@@ -1,11 +1,11 @@
-baseURL = ""
+baseURL = "https://solejay.cn"
 title = "Solejay Blog"
 
 theme = "puppet"
 publishDir = "dist"
 
-copyright = "Copyright &copy; Solejay 2024"
-paginate = 7
+copyright = "Copyright &copy; Solejay 2025"
+paginate = 10
 languageCode = "zh-CN"
 defaultContentLanguage = "zh"
 
@@ -18,7 +18,7 @@ enableEmoji = true
 ignoreErrors = ["error-remote-getjson"]
 
 disqusShortname = ""
-googleAnalytics = "G-517Z6CEKYX"
+GoogleAnalytics = "G-517Z6CEKYX"
 
 [outputs]
 home = ["HTML", "JSON", "RSS"]
@@ -70,9 +70,9 @@ weight = 50
 
 [params]
 author = "Solejay"
-description = "「世上只有一种英雄主义，就是认清生活的真相之后依然热爱生活」"
+description = "「记录一点存在过的证据」"
 keywords = ""
-img_home = "https://images.unsplash.com/photo-1724268509055-d4053632de47?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+img_home = "/img/home.jpg"
 img_404 = "https://images.unsplash.com/photo-1584824388173-4df14ba64472?q=80&w=3648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 useFaviconGenerator = true
@@ -81,7 +81,7 @@ useFaviconGenerator = true
 # (assets/js/custom.js, assets/css/custom.css)
 # include by `js/custom.js` and `css/custom.css`
 custom_js = ["js/lightbox-option.js"]
-custom_css = ["css/scrollbar.css"]
+custom_css = ["css/scrollbar.css", "css/backgroundcolor.css", "css/fonts.css"]
 
 [params.sidebar]
 enable = true
