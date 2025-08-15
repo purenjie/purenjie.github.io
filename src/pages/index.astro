@@ -3,7 +3,8 @@ import { Image } from 'astro:assets'
 
 import { PostPreview } from 'astro-pure/components/pages'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
-import { Button, Icon, Label } from 'astro-pure/user'
+import { Button, Card, Icon, Label } from 'astro-pure/user'
+import { Quote } from 'astro-pure/advanced'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
@@ -45,10 +46,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <!-- <p class='text-muted-foreground'>Developer / Bloger</p> -->
-        <p class='text-muted-foreground'>
-          「记录一点存在过的证据」
-        </p>
+        <p class='text-muted-foreground'>Developer / Bloger</p>
+        <p class='text-muted-foreground'>记录一点存在过的证据</p>
+        <p class='text-muted-foreground'>做个有趣的人</p>
+        <p class='text-muted-foreground'>偶尔假深沉，时而真发疯</p>
+        <p class='text-muted-foreground'>间歇性踌躇满志，持续性混吃等死</p>
+
         <!-- <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' /> -->
       </Section>
       {
@@ -136,7 +139,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <SkillLayout title='Frontend' skills={frontend} />
         <SkillLayout title='Backend' skills={backend} />
       </Section>
+
+      <Section title='Statistics'>
+        <div class='text-muted-foreground'>
+          <span id="vercount_value_site_pv" class="font-semibold text-foreground">Loading</span> Views
+        </div>
+      </Section>
     </div>
-    <!-- <Quote class='mt-12' /> -->
+    <Quote class='mt-12' />
   </main>
 </PageLayout>
+
+<!-- Vercount 统计脚本 -->
+<script defer src="https://events.vercount.one/js"></script>

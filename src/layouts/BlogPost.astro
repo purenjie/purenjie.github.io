@@ -5,7 +5,7 @@ import type { CollectionEntry } from 'astro:content'
 // Plugin styles
 import 'katex/dist/katex.min.css'
 
-import { Comment, MediumZoom } from 'astro-pure/advanced'
+import { MediumZoom } from 'astro-pure/advanced'
 import { ArticleBottom, Copyright, Hero, TOC } from 'astro-pure/components/pages'
 import PageLayout from '@/layouts/ContentLayout.astro'
 import { integ } from '@/site-config'
@@ -30,8 +30,7 @@ const {
   publishDate,
   title,
   updatedDate,
-  draft: isDraft,
-  comment: enableComment
+  draft: isDraft
 } = data
 
 const socialImage = heroImage
@@ -67,3 +66,6 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 </PageLayout>
 
 {integ.mediumZoom.enable && <MediumZoom />}
+
+<!-- Vercount 统计脚本 -->
+<script defer src="https://events.vercount.one/js"></script>

@@ -119,11 +119,11 @@ export const integ: IntegrationUserConfig = {
   // See: https://astro-pure.js.org/docs/integrations/advanced#web-content-render
   quote: {
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    // server: 'https://v1.hitokoto.cn/?c=i',
-    // target: (data) => (data as { hitokoto: string }).hitokoto || 'Error'
+    server: 'https://v1.hitokoto.cn/?c=i',
+    target: `(data) => data.hitokoto || 'Error'`
     // https://github.com/lukePeavey/quotable
-    server: 'https://api.quotable.io/quotes/random?maxLength=60',
-    target: `(data) => data[0].content || 'Error'`
+    // server: 'https://api.quotable.io/quotes/random?maxLength=60',
+    // target: `(data) => data[0].content || 'Error'`
   },
   // UnoCSS typography
   // See: https://unocss.dev/presets/typography
@@ -143,24 +143,12 @@ export const integ: IntegrationUserConfig = {
       className: 'zoomable'
     }
   },
-  // Comment system
+  // 保留 waline 配置结构以满足主题要求，但禁用功能
   waline: {
     enable: false,
-    // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/',
-    // Refer https://waline.js.org/en/guide/features/emoji.html
-    emoji: ['bmoji', 'weibo'],
-    // Refer https://waline.js.org/en/reference/client/props.html
-    additionalConfigs: {
-      // search: false,
-      pageview: true,
-      comment: true,
-      locale: {
-        reaction0: 'Like',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
-      },
-      imageUploader: false
-    }
+    server: '',
+    emoji: [],
+    additionalConfigs: {}
   }
 }
 

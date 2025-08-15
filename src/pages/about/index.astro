@@ -1,5 +1,4 @@
 ---
-import { Comment } from 'astro-pure/advanced'
 import {Collapse, Spoiler, Timeline, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
@@ -241,16 +240,11 @@ const headings = [
       CI/CD: <a href='https://vercel.com/workflow' target='_blank'>Vercel Workflow</a>
     </li>
     <!-- <li>Resources speedup: <a href='https://cdn.cbd.int/' target='_blank'>CBD CDN</a></li> -->
-    <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li>
-    <li>
-      Visits: <a href='https://supabase.com/' target='_blank'>Supabase</a> +
-      <a href='https://waline.js.org/' target='_blank'>Waline</a>
-    </li>
+    <li>Page statistics: <a href='https://github.com/EvanNotFound/vercount' target='_blank'>Vercount</a></li>
     <li>
       Other statistics: <a href='https://github.com/spencerwooo/substats' target='_blank'
         >Substats</a
       >
     </li>
   </ul>
-  <Comment slot='bottom' />
 </PageLayout>
