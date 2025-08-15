@@ -34,6 +34,11 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
   type='font/ttf'
   crossorigin
 />
+{/* 霞鹜文楷字体预加载 */}
+<link rel='preload' href='/fonts/LXGWWenKai-Regular.ttf' as='font' type='font/ttf' crossorigin />
+{/* 字体预连接优化 */}
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
 
 {/* Canonical URL */}
 <link rel='canonical' href={canonicalURL} />
