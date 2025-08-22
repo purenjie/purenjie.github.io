@@ -1,0 +1,132 @@
+---
+// FontLazyLoader.astro - 字体懒加载组件
+---
+
+<script is:inline>
+  (function() {
+    // 定义字体配置
+    const fontConfigs = {
+      chinese: {
+        name: 'LXGWWenKai',
+        url: '/fonts/LXGWWenKaiLite-Light.woff2',
+        loaded: false
+      },
+      satoshi: {
+        name: 'Satoshi',
+        url: '/fonts/Satoshi-Variable.woff2',
+        loaded: false
+      }
+    };
+
+    function checkChineseContent() {
+      const textContent = document.body.textContent || '';
+      const hasChinese = /[\u4e00-\u9fff]/.test(textContent);
+      if (hasChinese) {
+        loadFont('chinese');
+      }
+    }
+
+    function loadOnInteraction() {
+      const events = ['scroll', 'click', 'touchstart', 'keydown'];
+      const handler = function() {
+        loadFont('satoshi');
+        events.forEach(function(event) {
+          document.removeEventListener(event, handler);
+        });
+      };
+
+      events.forEach(function(event) {
+        document.addEventListener(event, handler, { 
+          once: true, 
+          passive: true 
+        });
+      });
+    }
+
+    function deferredLoad() {
+      // 3秒后加载所有字体
+      setTimeout(function() {
+        Object.keys(fontConfigs).forEach(function(key) {
+          loadFont(key);
+        });
+      }, 3000);
+    }
+
+    function loadFont(fontKey) {
+      const fontInfo = fontConfigs[fontKey];
+      if (!fontInfo || fontInfo.loaded) return;
+
+      try {
+        if ('FontFace' in window) {
+          const font = new FontFace(fontInfo.name, 'url(' + fontInfo.url + ')');
+          font.load().then(function(loadedFont) {
+            document.fonts.add(loadedFont);
+            fontInfo.loaded = true;
+            document.documentElement.classList.add(fontKey + '-font-loaded');
+            console.log('✅ Font loaded: ' + fontInfo.name);
+          }).catch(function(error) {
+            console.warn('❌ Font loading failed: ' + fontInfo.name, error);
+          });
+        }
+      } catch (error) {
+        console.warn('❌ Font loading error: ' + fontInfo.name, error);
+      }
+    }
+
+    function init() {
+      // 检查浏览器支持
+      if (!('fonts' in document) || !('FontFace' in window)) {
+        return;
+      }
+
+      // 检查是否需要中文字体
+      checkChineseContent();
+
+      // 用户交互时加载
+      loadOnInteraction();
+
+      // 延迟加载策略
+      deferredLoad();
+    }
+
+    // 页面加载完成后初始化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+<style>
+  /* 字体加载状态的CSS */
+  html {
+    /* 默认使用系统字体 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* 英文字体加载完成 */
+  html.satoshi-font-loaded {
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* 中文字体加载完成 */
+  html.chinese-font-loaded {
+    font-family: 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  }
+  
+  /* 所有字体加载完成 */
+  html.satoshi-font-loaded.chinese-font-loaded {
+    font-family: 'LXGWWenKai', 'Satoshi', 'PingFang SC', sans-serif;
+  }
+  
+  /* 加载动画效果 */
+  .font-loading {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .font-loaded {
+    opacity: 1;
+  }
+</style>

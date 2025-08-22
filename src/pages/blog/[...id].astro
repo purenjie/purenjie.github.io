@@ -10,19 +10,18 @@ export async function getStaticPaths() {
   const posts = sortMDByDate(await getBlogCollection())
   return posts.map((post) => ({
     params: { id: post.id },
-    props: { post, posts }
+    props: { post }
   }))
 }
 
 type Props = {
   post: CollectionEntry<'blog'>
-  posts: CollectionEntry<'blog'>[]
 }
 
-const { post, posts } = Astro.props
+const { post } = Astro.props
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
 ---
 
-<PostLayout {post} {posts} {headings} {remarkPluginFrontmatter}>
+<PostLayout {post} {headings} {remarkPluginFrontmatter}>
   <Content />
 </PostLayout>

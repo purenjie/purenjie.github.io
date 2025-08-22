@@ -1,3 +1,39 @@
+/* 字体优化加载策略 */
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; /* 重要：快速显示fallback字体，加载完成后替换 */
+  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF; /* 中文字符范围 */
+}
+
+/* 为了向前兼容，也添加normal权重 */
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Animation */
 @keyframes fade-in-up {
   0% {

@@ -1,9 +1,9 @@
 ---
-title: astro博客使用
+title: Astro博客使用
 publishDate: 2025-08-15
 description: 'hugo 迁移 astro'
 tags:
-  - blog
+  - 博客
   - astro
 
 heroImage:

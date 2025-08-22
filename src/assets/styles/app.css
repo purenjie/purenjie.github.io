@@ -1,13 +1,15 @@
 /* Font */
 @font-face {
   font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Variable.ttf');
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-VariableItalic.ttf');
+  src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
@@ -15,8 +17,18 @@
 /* 霞鹜文楷字体配置 */
 @font-face {
   font-family: 'LXGWWenKai';
-  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+}
+
+/* 为了向前兼容，也添加normal权重 */
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
   unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;

@@ -1,0 +1,460 @@
+---
+interface Props {
+  analysisData: any;
+}
+
+const { analysisData } = Astro.props;
+
+// 提取关键数据
+const summary = analysisData.summary || {};
+const writingStyle = analysisData.writing_style || {};
+const personalityTraits = analysisData.personality_traits || {};
+const contentAnalysis = analysisData.content_analysis || {};
+const comprehensiveScores = analysisData.comprehensive_scores || {};
+const aiInsights = analysisData.ai_insights || {};
+
+// 格式化数据
+const formatPercentage = (value: number) => `${(value * 100).toFixed(1)}%`;
+const formatScore = (score: number) => `${score}/10`;
+const formatPersonalityScore = (score: number) => `${score}/100`;
+
+// 获取性格特征标签颜色
+const getPersonalityColor = (score: number) => {
+  if (score >= 70) return 'text-green-600';
+  if (score >= 50) return 'text-yellow-600';
+  return 'text-red-600';
+};
+
+// 获取写作风格评分颜色
+const getStyleColor = (score: number) => {
+  if (score >= 7) return 'text-green-600';
+  if (score >= 5) return 'text-yellow-600';
+  return 'text-red-600';
+};
+---
+
+<div class="blog-analysis-section space-y-8">
+  <!-- 总体概览 -->
+  <div class="overview-card bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border border-blue-200 dark:border-gray-600">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">🤖</span>
+      AI眼中的我的博客
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="stat-card bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">{summary.total_articles}</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">文章总数</div>
+      </div>
+      <div class="stat-card bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div class="text-3xl font-bold text-green-600 dark:text-green-400">{summary.total_words?.toLocaleString()}</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">总字数</div>
+      </div>
+      <div class="stat-card bg-white dark:bg-gray-700 rounded-lg p-4 text-center">
+        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">{summary.time_span}</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">时间跨度</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 综合评分 -->
+  <div class="scores-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">🏆</span>
+      综合评分
+    </h3>
+    
+    <div class="mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-gray-600 dark:text-gray-400">总体评分</span>
+        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+          {comprehensiveScores.overall_score}/10
+        </span>
+      </div>
+      <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+        <div 
+          class="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-500"
+          style={`width: ${(comprehensiveScores.overall_score / 10) * 100}%`}
+        ></div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="score-item text-center">
+        <div class={`text-2xl font-bold ${getStyleColor(comprehensiveScores.writing_ability)}`}>
+          {formatScore(comprehensiveScores.writing_ability)}
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">写作能力</div>
+      </div>
+      <div class="score-item text-center">
+        <div class={`text-2xl font-bold ${getStyleColor(comprehensiveScores.content_quality)}`}>
+          {formatScore(comprehensiveScores.content_quality)}
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">内容质量</div>
+      </div>
+      <div class="score-item text-center">
+        <div class={`text-2xl font-bold ${getStyleColor(comprehensiveScores.personality_balance)}`}>
+          {formatScore(comprehensiveScores.personality_balance)}
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">个性平衡</div>
+      </div>
+    </div>
+    
+    <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+      <p class="text-blue-800 dark:text-blue-200 text-sm">
+        💡 {comprehensiveScores.score_interpretation}
+      </p>
+    </div>
+  </div>
+
+  <!-- 写作风格分析 -->
+  <div class="writing-style-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">🎨</span>
+      写作风格分析
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 评分雷达图 -->
+      <div class="style-scores">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">风格评分</h4>
+        <div class="space-y-3">
+          <div class="score-bar">
+            <div class="flex justify-between text-sm mb-1">
+              <span>词汇丰富度</span>
+              <span class={`font-semibold ${getStyleColor(writingStyle.vocabulary_richness)}`}>
+                {formatScore(writingStyle.vocabulary_richness)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-green-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(writingStyle.vocabulary_richness / 10) * 100}%`}
+              ></div>
+            </div>
+          </div>
+          
+          <div class="score-bar">
+            <div class="flex justify-between text-sm mb-1">
+              <span>句子复杂度</span>
+              <span class={`font-semibold ${getStyleColor(writingStyle.sentence_complexity)}`}>
+                {formatScore(writingStyle.sentence_complexity)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-blue-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(writingStyle.sentence_complexity / 10) * 100}%`}
+              ></div>
+            </div>
+          </div>
+          
+          <div class="score-bar">
+            <div class="flex justify-between text-sm mb-1">
+              <span>情感表达</span>
+              <span class={`font-semibold ${getStyleColor(writingStyle.emotional_expression)}`}>
+                {formatScore(writingStyle.emotional_expression)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-purple-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(writingStyle.emotional_expression / 10) * 100}%`}
+              ></div>
+            </div>
+          </div>
+          
+          <div class="score-bar">
+            <div class="flex justify-between text-sm mb-1">
+              <span>结构组织</span>
+              <span class={`font-semibold ${getStyleColor(writingStyle.structure_organization)}`}>
+                {formatScore(writingStyle.structure_organization)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-orange-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(writingStyle.structure_organization / 10) * 100}%`}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI解读 -->
+      <div class="ai-interpretation">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">AI解读</h4>
+        <div class="prose prose-sm dark:prose-invert max-w-none">
+          <div class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            {writingStyle.ai_interpretation ? 
+              writingStyle.ai_interpretation.split('\n\n').slice(0, 2).join('\n\n') + '...' :
+              '暂无AI分析结果'
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 性格特征分析 -->
+  <div class="personality-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">🧠</span>
+      性格特征分析 (Big Five模型)
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+      {Object.entries(personalityTraits.big_five_scores || {}).map(([trait, score]) => {
+        const traitLabels = {
+          openness: '开放性',
+          conscientiousness: '尽责性',
+          extraversion: '外向性',
+          agreeableness: '宜人性',
+          neuroticism: '神经质'
+        };
+        const label = traitLabels[trait as keyof typeof traitLabels] || trait;
+        const color = getPersonalityColor(score as number);
+        
+        return (
+          <div class="personality-trait text-center">
+            <div class={`text-2xl font-bold ${color}`}>
+              {formatPersonalityScore(score as number)}
+            </div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">{label}</div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
+              <div 
+                class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${score as number}%`}
+              ></div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    
+    <!-- AI性格解读 -->
+    {personalityTraits.ai_interpretation && (
+      <div class="ai-personality-interpretation">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">AI性格解读</h4>
+        <div class="prose prose-sm dark:prose-invert max-w-none">
+          <div class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+            {personalityTraits.ai_interpretation.split('\n\n').slice(0, 3).join('\n\n') + '...'}
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+
+  <!-- 内容分析 -->
+  <div class="content-analysis-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">📚</span>
+      内容分析
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 主题分布 -->
+      <div class="topic-distribution">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">主题分布</h4>
+        <div class="space-y-2">
+          {Object.entries(contentAnalysis.topic_distribution || {}).map(([topic, ratio]) => {
+            const topicLabels = {
+              technology: '技术',
+              life: '生活',
+              reading: '读书',
+              summary: '总结',
+              other: '其他'
+            };
+            const label = topicLabels[topic as keyof typeof topicLabels] || topic;
+            
+            return (
+              <div class="topic-item">
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600 dark:text-gray-400">{label}</span>
+                  <span class="font-semibold text-gray-800 dark:text-gray-200">
+                    {formatPercentage(ratio as number)}
+                  </span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                  <div 
+                    class="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-500"
+                    style={`width: ${(ratio as number) * 100}%`}
+                  ></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+      <!-- 情感基调 -->
+      <div class="emotional-tone">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">情感基调</h4>
+        <div class="space-y-3">
+          <div class="emotion-item">
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600 dark:text-gray-400">积极</span>
+              <span class="font-semibold text-green-600">
+                {formatPercentage(contentAnalysis.emotional_tone?.emotion_ratios?.positive || 0)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-green-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(contentAnalysis.emotional_tone?.emotion_ratios?.positive || 0) * 100}%`}
+              ></div>
+            </div>
+          </div>
+          
+          <div class="emotion-item">
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600 dark:text-gray-400">中性</span>
+              <span class="font-semibold text-gray-600">
+                {formatPercentage(contentAnalysis.emotional_tone?.emotion_ratios?.neutral || 0)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-gray-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(contentAnalysis.emotional_tone?.emotion_ratios?.neutral || 0) * 100}%`}
+              ></div>
+            </div>
+          </div>
+          
+          <div class="emotion-item">
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600 dark:text-gray-400">消极</span>
+              <span class="font-semibold text-red-600">
+                {formatPercentage(contentAnalysis.emotional_tone?.emotion_ratios?.negative || 0)}
+              </span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-red-500 h-2 rounded-full transition-all duration-500"
+                style={`width: ${(contentAnalysis.emotional_tone?.emotion_ratios?.negative || 0) * 100}%`}
+              ></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            整体情感倾向: 
+            <span class={`font-semibold ${
+              contentAnalysis.emotional_tone?.overall_sentiment === 'positive' ? 'text-green-600' :
+              contentAnalysis.emotional_tone?.overall_sentiment === 'negative' ? 'text-red-600' :
+              'text-gray-600'
+            }`}>
+              {contentAnalysis.emotional_tone?.overall_sentiment === 'positive' ? '积极向上' :
+               contentAnalysis.emotional_tone?.overall_sentiment === 'negative' ? '消极悲观' :
+               '中性平衡'}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 关键词云 -->
+  {contentAnalysis.keywords && contentAnalysis.keywords.length > 0 && (
+    <div class="keywords-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+      <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+        <span class="mr-2">🔑</span>
+        高频关键词
+      </h3>
+      
+      <div class="flex flex-wrap gap-2">
+        {contentAnalysis.keywords.slice(0, 15).map(([word, weight]: [string, number]) => (
+          <span 
+            class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+            style={`font-size: ${Math.max(0.8, Math.min(1.2, weight * 50))}rem`}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- AI洞察总结 -->
+  <div class="ai-insights-card bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-700">
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+      <span class="mr-2">💡</span>
+      AI洞察总结
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {aiInsights.writing_style && (
+        <div class="insight-item">
+          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">写作风格</h4>
+          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {aiInsights.writing_style.summary?.split('\n\n')[0] || '暂无分析结果'}
+          </div>
+        </div>
+      )}
+      
+      {aiInsights.personality_traits && (
+        <div class="insight-item">
+          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">性格特征</h4>
+          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {aiInsights.personality_traits.summary?.split('\n\n')[0] || '暂无分析结果'}
+          </div>
+        </div>
+      )}
+      
+      {aiInsights.thinking_patterns && (
+        <div class="insight-item">
+          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">思维模式</h4>
+          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {aiInsights.thinking_patterns.summary?.split('\n\n')[0] || '暂无分析结果'}
+          </div>
+        </div>
+      )}
+      
+      {aiInsights.content_preferences && (
+        <div class="insight-item">
+          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">内容偏好</h4>
+          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {aiInsights.content_preferences.summary?.split('\n\n')[0] || '暂无分析结果'}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- 更新信息 -->
+  <div class="update-info text-center text-sm text-gray-500 dark:text-gray-400 py-4">
+    <p>🤖 此分析基于 {summary.total_articles} 篇博客文章，由AI智能生成</p>
+    <p>📅 最后更新: {new Date(analysisData.metadata?.generated_at || Date.now()).toLocaleDateString('zh-CN')}</p>
+  </div>
+</div>
+
+<style>
+  .blog-analysis-section {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .stat-card {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .score-item {
+    @apply p-3 bg-gray-50 dark:bg-gray-700 rounded-lg;
+  }
+  
+  .insight-item {
+    @apply p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm;
+  }
+  
+  .prose {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+  
+  .prose strong {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+</style>

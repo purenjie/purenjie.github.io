@@ -6,20 +6,18 @@ import type { CollectionEntry } from 'astro:content'
 import 'katex/dist/katex.min.css'
 
 import { MediumZoom } from 'astro-pure/advanced'
-import { ArticleBottom, Copyright, Hero, TOC } from 'astro-pure/components/pages'
+import { Hero, TOC } from 'astro-pure/components/pages'
 import PageLayout from '@/layouts/ContentLayout.astro'
 import { integ } from '@/site-config'
 
 interface Props {
   post: CollectionEntry<'blog'>
-  posts: CollectionEntry<'blog'>[]
   headings: MarkdownHeading[]
   remarkPluginFrontmatter: Record<string, unknown>
 }
 
 const {
-  post: { id, data },
-  posts,
+  post: { data },
   headings,
   remarkPluginFrontmatter
 } = Astro.props
@@ -29,8 +27,7 @@ const {
   heroImage,
   publishDate,
   title,
-  updatedDate,
-  draft: isDraft
+  updatedDate
 } = data
 
 const socialImage = heroImage
@@ -68,4 +65,4 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 {integ.mediumZoom.enable && <MediumZoom />}
 
 <!-- Vercount 统计脚本 -->
-<script defer src="https://events.vercount.one/js"></script>
+<script defer src="https://events.vercount.one/js" is:inline></script>
