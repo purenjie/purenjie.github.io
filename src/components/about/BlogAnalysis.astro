@@ -196,54 +196,6 @@ const getStyleColor = (score: number) => {
     </div>
   </div>
 
-  <!-- 性格特征分析 -->
-  <div class="personality-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
-      <span class="mr-2">🧠</span>
-      性格特征分析 (Big Five模型)
-    </h3>
-    
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
-      {Object.entries(personalityTraits.big_five_scores || {}).map(([trait, score]) => {
-        const traitLabels = {
-          openness: '开放性',
-          conscientiousness: '尽责性',
-          extraversion: '外向性',
-          agreeableness: '宜人性',
-          neuroticism: '神经质'
-        };
-        const label = traitLabels[trait as keyof typeof traitLabels] || trait;
-        const color = getPersonalityColor(score as number);
-        
-        return (
-          <div class="personality-trait text-center">
-            <div class={`text-2xl font-bold ${color}`}>
-              {formatPersonalityScore(score as number)}
-            </div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">{label}</div>
-            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
-              <div 
-                class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-500"
-                style={`width: ${score as number}%`}
-              ></div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-    
-    <!-- AI性格解读 -->
-    {personalityTraits.ai_interpretation && (
-      <div class="ai-personality-interpretation">
-        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">AI性格解读</h4>
-        <div class="prose prose-sm dark:prose-invert max-w-none">
-          <div class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-            {personalityTraits.ai_interpretation.split('\n\n').slice(0, 3).join('\n\n') + '...'}
-          </div>
-        </div>
-      </div>
-    )}
-  </div>
 
   <!-- 内容分析 -->
   <div class="content-analysis-card bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
@@ -376,51 +328,6 @@ const getStyleColor = (score: number) => {
     </div>
   )}
 
-  <!-- AI洞察总结 -->
-  <div class="ai-insights-card bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-700">
-    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
-      <span class="mr-2">💡</span>
-      AI洞察总结
-    </h3>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {aiInsights.writing_style && (
-        <div class="insight-item">
-          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">写作风格</h4>
-          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            {aiInsights.writing_style.summary?.split('\n\n')[0] || '暂无分析结果'}
-          </div>
-        </div>
-      )}
-      
-      {aiInsights.personality_traits && (
-        <div class="insight-item">
-          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">性格特征</h4>
-          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            {aiInsights.personality_traits.summary?.split('\n\n')[0] || '暂无分析结果'}
-          </div>
-        </div>
-      )}
-      
-      {aiInsights.thinking_patterns && (
-        <div class="insight-item">
-          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">思维模式</h4>
-          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            {aiInsights.thinking_patterns.summary?.split('\n\n')[0] || '暂无分析结果'}
-          </div>
-        </div>
-      )}
-      
-      {aiInsights.content_preferences && (
-        <div class="insight-item">
-          <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">内容偏好</h4>
-          <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            {aiInsights.content_preferences.summary?.split('\n\n')[0] || '暂无分析结果'}
-          </div>
-        </div>
-      )}
-    </div>
-  </div>
 
   <!-- 更新信息 -->
   <div class="update-info text-center text-sm text-gray-500 dark:text-gray-400 py-4">

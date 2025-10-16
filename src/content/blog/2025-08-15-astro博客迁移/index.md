@@ -18,8 +18,8 @@ language: 'Chinese'
 ```bash
 ❯ npm create astro@latest -- --template cworld1/astro-theme-pure
 ❯ cd $FOLDER
-❯ npm install
-❯ npm run dev
+# ❯ npm install
+# ❯ npm run dev
 ```
 
 # 目录结构
