@@ -1,0 +1,68 @@
+{
+  "id": "index",
+  "title": "Astro博客使用",
+  "date": "",
+  "tags": [],
+  "slug": "astro博客迁移",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-08-15-astro博客迁移/index.md",
+  "md5": "a3aca7da9274cff443751d8197f52155",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 5
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 412,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.0
+    },
+    "rhythm": "技术说明型",
+    "tropes": [
+      "代码示例",
+      "配置说明",
+      "操作指南"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "Astro",
+      "博客",
+      "安装",
+      "目录结构",
+      "文章",
+      "配置"
+    ],
+    "concepts": [
+      "静态站点生成",
+      "Markdown写作",
+      "主题定制",
+      "评论系统"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程手册",
+    "opening": "安装说明",
+    "closing": "定制主题"
+  },
+  "depth": "中级",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

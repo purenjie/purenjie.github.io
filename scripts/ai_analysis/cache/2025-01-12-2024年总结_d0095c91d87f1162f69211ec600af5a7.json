@@ -1,0 +1,71 @@
+{
+  "id": "index",
+  "title": "2024年总结",
+  "date": "",
+  "tags": [],
+  "slug": "2024年总结",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-01-12-2024年总结/index.md",
+  "md5": "d0095c91d87f1162f69211ec600af5a7",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 18,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 4850,
+      "words": 810,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.2,
+      "reflective": 0.8,
+      "humor": 0.3,
+      "critical": 0.4
+    },
+    "rhythm": "平实流畅，带有个人叙事节奏",
+    "tropes": [
+      "年度总结",
+      "自我反思",
+      "成长记录",
+      "生活感悟"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "读书",
+      "工作",
+      "副业",
+      "恋爱",
+      "健康",
+      "投资",
+      "生活"
+    ],
+    "concepts": [
+      "自我成长",
+      "职业发展",
+      "亲密关系",
+      "家庭责任",
+      "健康管理"
+    ]
+  },
+  "sentiment": {
+    "label": "积极反思",
+    "score": 0.7
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "主题分段式",
+    "opening": "以年度总结的难产感引入，引发对自我成长的思考",
+    "closing": "以对未来的希望和积极态度结束"
+  },
+  "depth": "中等深度，包含具体生活细节和情感体验",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

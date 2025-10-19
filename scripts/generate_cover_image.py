@@ -32,7 +32,7 @@ import requests
 
 # API配置常量
 ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
-TEXT_MODEL = "doubao-1-5-pro-32k-250115"
+TEXT_MODEL = "doubao-seed-1-6-251015"
 IMAGE_MODEL = "doubao-seedream-3-0-t2i-250415"
 IMAGE_SIZE = "1024x1024"
 

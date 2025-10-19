@@ -1,0 +1,66 @@
+{
+  "id": "index",
+  "title": "考研回望",
+  "date": "",
+  "tags": [],
+  "slug": "kao-yan-hui-wang",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2019-04-03-考研回望/index.md",
+  "md5": "be20d87e093366b2b5ea3b153163f368",
+  "metrics": {
+    "sentenceAvgLen": 22.5,
+    "sentenceLenBuckets": {
+      "1-10": 3,
+      "11-20": 8,
+      "21-30": 12,
+      "30+": 7
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 650,
+      "paragraphs": 15
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.9,
+      "humor": 0.2,
+      "critical": 0.1
+    },
+    "rhythm": "平缓而富有哲思",
+    "tropes": [
+      "比喻",
+      "引用",
+      "反问"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "考研",
+      "北邮",
+      "计算机",
+      "努力",
+      "成功"
+    ],
+    "concepts": [
+      "SWOT分析",
+      "西西弗斯神话",
+      "修行"
+    ]
+  },
+  "sentiment": {
+    "label": "积极反思",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "回忆-过程-感悟",
+    "opening": "对考研一年的简略回顾",
+    "closing": "人生的哲思，或许就在这个问题里吧"
+  },
+  "depth": "深刻",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

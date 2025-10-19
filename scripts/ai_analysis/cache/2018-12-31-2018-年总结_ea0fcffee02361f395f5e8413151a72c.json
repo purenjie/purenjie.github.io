@@ -1,0 +1,68 @@
+{
+  "id": "index",
+  "title": "2018年总结",
+  "date": "",
+  "tags": [],
+  "slug": "2018-年总结",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2018-12-31-2018-年总结/index.md",
+  "md5": "ea0fcffee02361f395f5e8413151a72c",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 1250,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.8,
+      "humor": 0.4,
+      "critical": 0.5
+    },
+    "rhythm": "平实流畅，带有自省节奏",
+    "tropes": [
+      "自嘲",
+      "对比",
+      "隐喻"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "考研",
+      "编程",
+      "读书",
+      "健身",
+      "投资",
+      "反思"
+    ],
+    "concepts": [
+      "个人成长",
+      "自我提升",
+      "生活平衡",
+      "目标追求"
+    ]
+  },
+  "sentiment": {
+    "label": "复杂反思",
+    "score": 0.6
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "主题分段式",
+    "opening": "犹豫是否总结，最终决定延续传统",
+    "closing": "引用格言表达进取决心"
+  },
+  "depth": "中等深度，包含具体经历和情感反思",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

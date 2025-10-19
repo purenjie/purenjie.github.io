@@ -1,0 +1,68 @@
+{
+  "id": "index",
+  "title": "2020年总结",
+  "date": "",
+  "tags": [],
+  "slug": "2020-年总结",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-01-04-2020-年总结/index.md",
+  "md5": "9a25b2b46601f78aa454a68d581da59b",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 18,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 1234,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.2,
+      "reflective": 0.8,
+      "humor": 0.3,
+      "critical": 0.4
+    },
+    "rhythm": "平实流畅，略带起伏",
+    "tropes": [
+      "个人成长",
+      "自我反思",
+      "生活感悟"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "疫情",
+      "面试",
+      "开发",
+      "读书",
+      "健身",
+      "投资"
+    ],
+    "concepts": [
+      "职业转型",
+      "自我提升",
+      "生活平衡",
+      "感恩心态"
+    ]
+  },
+  "sentiment": {
+    "label": "反思与期待",
+    "score": 0.6
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "主题分段式",
+    "opening": "又是一年总结时，却感觉只是徒增马齿",
+    "closing": "这个寒假要比高中还要努力！冲！"
+  },
+  "depth": "中等深度，包含具体经历和情感反思",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

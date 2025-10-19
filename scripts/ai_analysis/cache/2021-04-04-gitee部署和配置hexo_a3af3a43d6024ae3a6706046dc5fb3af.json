@@ -1,0 +1,66 @@
+{
+  "id": "2021-04-04-gitee部署和配置hexo",
+  "title": "gitee部署和配置hexo",
+  "date": "",
+  "tags": [],
+  "slug": "gitee部署和配置hexo",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-04-gitee部署和配置hexo.md",
+  "md5": "a3af3a43d6024ae3a6706046dc5fb3af",
+  "metrics": {
+    "sentenceAvgLen": 18.6,
+    "sentenceLenBuckets": {
+      "1-10": 3,
+      "11-20": 5,
+      "21-30": 2,
+      "30+": 1
+    },
+    "readability": {
+      "chars": 856,
+      "words": 142,
+      "paragraphs": 12
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.9,
+      "reflective": 0.2,
+      "humor": 0.0,
+      "critical": 0.1
+    },
+    "rhythm": "技术说明型",
+    "tropes": [
+      "技术教程",
+      "问题解决",
+      "代码示例"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "Hexo",
+      "Gitee",
+      "部署",
+      "gitignore",
+      "分支"
+    ],
+    "concepts": [
+      "博客部署",
+      "版本控制",
+      "文件管理"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题-解决方案",
+    "opening": "介绍Gitee部署Hexo博客",
+    "closing": "提供网络图片显示问题的解决方案"
+  },
+  "depth": "中等",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "2025-04-23-开发环境管理",
+  "title": "开发环境管理",
+  "date": "",
+  "tags": [],
+  "slug": "开发环境管理",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-23-开发环境管理.md",
+  "md5": "c7c40ffde90be7e87a5b7e0573f6e94f",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 5
+    },
+    "readability": {
+      "chars": 1456,
+      "words": 243,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.0,
+      "critical": 0.05
+    },
+    "rhythm": "技术说明型",
+    "tropes": [
+      "命令行示例",
+      "工具推荐",
+      "安装指南"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "nvm",
+      "gvm",
+      "miniconda",
+      "版本管理",
+      "环境切换"
+    ],
+    "concepts": [
+      "开发环境管理",
+      "多语言版本控制",
+      "虚拟环境"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程式",
+    "opening": "问题引入",
+    "closing": "参考链接"
+  },
+  "depth": "实用指南",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

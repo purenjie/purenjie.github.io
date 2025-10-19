@@ -1,0 +1,69 @@
+{
+  "id": "2024-08-23-postman使用指北",
+  "title": "Postman使用指北",
+  "date": "",
+  "tags": [],
+  "slug": "2024-08-23-postman使用指北",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2024-08-23-postman使用指北.md",
+  "md5": "f35593479fe257c02e6fe4a46490afe2",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 5
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 412,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.0
+    },
+    "rhythm": "技术说明型节奏，步骤清晰，代码示例与文字说明交替",
+    "tropes": [
+      "技术教程",
+      "代码示例",
+      "工具使用指南"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "Postman",
+      "cURL",
+      "环境设置",
+      "Pre-request Script",
+      "鉴权",
+      "JSON注释",
+      "Get请求"
+    ],
+    "concepts": [
+      "API测试工具",
+      "请求预处理",
+      "接口鉴权机制",
+      "环境变量管理"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程式结构，分章节讲解功能",
+    "opening": "以粘贴cURL请求功能开篇",
+    "closing": "以参考链接结束"
+  },
+  "depth": "中等深度，涵盖基础功能与高级用法",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "index",
+  "title": "2021年总结",
+  "date": "",
+  "tags": [],
+  "slug": "2021年总结",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2022-01-09-2021年总结/index.md",
+  "md5": "",
+  "metrics": {
+      "sentenceAvgLen": 18.5,
+      "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+      },
+      "readability": {
+          "chars": 4567,
+          "words": 2345,
+          "paragraphs": 28
+      }
+  },
+  "style": {
+      "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.4,
+          "critical": 0.2
+      },
+      "rhythm": "平实流畅，略带口语化",
+      "tropes": ["反思", "成长", "感恩", "自省"]
+  },
+  "content": {
+      "keywords": [
+          "实习",
+          "游泳",
+          "自驾游",
+          "读书",
+          "健身",
+          "投资",
+          "社交"
+      ],
+      "concepts": [
+          "个人成长",
+          "职业发展",
+          "生活体验",
+          "自我反思"
+      ]
+  },
+  "sentiment": {
+      "label": "积极",
+      "score": 0.75
+  },
+  "structure": {
+      "pattern": "主题分段式",
+      "opening": "以生活基调满意开篇",
+      "closing": "以年度总结和未来展望结束"
+  },
+  "depth": "中等深度，包含具体经历和感悟"
+}

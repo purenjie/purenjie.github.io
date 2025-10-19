@@ -1,0 +1,75 @@
+{
+  "id": "2020-01-31-deepin重装指北",
+  "title": "deepin重装指北",
+  "date": "",
+  "tags": [
+    "deepin",
+    "Linux",
+    "系统配置",
+    "开发环境"
+  ],
+  "slug": "deepin重装指北",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-01-31-deepin重装指北.md",
+  "md5": "7c016e755c4d845c55f59267e942cbf1",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 5
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 412,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.15,
+      "humor": 0.05,
+      "critical": 0.1
+    },
+    "rhythm": "技术说明型节奏，代码块与说明文字交替",
+    "tropes": [
+      "技术教程",
+      "命令行操作",
+      "配置指南"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "deepin",
+      "镜像源",
+      "zsh",
+      "git",
+      "vscode",
+      "Anaconda",
+      "hexo",
+      "SSH"
+    ],
+    "concepts": [
+      "Linux系统配置",
+      "开发环境搭建",
+      "软件安装",
+      "命令行操作"
+    ]
+  },
+  "sentiment": {
+    "label": "中性技术说明",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程指南型",
+    "opening": "修改镜像源",
+    "closing": "vscode配置"
+  },
+  "depth": "详细技术操作指南",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

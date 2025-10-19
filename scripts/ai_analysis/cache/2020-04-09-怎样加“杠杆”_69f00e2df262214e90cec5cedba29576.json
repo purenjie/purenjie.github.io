@@ -1,0 +1,77 @@
+{
+  "id": "2020-04-09-怎样加“杠杆”",
+  "title": "怎样加杠杆",
+  "date": "2020-04-09",
+  "tags": [
+    "杠杆",
+    "投资",
+    "企业",
+    "人生",
+    "资源分配"
+  ],
+  "slug": "how-to-add-leverage",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-04-09-怎样加“杠杆”.md",
+  "md5": "69f00e2df262214e90cec5cedba29576",
+  "metrics": {
+    "sentenceAvgLen": 24.5,
+    "sentenceLenBuckets": {
+      "1-10": 3,
+      "11-20": 8,
+      "21-30": 12,
+      "30+": 7
+    },
+    "readability": {
+      "chars": 1850,
+      "words": 320,
+      "paragraphs": 18
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.7,
+      "humor": 0.1,
+      "critical": 0.3
+    },
+    "rhythm": "中等节奏，段落分明，使用列表和强调突出重点",
+    "tropes": [
+      "比喻",
+      "引用",
+      "举例",
+      "总结"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "杠杆",
+      "固定成本",
+      "资源使用权",
+      "投资",
+      "企业",
+      "人生",
+      "能力"
+    ],
+    "concepts": [
+      "杠杆三要素",
+      "经营杠杆",
+      "财务杠杆",
+      "个人品牌",
+      "人际关系网络"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题引入-概念解析-分领域应用-总结升华",
+    "opening": "通过提问方式引入主题，链接外部文章",
+    "closing": "回归核心要素，强调能力提升的重要性，以励志语句结束"
+  },
+  "depth": "中等深度，结合理论与实例，覆盖多个应用场景，提供实用建议",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

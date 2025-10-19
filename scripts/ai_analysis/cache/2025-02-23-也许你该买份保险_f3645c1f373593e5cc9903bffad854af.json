@@ -1,0 +1,71 @@
+{
+  "id": "2025-02-23-也许你该买份保险",
+  "title": "也许你该买份保险?",
+  "date": "",
+  "tags": [],
+  "slug": "2025-02-23-也许你该买份保险",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-02-23-也许你该买份保险.md",
+  "md5": "f3645c1f373593e5cc9903bffad854af",
+  "metrics": {
+    "sentenceAvgLen": 24.7,
+    "sentenceLenBuckets": {
+      "1-10": 8,
+      "11-20": 12,
+      "21-30": 15,
+      "30+": 10
+    },
+    "readability": {
+      "chars": 3421,
+      "words": 856,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.7,
+      "humor": 0.1,
+      "critical": 0.3
+    },
+    "rhythm": "平实流畅，段落分明",
+    "tropes": [
+      "反问句",
+      "排比",
+      "引用",
+      "比喻"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "保险",
+      "风险",
+      "医疗险",
+      "意外险",
+      "重疾险",
+      "寿险",
+      "配置"
+    ],
+    "concepts": [
+      "风险兜底",
+      "反人性",
+      "情绪价值",
+      "杠杆率",
+      "个性化配置"
+    ]
+  },
+  "sentiment": {
+    "label": "理性积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题引入-理论阐述-分类说明-建议总结",
+    "opening": "以常见保险负面评价引入个人经历",
+    "closing": "强调保险必要性并附参考资料"
+  },
+  "depth": "中等深度，结合个人体验与专业知识",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

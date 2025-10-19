@@ -1,0 +1,70 @@
+{
+  "id": "2023-01-25-权限设计",
+  "title": "权限设计",
+  "date": "",
+  "tags": [],
+  "slug": "权限设计",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2023-01-25-权限设计.md",
+  "md5": "cc472f42af258262d6276eda118d9386",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 18,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 4560,
+      "words": 760,
+      "paragraphs": 42
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.15,
+      "humor": 0.0,
+      "critical": 0.0
+    },
+    "rhythm": "技术说明型",
+    "tropes": [
+      "RBAC模型",
+      "功能权限",
+      "数据权限",
+      "角色设计"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "权限设计",
+      "RBAC",
+      "功能权限",
+      "数据权限",
+      "角色",
+      "用户管理",
+      "系统架构"
+    ],
+    "concepts": [
+      "权限分离",
+      "模块化设计",
+      "用户角色关联",
+      "系统部署模式"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题-解决方案-案例实施",
+    "opening": "权限设计的必要性和基本概念",
+    "closing": "参考链接和延伸阅读"
+  },
+  "depth": "技术实现级",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

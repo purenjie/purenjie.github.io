@@ -1,0 +1,68 @@
+{
+  "id": "2025-04-02-初识MCP",
+  "title": "MCP简介及应用",
+  "date": "",
+  "tags": [],
+  "slug": "初识MCP",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-02-初识MCP.md",
+  "md5": "348674402ccdefc4c2e00e9a37702344",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 4560,
+      "words": 780,
+      "paragraphs": 42
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.15,
+      "humor": 0.05,
+      "critical": 0.1
+    },
+    "rhythm": "技术说明与实例交替",
+    "tropes": [
+      "比喻",
+      "对比",
+      "示例驱动"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "MCP",
+      "API",
+      "协议",
+      "集成",
+      "双向通信"
+    ],
+    "concepts": [
+      "Model Context Protocol",
+      "标准化协议",
+      "动态发现",
+      "SSE",
+      "STDIO"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "概念-应用-对比-架构-使用",
+    "opening": "概念定义与比喻引入",
+    "closing": "参考资料列表"
+  },
+  "depth": "中等",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

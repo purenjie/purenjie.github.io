@@ -1,0 +1,75 @@
+{
+  "id": "2024-12-06-VPS初始化配置",
+  "title": "VPS初始化配置",
+  "date": "",
+  "tags": [
+    "VPS",
+    "服务器配置",
+    "SSH",
+    "安全设置",
+    "软件安装"
+  ],
+  "slug": "vps-initial-configuration",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2024-12-06-VPS初始化配置.md",
+  "md5": "f3585de386d9ba4e2e788d54b59d81c3",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 18,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 8560,
+      "words": 1420,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.95,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.0
+    },
+    "rhythm": "指令式节奏，以步骤编号和代码块为主",
+    "tropes": [
+      "技术教程",
+      "命令行操作",
+      "配置指南"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "SSH",
+      "密钥",
+      "防火墙",
+      "ZSH",
+      "Docker",
+      "Nginx",
+      "Git"
+    ],
+    "concepts": [
+      "服务器安全",
+      "用户管理",
+      "开发环境配置",
+      "服务部署"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程手册式结构",
+    "opening": "直接以登录服务器步骤开始",
+    "closing": "以Git快捷键配置结束"
+  },
+  "depth": "详细操作指南",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

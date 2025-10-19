@@ -1,0 +1,71 @@
+{
+  "id": "2024-12-10-域名访问博客流程",
+  "title": "域名访问博客流程",
+  "date": "",
+  "tags": [],
+  "slug": "域名访问博客流程",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2024-12-10-域名访问博客流程.md",
+  "md5": "c2020b3a444a8a358dadf080440abf59",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 4850,
+      "words": 850,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.1
+    },
+    "rhythm": "技术说明型节奏，步骤清晰，代码块与文字说明交替",
+    "tropes": [
+      "技术教程",
+      "命令行操作",
+      "配置示例",
+      "问题解决"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "域名解析",
+      "Nginx配置",
+      "HTTPS",
+      "SSL证书",
+      "反向代理",
+      "静态文件",
+      "服务器部署"
+    ],
+    "concepts": [
+      "DNS解析",
+      "Web服务器配置",
+      "SSL证书申请",
+      "搜索引擎收录",
+      "文件同步"
+    ]
+  },
+  "sentiment": {
+    "label": "中性偏技术",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程式结构，分步骤说明",
+    "opening": "以博客静态文件传输到服务器开始",
+    "closing": "以搜索引擎收录配置结束，包含对百度的负面评价"
+  },
+  "depth": "中等深度，包含具体技术实现细节但未深入底层原理",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "2020-04-12-日程安排总结和思考",
+  "title": "日程安排总结和思考",
+  "date": "",
+  "tags": [],
+  "slug": "2020-04-12-日程安排总结和思考",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-04-12-日程安排总结和思考.md",
+  "md5": "fc1654bff1a4c282db3a3515d4b04f9c",
+  "metrics": {
+    "sentenceAvgLen": 25.4,
+    "sentenceLenBuckets": {
+      "1-10": 2,
+      "11-20": 3,
+      "21-30": 4,
+      "30+": 3
+    },
+    "readability": {
+      "chars": 1024,
+      "words": 512,
+      "paragraphs": 5
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.8,
+      "humor": 0.2,
+      "critical": 0.4
+    },
+    "rhythm": "平缓叙述与反思交替",
+    "tropes": [
+      "个人反思",
+      "生活感悟",
+      "效率方法"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "学习",
+      "放松",
+      "番茄工作法",
+      "效率",
+      "焦虑"
+    ],
+    "concepts": [
+      "工作与生活平衡",
+      "时间管理",
+      "自我提升"
+    ]
+  },
+  "sentiment": {
+    "label": "中性偏反思",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题描述-反思-解决方案",
+    "opening": "感觉自己好像一直没有摆脱一个怪圈",
+    "closing": "其他的还需要看看笔记，再重温一下要点和技巧，后面再复盘吧"
+  },
+  "depth": "中等",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

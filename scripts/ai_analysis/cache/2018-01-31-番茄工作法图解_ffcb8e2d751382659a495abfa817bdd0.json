@@ -1,0 +1,47 @@
+{
+  "id": "2018-01-31-番茄工作法图解",
+  "title": "《番茄工作法图解》读书笔记",
+  "date": null,
+  "tags": [],
+  "slug": "2018-01-31-番茄工作法图解",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2018-01-31-番茄工作法图解.md",
+  "md5": "ffcb8e2d751382659a495abfa817bdd0",
+  "metrics": {
+    "sentenceAvgLen": 23.34,
+    "sentenceLenBuckets": {
+      "1-10": 28,
+      "11-20": 22,
+      "21-30": 24,
+      "30+": 32
+    },
+    "readability": {
+      "chars": 2673,
+      "words": 2673,
+      "paragraphs": 130
+    }
+  },
+  "style": {
+    "tone": {},
+    "rhythm": null,
+    "tropes": []
+  },
+  "content": {
+    "keywords": [],
+    "concepts": []
+  },
+  "sentiment": {
+    "label": null,
+    "score": null
+  },
+  "stance": {},
+  "structure": {
+    "pattern": null,
+    "opening": null,
+    "closing": null
+  },
+  "depth": null,
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

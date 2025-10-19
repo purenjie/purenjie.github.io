@@ -4,8 +4,13 @@
 requests>=2.31.0
 PyYAML>=6.0.1
 
-# 中文文本处理
-jieba>=0.42.1
+# 模型与校验
+pydantic>=2.7.4
+
+# 机器学习与网络
+scikit-learn>=1.4.0
+networkx>=3.3
+tenacity>=9.0.0
 
 # 可选依赖（用于增强功能）
 # textblob>=0.17.1  # 英文文本分析（可选）

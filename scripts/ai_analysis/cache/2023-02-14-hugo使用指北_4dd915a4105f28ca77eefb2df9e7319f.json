@@ -1,0 +1,66 @@
+{
+  "id": "2023-02-14-hugo使用指北",
+  "title": "Hugo使用指北",
+  "date": "",
+  "tags": [],
+  "slug": "hugo使用指北",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2023-02-14-hugo使用指北.md",
+  "md5": "4dd915a4105f28ca77eefb2df9e7319f",
+  "metrics": {
+    "sentenceAvgLen": 12.4,
+    "sentenceLenBuckets": {
+      "1-10": 8,
+      "11-20": 5,
+      "21-30": 2,
+      "30+": 1
+    },
+    "readability": {
+      "chars": 420,
+      "words": 85,
+      "paragraphs": 8
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.9,
+      "reflective": 0.1,
+      "humor": 0.0,
+      "critical": 0.0
+    },
+    "rhythm": "指令式",
+    "tropes": [
+      "技术指南",
+      "命令行操作",
+      "代码示例"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "Hugo",
+      "新建文章",
+      "草稿",
+      "发布",
+      "本地视图"
+    ],
+    "concepts": [
+      "静态网站生成",
+      "内容管理",
+      "命令行工具"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "步骤指南",
+    "opening": "新建文章",
+    "closing": "参考链接"
+  },
+  "depth": "入门级",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

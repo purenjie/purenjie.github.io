@@ -1,0 +1,69 @@
+{
+  "id": "2021-02-06-《有梗》笔记",
+  "title": "《有梗》笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2021-02-06-《有梗》笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-02-06-《有梗》笔记.md",
+  "md5": "655329fb32ed8f90b9cd9baa4afce07f",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 45,
+      "11-20": 60,
+      "21-30": 35,
+      "30+": 20
+    },
+    "readability": {
+      "chars": 4850,
+      "words": 3200,
+      "paragraphs": 85
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.7,
+      "reflective": 0.6,
+      "humor": 0.9,
+      "critical": 0.3
+    },
+    "rhythm": "轻松活泼，节奏明快",
+    "tropes": [
+      "反转",
+      "比喻",
+      "夸张",
+      "谐音",
+      "自嘲"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "幽默",
+      "段子",
+      "脱口秀",
+      "练习",
+      "技巧"
+    ],
+    "concepts": [
+      "后天习得幽默",
+      "幽默结构",
+      "人际沟通",
+      "表演元素"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.8
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "章节式教学",
+    "opening": "以人生不完美引出幽默价值",
+    "closing": "以个人经历强调对事业的坚持"
+  },
+  "depth": "实用指导型",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

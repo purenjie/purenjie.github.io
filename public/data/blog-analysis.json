@@ -1,0 +1,4472 @@
+{
+  "summary": {
+    "style": {
+      "toneAvg": {
+        "teaching": 0.67,
+        "reflective": 0.51,
+        "humor": 0.16,
+        "critical": 0.21
+      }
+    },
+    "avgSentenceLen": 20.5,
+    "sentimentDist": {
+      "positive": 0.486,
+      "neutral": 0.514,
+      "negative": 0.0
+    },
+    "topics": [
+      {
+        "name": "投资理财",
+        "ratio": 0.15,
+        "representatives": [
+          "《财务自由之路》读书笔记",
+          "怎样加杠杆",
+          "假如我财务自由了？",
+          "2017年总结"
+        ]
+      },
+      {
+        "name": "读书学习",
+        "ratio": 0.35,
+        "representatives": [
+          "《终身成长》读书笔记",
+          "《高效学习之道》读书笔记",
+          "《情商》读书笔记",
+          "《番茄工作法图解》读书笔记",
+          "《王二的经济学故事》读后感"
+        ]
+      },
+      {
+        "name": "个人成长与生活",
+        "ratio": 0.25,
+        "representatives": [
+          "2019年总结",
+          "2020年总结",
+          "《假性亲密关系》读书笔记",
+          "《有梗》笔记",
+          "日程安排总结和思考"
+        ]
+      },
+      {
+        "name": "技术实践",
+        "ratio": 0.25,
+        "representatives": [
+          "hugo博客搭建",
+          "gitee部署和配置hexo",
+          "deepin重装指北",
+          "重新认识GTD|如何科学地认识和使用GTD时间管理法则"
+        ]
+      }
+    ],
+    "conceptNetwork": {
+      "nodes": [
+        {
+          "id": "自我提升",
+          "weight": 4
+        },
+        {
+          "id": "职业规划",
+          "weight": 1
+        },
+        {
+          "id": "生活态度",
+          "weight": 1
+        },
+        {
+          "id": "时间管理",
+          "weight": 2
+        },
+        {
+          "id": "情绪智力",
+          "weight": 1
+        },
+        {
+          "id": "杏仁核",
+          "weight": 1
+        },
+        {
+          "id": "涌流状态",
+          "weight": 1
+        },
+        {
+          "id": "认知重建",
+          "weight": 1
+        },
+        {
+          "id": "延迟满足",
+          "weight": 1
+        },
+        {
+          "id": "个人成长",
+          "weight": 2
+        },
+        {
+          "id": "生活平衡",
+          "weight": 2
+        },
+        {
+          "id": "目标追求",
+          "weight": 1
+        },
+        {
+          "id": "SWOT分析",
+          "weight": 1
+        },
+        {
+          "id": "西西弗斯神话",
+          "weight": 1
+        },
+        {
+          "id": "修行",
+          "weight": 1
+        },
+        {
+          "id": "思维模式",
+          "weight": 1
+        },
+        {
+          "id": "自我发展",
+          "weight": 1
+        },
+        {
+          "id": "失败应对",
+          "weight": 1
+        },
+        {
+          "id": "能力培养",
+          "weight": 1
+        },
+        {
+          "id": "领导力",
+          "weight": 1
+        },
+        {
+          "id": "教育方法",
+          "weight": 1
+        },
+        {
+          "id": "终身成长",
+          "weight": 1
+        },
+        {
+          "id": "非暴力沟通",
+          "weight": 2
+        },
+        {
+          "id": "复利效应",
+          "weight": 1
+        },
+        {
+          "id": "成长型思维",
+          "weight": 1
+        },
+        {
+          "id": "人生哲学",
+          "weight": 1
+        },
+        {
+          "id": "Linux系统配置",
+          "weight": 1
+        },
+        {
+          "id": "开发环境搭建",
+          "weight": 2
+        },
+        {
+          "id": "软件安装",
+          "weight": 1
+        },
+        {
+          "id": "命令行操作",
+          "weight": 1
+        },
+        {
+          "id": "杠杆三要素",
+          "weight": 1
+        },
+        {
+          "id": "经营杠杆",
+          "weight": 1
+        },
+        {
+          "id": "财务杠杆",
+          "weight": 1
+        },
+        {
+          "id": "个人品牌",
+          "weight": 1
+        },
+        {
+          "id": "人际关系网络",
+          "weight": 1
+        },
+        {
+          "id": "工作与生活平衡",
+          "weight": 1
+        },
+        {
+          "id": "习以为常",
+          "weight": 1
+        },
+        {
+          "id": "持久满足",
+          "weight": 1
+        },
+        {
+          "id": "逃避问题",
+          "weight": 1
+        },
+        {
+          "id": "自我设限",
+          "weight": 1
+        },
+        {
+          "id": "市场机制",
+          "weight": 1
+        },
+        {
+          "id": "供需矛盾",
+          "weight": 1
+        },
+        {
+          "id": "经济效率",
+          "weight": 1
+        },
+        {
+          "id": "思维拓展",
+          "weight": 1
+        },
+        {
+          "id": "捕获-明晰-组织-回顾-执行",
+          "weight": 1
+        },
+        {
+          "id": "清空大脑",
+          "weight": 1
+        },
+        {
+          "id": "下一步行动",
+          "weight": 1
+        },
+        {
+          "id": "目标导向排序",
+          "weight": 1
+        },
+        {
+          "id": "负罪感幻觉",
+          "weight": 1
+        },
+        {
+          "id": "可控范围",
+          "weight": 1
+        },
+        {
+          "id": "命运主宰",
+          "weight": 1
+        },
+        {
+          "id": "创造奇迹",
+          "weight": 1
+        },
+        {
+          "id": "坚持目标",
+          "weight": 1
+        },
+        {
+          "id": "生活角度",
+          "weight": 1
+        },
+        {
+          "id": "投资策略",
+          "weight": 1
+        },
+        {
+          "id": "导师指导",
+          "weight": 1
+        },
+        {
+          "id": "整体性学习",
+          "weight": 1
+        },
+        {
+          "id": "碎片化阅读",
+          "weight": 1
+        },
+        {
+          "id": "自我教育",
+          "weight": 1
+        },
+        {
+          "id": "高效方法",
+          "weight": 1
+        },
+        {
+          "id": "服务器配置",
+          "weight": 1
+        },
+        {
+          "id": "密钥认证",
+          "weight": 1
+        },
+        {
+          "id": "系统安全",
+          "weight": 1
+        },
+        {
+          "id": "职业转型",
+          "weight": 1
+        },
+        {
+          "id": "感恩心态",
+          "weight": 1
+        },
+        {
+          "id": "情感账户",
+          "weight": 1
+        },
+        {
+          "id": "原生家庭创伤",
+          "weight": 1
+        },
+        {
+          "id": "自我探索",
+          "weight": 1
+        },
+        {
+          "id": "关系建设",
+          "weight": 1
+        },
+        {
+          "id": "后天习得幽默",
+          "weight": 1
+        },
+        {
+          "id": "幽默结构",
+          "weight": 1
+        },
+        {
+          "id": "人际沟通",
+          "weight": 1
+        },
+        {
+          "id": "表演元素",
+          "weight": 1
+        },
+        {
+          "id": "博客部署",
+          "weight": 1
+        },
+        {
+          "id": "版本控制",
+          "weight": 1
+        },
+        {
+          "id": "文件管理",
+          "weight": 1
+        },
+        {
+          "id": "系统刷写",
+          "weight": 1
+        },
+        {
+          "id": "Android定制",
+          "weight": 1
+        },
+        {
+          "id": "数据备份",
+          "weight": 1
+        },
+        {
+          "id": "进化心理学",
+          "weight": 1
+        },
+        {
+          "id": "享乐跑步机",
+          "weight": 1
+        },
+        {
+          "id": "自我意识",
+          "weight": 1
+        },
+        {
+          "id": "感觉间离",
+          "weight": 1
+        },
+        {
+          "id": "职业发展",
+          "weight": 2
+        },
+        {
+          "id": "生活体验",
+          "weight": 2
+        },
+        {
+          "id": "自我反思",
+          "weight": 1
+        },
+        {
+          "id": "职场转变",
+          "weight": 1
+        },
+        {
+          "id": "个人目标",
+          "weight": 1
+        },
+        {
+          "id": "情感变化",
+          "weight": 1
+        },
+        {
+          "id": "权限分离",
+          "weight": 1
+        },
+        {
+          "id": "模块化设计",
+          "weight": 1
+        },
+        {
+          "id": "用户角色关联",
+          "weight": 1
+        },
+        {
+          "id": "系统部署模式",
+          "weight": 1
+        },
+        {
+          "id": "静态网站生成",
+          "weight": 1
+        },
+        {
+          "id": "内容管理",
+          "weight": 1
+        },
+        {
+          "id": "命令行工具",
+          "weight": 1
+        },
+        {
+          "id": "对象存储",
+          "weight": 1
+        },
+        {
+          "id": "图片上传",
+          "weight": 1
+        },
+        {
+          "id": "API配置",
+          "weight": 1
+        },
+        {
+          "id": "插件安装",
+          "weight": 1
+        },
+        {
+          "id": "API测试工具",
+          "weight": 1
+        },
+        {
+          "id": "请求预处理",
+          "weight": 1
+        },
+        {
+          "id": "接口鉴权机制",
+          "weight": 1
+        },
+        {
+          "id": "环境变量管理",
+          "weight": 1
+        },
+        {
+          "id": "服务器安全",
+          "weight": 1
+        },
+        {
+          "id": "用户管理",
+          "weight": 1
+        },
+        {
+          "id": "开发环境配置",
+          "weight": 1
+        },
+        {
+          "id": "服务部署",
+          "weight": 1
+        },
+        {
+          "id": "DNS解析",
+          "weight": 1
+        },
+        {
+          "id": "Web服务器配置",
+          "weight": 1
+        },
+        {
+          "id": "SSL证书申请",
+          "weight": 1
+        },
+        {
+          "id": "搜索引擎收录",
+          "weight": 1
+        },
+        {
+          "id": "文件同步",
+          "weight": 1
+        },
+        {
+          "id": "自我成长",
+          "weight": 1
+        },
+        {
+          "id": "亲密关系",
+          "weight": 1
+        },
+        {
+          "id": "家庭责任",
+          "weight": 1
+        },
+        {
+          "id": "健康管理",
+          "weight": 1
+        },
+        {
+          "id": "风险兜底",
+          "weight": 1
+        },
+        {
+          "id": "反人性",
+          "weight": 1
+        },
+        {
+          "id": "情绪价值",
+          "weight": 1
+        },
+        {
+          "id": "杠杆率",
+          "weight": 1
+        },
+        {
+          "id": "个性化配置",
+          "weight": 1
+        },
+        {
+          "id": "Model Context Protocol",
+          "weight": 1
+        },
+        {
+          "id": "标准化协议",
+          "weight": 1
+        },
+        {
+          "id": "动态发现",
+          "weight": 1
+        },
+        {
+          "id": "SSE",
+          "weight": 1
+        },
+        {
+          "id": "STDIO",
+          "weight": 1
+        },
+        {
+          "id": "MCP服务器开发",
+          "weight": 1
+        },
+        {
+          "id": "跨语言开发",
+          "weight": 1
+        },
+        {
+          "id": "工具函数实现",
+          "weight": 1
+        },
+        {
+          "id": "传输协议配置",
+          "weight": 1
+        },
+        {
+          "id": "开发环境管理",
+          "weight": 1
+        },
+        {
+          "id": "多语言版本控制",
+          "weight": 1
+        },
+        {
+          "id": "虚拟环境",
+          "weight": 1
+        },
+        {
+          "id": "静态站点生成",
+          "weight": 1
+        },
+        {
+          "id": "Markdown写作",
+          "weight": 1
+        },
+        {
+          "id": "主题定制",
+          "weight": 1
+        },
+        {
+          "id": "评论系统",
+          "weight": 1
+        }
+      ],
+      "links": [
+        {
+          "source": "职业规划",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "生活态度",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "时间管理",
+          "target": "自我提升",
+          "weight": 2
+        },
+        {
+          "source": "生活态度",
+          "target": "职业规划",
+          "weight": 1
+        },
+        {
+          "source": "时间管理",
+          "target": "职业规划",
+          "weight": 1
+        },
+        {
+          "source": "时间管理",
+          "target": "生活态度",
+          "weight": 1
+        },
+        {
+          "source": "情绪智力",
+          "target": "杏仁核",
+          "weight": 1
+        },
+        {
+          "source": "情绪智力",
+          "target": "涌流状态",
+          "weight": 1
+        },
+        {
+          "source": "情绪智力",
+          "target": "认知重建",
+          "weight": 1
+        },
+        {
+          "source": "延迟满足",
+          "target": "情绪智力",
+          "weight": 1
+        },
+        {
+          "source": "杏仁核",
+          "target": "涌流状态",
+          "weight": 1
+        },
+        {
+          "source": "杏仁核",
+          "target": "认知重建",
+          "weight": 1
+        },
+        {
+          "source": "延迟满足",
+          "target": "杏仁核",
+          "weight": 1
+        },
+        {
+          "source": "涌流状态",
+          "target": "认知重建",
+          "weight": 1
+        },
+        {
+          "source": "延迟满足",
+          "target": "涌流状态",
+          "weight": 1
+        },
+        {
+          "source": "延迟满足",
+          "target": "认知重建",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "生活平衡",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "目标追求",
+          "weight": 1
+        },
+        {
+          "source": "生活平衡",
+          "target": "自我提升",
+          "weight": 2
+        },
+        {
+          "source": "目标追求",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "生活平衡",
+          "target": "目标追求",
+          "weight": 1
+        },
+        {
+          "source": "SWOT分析",
+          "target": "西西弗斯神话",
+          "weight": 1
+        },
+        {
+          "source": "SWOT分析",
+          "target": "修行",
+          "weight": 1
+        },
+        {
+          "source": "修行",
+          "target": "西西弗斯神话",
+          "weight": 1
+        },
+        {
+          "source": "思维模式",
+          "target": "自我发展",
+          "weight": 1
+        },
+        {
+          "source": "失败应对",
+          "target": "思维模式",
+          "weight": 1
+        },
+        {
+          "source": "思维模式",
+          "target": "能力培养",
+          "weight": 1
+        },
+        {
+          "source": "思维模式",
+          "target": "领导力",
+          "weight": 1
+        },
+        {
+          "source": "思维模式",
+          "target": "教育方法",
+          "weight": 1
+        },
+        {
+          "source": "失败应对",
+          "target": "自我发展",
+          "weight": 1
+        },
+        {
+          "source": "能力培养",
+          "target": "自我发展",
+          "weight": 1
+        },
+        {
+          "source": "自我发展",
+          "target": "领导力",
+          "weight": 1
+        },
+        {
+          "source": "教育方法",
+          "target": "自我发展",
+          "weight": 1
+        },
+        {
+          "source": "失败应对",
+          "target": "能力培养",
+          "weight": 1
+        },
+        {
+          "source": "失败应对",
+          "target": "领导力",
+          "weight": 1
+        },
+        {
+          "source": "失败应对",
+          "target": "教育方法",
+          "weight": 1
+        },
+        {
+          "source": "能力培养",
+          "target": "领导力",
+          "weight": 1
+        },
+        {
+          "source": "教育方法",
+          "target": "能力培养",
+          "weight": 1
+        },
+        {
+          "source": "教育方法",
+          "target": "领导力",
+          "weight": 1
+        },
+        {
+          "source": "终身成长",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "复利效应",
+          "target": "终身成长",
+          "weight": 1
+        },
+        {
+          "source": "成长型思维",
+          "target": "终身成长",
+          "weight": 1
+        },
+        {
+          "source": "人生哲学",
+          "target": "终身成长",
+          "weight": 1
+        },
+        {
+          "source": "复利效应",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "成长型思维",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "人生哲学",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "复利效应",
+          "target": "成长型思维",
+          "weight": 1
+        },
+        {
+          "source": "人生哲学",
+          "target": "复利效应",
+          "weight": 1
+        },
+        {
+          "source": "人生哲学",
+          "target": "成长型思维",
+          "weight": 1
+        },
+        {
+          "source": "Linux系统配置",
+          "target": "开发环境搭建",
+          "weight": 1
+        },
+        {
+          "source": "Linux系统配置",
+          "target": "软件安装",
+          "weight": 1
+        },
+        {
+          "source": "Linux系统配置",
+          "target": "命令行操作",
+          "weight": 1
+        },
+        {
+          "source": "开发环境搭建",
+          "target": "软件安装",
+          "weight": 1
+        },
+        {
+          "source": "命令行操作",
+          "target": "开发环境搭建",
+          "weight": 1
+        },
+        {
+          "source": "命令行操作",
+          "target": "软件安装",
+          "weight": 1
+        },
+        {
+          "source": "杠杆三要素",
+          "target": "经营杠杆",
+          "weight": 1
+        },
+        {
+          "source": "杠杆三要素",
+          "target": "财务杠杆",
+          "weight": 1
+        },
+        {
+          "source": "个人品牌",
+          "target": "杠杆三要素",
+          "weight": 1
+        },
+        {
+          "source": "人际关系网络",
+          "target": "杠杆三要素",
+          "weight": 1
+        },
+        {
+          "source": "经营杠杆",
+          "target": "财务杠杆",
+          "weight": 1
+        },
+        {
+          "source": "个人品牌",
+          "target": "经营杠杆",
+          "weight": 1
+        },
+        {
+          "source": "人际关系网络",
+          "target": "经营杠杆",
+          "weight": 1
+        },
+        {
+          "source": "个人品牌",
+          "target": "财务杠杆",
+          "weight": 1
+        },
+        {
+          "source": "人际关系网络",
+          "target": "财务杠杆",
+          "weight": 1
+        },
+        {
+          "source": "个人品牌",
+          "target": "人际关系网络",
+          "weight": 1
+        },
+        {
+          "source": "工作与生活平衡",
+          "target": "时间管理",
+          "weight": 1
+        },
+        {
+          "source": "工作与生活平衡",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "习以为常",
+          "target": "持久满足",
+          "weight": 1
+        },
+        {
+          "source": "习以为常",
+          "target": "逃避问题",
+          "weight": 1
+        },
+        {
+          "source": "习以为常",
+          "target": "自我设限",
+          "weight": 1
+        },
+        {
+          "source": "持久满足",
+          "target": "逃避问题",
+          "weight": 1
+        },
+        {
+          "source": "持久满足",
+          "target": "自我设限",
+          "weight": 1
+        },
+        {
+          "source": "自我设限",
+          "target": "逃避问题",
+          "weight": 1
+        },
+        {
+          "source": "供需矛盾",
+          "target": "市场机制",
+          "weight": 1
+        },
+        {
+          "source": "市场机制",
+          "target": "经济效率",
+          "weight": 1
+        },
+        {
+          "source": "市场机制",
+          "target": "思维拓展",
+          "weight": 1
+        },
+        {
+          "source": "供需矛盾",
+          "target": "经济效率",
+          "weight": 1
+        },
+        {
+          "source": "供需矛盾",
+          "target": "思维拓展",
+          "weight": 1
+        },
+        {
+          "source": "思维拓展",
+          "target": "经济效率",
+          "weight": 1
+        },
+        {
+          "source": "捕获-明晰-组织-回顾-执行",
+          "target": "清空大脑",
+          "weight": 1
+        },
+        {
+          "source": "下一步行动",
+          "target": "捕获-明晰-组织-回顾-执行",
+          "weight": 1
+        },
+        {
+          "source": "捕获-明晰-组织-回顾-执行",
+          "target": "目标导向排序",
+          "weight": 1
+        },
+        {
+          "source": "捕获-明晰-组织-回顾-执行",
+          "target": "负罪感幻觉",
+          "weight": 1
+        },
+        {
+          "source": "下一步行动",
+          "target": "清空大脑",
+          "weight": 1
+        },
+        {
+          "source": "清空大脑",
+          "target": "目标导向排序",
+          "weight": 1
+        },
+        {
+          "source": "清空大脑",
+          "target": "负罪感幻觉",
+          "weight": 1
+        },
+        {
+          "source": "下一步行动",
+          "target": "目标导向排序",
+          "weight": 1
+        },
+        {
+          "source": "下一步行动",
+          "target": "负罪感幻觉",
+          "weight": 1
+        },
+        {
+          "source": "目标导向排序",
+          "target": "负罪感幻觉",
+          "weight": 1
+        },
+        {
+          "source": "可控范围",
+          "target": "命运主宰",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "可控范围",
+          "weight": 1
+        },
+        {
+          "source": "可控范围",
+          "target": "坚持目标",
+          "weight": 1
+        },
+        {
+          "source": "可控范围",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "可控范围",
+          "target": "投资策略",
+          "weight": 1
+        },
+        {
+          "source": "可控范围",
+          "target": "导师指导",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "命运主宰",
+          "weight": 1
+        },
+        {
+          "source": "命运主宰",
+          "target": "坚持目标",
+          "weight": 1
+        },
+        {
+          "source": "命运主宰",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "命运主宰",
+          "target": "投资策略",
+          "weight": 1
+        },
+        {
+          "source": "命运主宰",
+          "target": "导师指导",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "坚持目标",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "投资策略",
+          "weight": 1
+        },
+        {
+          "source": "创造奇迹",
+          "target": "导师指导",
+          "weight": 1
+        },
+        {
+          "source": "坚持目标",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "坚持目标",
+          "target": "投资策略",
+          "weight": 1
+        },
+        {
+          "source": "坚持目标",
+          "target": "导师指导",
+          "weight": 1
+        },
+        {
+          "source": "投资策略",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "导师指导",
+          "target": "生活角度",
+          "weight": 1
+        },
+        {
+          "source": "导师指导",
+          "target": "投资策略",
+          "weight": 1
+        },
+        {
+          "source": "整体性学习",
+          "target": "碎片化阅读",
+          "weight": 1
+        },
+        {
+          "source": "整体性学习",
+          "target": "自我教育",
+          "weight": 1
+        },
+        {
+          "source": "整体性学习",
+          "target": "高效方法",
+          "weight": 1
+        },
+        {
+          "source": "碎片化阅读",
+          "target": "自我教育",
+          "weight": 1
+        },
+        {
+          "source": "碎片化阅读",
+          "target": "高效方法",
+          "weight": 1
+        },
+        {
+          "source": "自我教育",
+          "target": "高效方法",
+          "weight": 1
+        },
+        {
+          "source": "密钥认证",
+          "target": "服务器配置",
+          "weight": 1
+        },
+        {
+          "source": "服务器配置",
+          "target": "系统安全",
+          "weight": 1
+        },
+        {
+          "source": "开发环境搭建",
+          "target": "服务器配置",
+          "weight": 1
+        },
+        {
+          "source": "密钥认证",
+          "target": "系统安全",
+          "weight": 1
+        },
+        {
+          "source": "密钥认证",
+          "target": "开发环境搭建",
+          "weight": 1
+        },
+        {
+          "source": "开发环境搭建",
+          "target": "系统安全",
+          "weight": 1
+        },
+        {
+          "source": "职业转型",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "生活平衡",
+          "target": "职业转型",
+          "weight": 1
+        },
+        {
+          "source": "感恩心态",
+          "target": "职业转型",
+          "weight": 1
+        },
+        {
+          "source": "感恩心态",
+          "target": "自我提升",
+          "weight": 1
+        },
+        {
+          "source": "感恩心态",
+          "target": "生活平衡",
+          "weight": 1
+        },
+        {
+          "source": "情感账户",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "原生家庭创伤",
+          "target": "情感账户",
+          "weight": 1
+        },
+        {
+          "source": "情感账户",
+          "target": "自我探索",
+          "weight": 1
+        },
+        {
+          "source": "关系建设",
+          "target": "情感账户",
+          "weight": 1
+        },
+        {
+          "source": "原生家庭创伤",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "自我探索",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "关系建设",
+          "target": "非暴力沟通",
+          "weight": 1
+        },
+        {
+          "source": "原生家庭创伤",
+          "target": "自我探索",
+          "weight": 1
+        },
+        {
+          "source": "关系建设",
+          "target": "原生家庭创伤",
+          "weight": 1
+        },
+        {
+          "source": "关系建设",
+          "target": "自我探索",
+          "weight": 1
+        },
+        {
+          "source": "后天习得幽默",
+          "target": "幽默结构",
+          "weight": 1
+        },
+        {
+          "source": "人际沟通",
+          "target": "后天习得幽默",
+          "weight": 1
+        },
+        {
+          "source": "后天习得幽默",
+          "target": "表演元素",
+          "weight": 1
+        },
+        {
+          "source": "人际沟通",
+          "target": "幽默结构",
+          "weight": 1
+        },
+        {
+          "source": "幽默结构",
+          "target": "表演元素",
+          "weight": 1
+        },
+        {
+          "source": "人际沟通",
+          "target": "表演元素",
+          "weight": 1
+        },
+        {
+          "source": "博客部署",
+          "target": "版本控制",
+          "weight": 1
+        },
+        {
+          "source": "博客部署",
+          "target": "文件管理",
+          "weight": 1
+        },
+        {
+          "source": "文件管理",
+          "target": "版本控制",
+          "weight": 1
+        },
+        {
+          "source": "Android定制",
+          "target": "系统刷写",
+          "weight": 1
+        },
+        {
+          "source": "数据备份",
+          "target": "系统刷写",
+          "weight": 1
+        },
+        {
+          "source": "Android定制",
+          "target": "数据备份",
+          "weight": 1
+        },
+        {
+          "source": "享乐跑步机",
+          "target": "进化心理学",
+          "weight": 1
+        },
+        {
+          "source": "自我意识",
+          "target": "进化心理学",
+          "weight": 1
+        },
+        {
+          "source": "感觉间离",
+          "target": "进化心理学",
+          "weight": 1
+        },
+        {
+          "source": "享乐跑步机",
+          "target": "自我意识",
+          "weight": 1
+        },
+        {
+          "source": "享乐跑步机",
+          "target": "感觉间离",
+          "weight": 1
+        },
+        {
+          "source": "感觉间离",
+          "target": "自我意识",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "职业发展",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "生活体验",
+          "weight": 1
+        },
+        {
+          "source": "个人成长",
+          "target": "自我反思",
+          "weight": 1
+        },
+        {
+          "source": "生活体验",
+          "target": "职业发展",
+          "weight": 1
+        },
+        {
+          "source": "职业发展",
+          "target": "自我反思",
+          "weight": 1
+        },
+        {
+          "source": "生活体验",
+          "target": "自我反思",
+          "weight": 1
+        },
+        {
+          "source": "生活体验",
+          "target": "职场转变",
+          "weight": 1
+        },
+        {
+          "source": "个人目标",
+          "target": "职场转变",
+          "weight": 1
+        },
+        {
+          "source": "情感变化",
+          "target": "职场转变",
+          "weight": 1
+        },
+        {
+          "source": "个人目标",
+          "target": "生活体验",
+          "weight": 1
+        },
+        {
+          "source": "情感变化",
+          "target": "生活体验",
+          "weight": 1
+        },
+        {
+          "source": "个人目标",
+          "target": "情感变化",
+          "weight": 1
+        },
+        {
+          "source": "权限分离",
+          "target": "模块化设计",
+          "weight": 1
+        },
+        {
+          "source": "权限分离",
+          "target": "用户角色关联",
+          "weight": 1
+        },
+        {
+          "source": "权限分离",
+          "target": "系统部署模式",
+          "weight": 1
+        },
+        {
+          "source": "模块化设计",
+          "target": "用户角色关联",
+          "weight": 1
+        },
+        {
+          "source": "模块化设计",
+          "target": "系统部署模式",
+          "weight": 1
+        },
+        {
+          "source": "用户角色关联",
+          "target": "系统部署模式",
+          "weight": 1
+        },
+        {
+          "source": "内容管理",
+          "target": "静态网站生成",
+          "weight": 1
+        },
+        {
+          "source": "命令行工具",
+          "target": "静态网站生成",
+          "weight": 1
+        },
+        {
+          "source": "内容管理",
+          "target": "命令行工具",
+          "weight": 1
+        },
+        {
+          "source": "图片上传",
+          "target": "对象存储",
+          "weight": 1
+        },
+        {
+          "source": "API配置",
+          "target": "对象存储",
+          "weight": 1
+        },
+        {
+          "source": "对象存储",
+          "target": "插件安装",
+          "weight": 1
+        },
+        {
+          "source": "API配置",
+          "target": "图片上传",
+          "weight": 1
+        },
+        {
+          "source": "图片上传",
+          "target": "插件安装",
+          "weight": 1
+        },
+        {
+          "source": "API配置",
+          "target": "插件安装",
+          "weight": 1
+        },
+        {
+          "source": "API测试工具",
+          "target": "请求预处理",
+          "weight": 1
+        },
+        {
+          "source": "API测试工具",
+          "target": "接口鉴权机制",
+          "weight": 1
+        },
+        {
+          "source": "API测试工具",
+          "target": "环境变量管理",
+          "weight": 1
+        },
+        {
+          "source": "接口鉴权机制",
+          "target": "请求预处理",
+          "weight": 1
+        },
+        {
+          "source": "环境变量管理",
+          "target": "请求预处理",
+          "weight": 1
+        },
+        {
+          "source": "接口鉴权机制",
+          "target": "环境变量管理",
+          "weight": 1
+        },
+        {
+          "source": "服务器安全",
+          "target": "用户管理",
+          "weight": 1
+        },
+        {
+          "source": "开发环境配置",
+          "target": "服务器安全",
+          "weight": 1
+        },
+        {
+          "source": "服务器安全",
+          "target": "服务部署",
+          "weight": 1
+        },
+        {
+          "source": "开发环境配置",
+          "target": "用户管理",
+          "weight": 1
+        },
+        {
+          "source": "服务部署",
+          "target": "用户管理",
+          "weight": 1
+        },
+        {
+          "source": "开发环境配置",
+          "target": "服务部署",
+          "weight": 1
+        },
+        {
+          "source": "DNS解析",
+          "target": "Web服务器配置",
+          "weight": 1
+        },
+        {
+          "source": "DNS解析",
+          "target": "SSL证书申请",
+          "weight": 1
+        },
+        {
+          "source": "DNS解析",
+          "target": "搜索引擎收录",
+          "weight": 1
+        },
+        {
+          "source": "DNS解析",
+          "target": "文件同步",
+          "weight": 1
+        },
+        {
+          "source": "SSL证书申请",
+          "target": "Web服务器配置",
+          "weight": 1
+        },
+        {
+          "source": "Web服务器配置",
+          "target": "搜索引擎收录",
+          "weight": 1
+        },
+        {
+          "source": "Web服务器配置",
+          "target": "文件同步",
+          "weight": 1
+        },
+        {
+          "source": "SSL证书申请",
+          "target": "搜索引擎收录",
+          "weight": 1
+        },
+        {
+          "source": "SSL证书申请",
+          "target": "文件同步",
+          "weight": 1
+        },
+        {
+          "source": "搜索引擎收录",
+          "target": "文件同步",
+          "weight": 1
+        },
+        {
+          "source": "职业发展",
+          "target": "自我成长",
+          "weight": 1
+        },
+        {
+          "source": "亲密关系",
+          "target": "自我成长",
+          "weight": 1
+        },
+        {
+          "source": "家庭责任",
+          "target": "自我成长",
+          "weight": 1
+        },
+        {
+          "source": "健康管理",
+          "target": "自我成长",
+          "weight": 1
+        },
+        {
+          "source": "亲密关系",
+          "target": "职业发展",
+          "weight": 1
+        },
+        {
+          "source": "家庭责任",
+          "target": "职业发展",
+          "weight": 1
+        },
+        {
+          "source": "健康管理",
+          "target": "职业发展",
+          "weight": 1
+        },
+        {
+          "source": "亲密关系",
+          "target": "家庭责任",
+          "weight": 1
+        },
+        {
+          "source": "亲密关系",
+          "target": "健康管理",
+          "weight": 1
+        },
+        {
+          "source": "健康管理",
+          "target": "家庭责任",
+          "weight": 1
+        },
+        {
+          "source": "反人性",
+          "target": "风险兜底",
+          "weight": 1
+        },
+        {
+          "source": "情绪价值",
+          "target": "风险兜底",
+          "weight": 1
+        },
+        {
+          "source": "杠杆率",
+          "target": "风险兜底",
+          "weight": 1
+        },
+        {
+          "source": "个性化配置",
+          "target": "风险兜底",
+          "weight": 1
+        },
+        {
+          "source": "反人性",
+          "target": "情绪价值",
+          "weight": 1
+        },
+        {
+          "source": "反人性",
+          "target": "杠杆率",
+          "weight": 1
+        },
+        {
+          "source": "个性化配置",
+          "target": "反人性",
+          "weight": 1
+        },
+        {
+          "source": "情绪价值",
+          "target": "杠杆率",
+          "weight": 1
+        },
+        {
+          "source": "个性化配置",
+          "target": "情绪价值",
+          "weight": 1
+        },
+        {
+          "source": "个性化配置",
+          "target": "杠杆率",
+          "weight": 1
+        },
+        {
+          "source": "Model Context Protocol",
+          "target": "标准化协议",
+          "weight": 1
+        },
+        {
+          "source": "Model Context Protocol",
+          "target": "动态发现",
+          "weight": 1
+        },
+        {
+          "source": "Model Context Protocol",
+          "target": "SSE",
+          "weight": 1
+        },
+        {
+          "source": "Model Context Protocol",
+          "target": "STDIO",
+          "weight": 1
+        },
+        {
+          "source": "动态发现",
+          "target": "标准化协议",
+          "weight": 1
+        },
+        {
+          "source": "SSE",
+          "target": "标准化协议",
+          "weight": 1
+        },
+        {
+          "source": "STDIO",
+          "target": "标准化协议",
+          "weight": 1
+        },
+        {
+          "source": "SSE",
+          "target": "动态发现",
+          "weight": 1
+        },
+        {
+          "source": "STDIO",
+          "target": "动态发现",
+          "weight": 1
+        },
+        {
+          "source": "SSE",
+          "target": "STDIO",
+          "weight": 1
+        },
+        {
+          "source": "MCP服务器开发",
+          "target": "跨语言开发",
+          "weight": 1
+        },
+        {
+          "source": "MCP服务器开发",
+          "target": "工具函数实现",
+          "weight": 1
+        },
+        {
+          "source": "MCP服务器开发",
+          "target": "传输协议配置",
+          "weight": 1
+        },
+        {
+          "source": "工具函数实现",
+          "target": "跨语言开发",
+          "weight": 1
+        },
+        {
+          "source": "传输协议配置",
+          "target": "跨语言开发",
+          "weight": 1
+        },
+        {
+          "source": "传输协议配置",
+          "target": "工具函数实现",
+          "weight": 1
+        },
+        {
+          "source": "多语言版本控制",
+          "target": "开发环境管理",
+          "weight": 1
+        },
+        {
+          "source": "开发环境管理",
+          "target": "虚拟环境",
+          "weight": 1
+        },
+        {
+          "source": "多语言版本控制",
+          "target": "虚拟环境",
+          "weight": 1
+        },
+        {
+          "source": "Markdown写作",
+          "target": "静态站点生成",
+          "weight": 1
+        },
+        {
+          "source": "主题定制",
+          "target": "静态站点生成",
+          "weight": 1
+        },
+        {
+          "source": "评论系统",
+          "target": "静态站点生成",
+          "weight": 1
+        },
+        {
+          "source": "Markdown写作",
+          "target": "主题定制",
+          "weight": 1
+        },
+        {
+          "source": "Markdown写作",
+          "target": "评论系统",
+          "weight": 1
+        },
+        {
+          "source": "主题定制",
+          "target": "评论系统",
+          "weight": 1
+        }
+      ]
+    },
+    "timelineDepth": [
+      {
+        "date": "2020-04-09",
+        "depth": "中等深度，结合理论与实例，覆盖多个应用场景，提供实用建议"
+      },
+      {
+        "date": "2022-12-31",
+        "depth": "中等深度，包含个人情感变化和成长反思"
+      }
+    ],
+    "structures": [
+      {
+        "pattern": "主题分段式",
+        "count": 6
+      },
+      {
+        "pattern": "总分总",
+        "count": 2
+      },
+      {
+        "pattern": "教程手册",
+        "count": 2
+      },
+      {
+        "pattern": "教程式",
+        "count": 2
+      },
+      {
+        "pattern": "回忆-过程-感悟",
+        "count": 1
+      },
+      {
+        "pattern": "总分总结构，先概述核心观点，再分章节解析，最后总结升华",
+        "count": 1
+      },
+      {
+        "pattern": "教程指南型",
+        "count": 1
+      },
+      {
+        "pattern": "问题引入-概念解析-分领域应用-总结升华",
+        "count": 1
+      },
+      {
+        "pattern": "问题描述-反思-解决方案",
+        "count": 1
+      },
+      {
+        "pattern": "问题引入-分点讨论-总结升华",
+        "count": 1
+      },
+      {
+        "pattern": "教程式结构，分节递进",
+        "count": 1
+      },
+      {
+        "pattern": "主题分段，每段以标题引导，内容为列表和阐述",
+        "count": 1
+      },
+      {
+        "pattern": "分层列表式",
+        "count": 1
+      },
+      {
+        "pattern": "分层论述",
+        "count": 1
+      },
+      {
+        "pattern": "章节式教学",
+        "count": 1
+      },
+      {
+        "pattern": "问题-解决方案",
+        "count": 1
+      },
+      {
+        "pattern": "个人感悟与理论探讨交织",
+        "count": 1
+      },
+      {
+        "pattern": "时间线性叙事",
+        "count": 1
+      },
+      {
+        "pattern": "问题-解决方案-案例实施",
+        "count": 1
+      },
+      {
+        "pattern": "步骤指南",
+        "count": 1
+      },
+      {
+        "pattern": "教程步骤",
+        "count": 1
+      },
+      {
+        "pattern": "教程式结构，分章节讲解功能",
+        "count": 1
+      },
+      {
+        "pattern": "教程手册式结构",
+        "count": 1
+      },
+      {
+        "pattern": "教程式结构，分步骤说明",
+        "count": 1
+      },
+      {
+        "pattern": "问题引入-理论阐述-分类说明-建议总结",
+        "count": 1
+      },
+      {
+        "pattern": "概念-应用-对比-架构-使用",
+        "count": 1
+      },
+      {
+        "pattern": "教程手册型",
+        "count": 1
+      }
+    ],
+    "topicSentiment": []
+  },
+  "perArticle": [
+    {
+      "id": "index",
+      "title": "2017年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2017-年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2017-12-31-2017-年总结/index.md",
+      "md5": "f1e4f04d56f6a2a1632d754e23167edb",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 1234,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.2,
+          "critical": 0.4
+        },
+        "rhythm": "平实流畅，带有反思性节奏",
+        "tropes": [
+          "个人成长",
+          "自我反思",
+          "生活感悟"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "编程",
+          "读书",
+          "健身",
+          "投资",
+          "护肤",
+          "学生生涯"
+        ],
+        "concepts": [
+          "自我提升",
+          "职业规划",
+          "生活态度",
+          "时间管理"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.7
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "史称“总结元年”",
+        "closing": "希望明年总结的时候，我能觉得收获满满，然后期待下一个一年..."
+      },
+      "depth": "中等深度，包含具体经历和感悟",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2018-01-31-番茄工作法图解",
+      "title": "《番茄工作法图解》读书笔记",
+      "date": null,
+      "tags": [],
+      "slug": "2018-01-31-番茄工作法图解",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2018-01-31-番茄工作法图解.md",
+      "md5": "ffcb8e2d751382659a495abfa817bdd0",
+      "metrics": {
+        "sentenceAvgLen": 23.34,
+        "sentenceLenBuckets": {
+          "1-10": 28,
+          "11-20": 22,
+          "21-30": 24,
+          "30+": 32
+        },
+        "readability": {
+          "chars": 2673,
+          "words": 2673,
+          "paragraphs": 130
+        }
+      },
+      "style": {
+        "tone": {},
+        "rhythm": null,
+        "tropes": []
+      },
+      "content": {
+        "keywords": [],
+        "concepts": []
+      },
+      "sentiment": {
+        "label": null,
+        "score": null
+      },
+      "stance": {},
+      "structure": {
+        "pattern": null,
+        "opening": null,
+        "closing": null
+      },
+      "depth": null,
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2018-02-18-情商",
+      "title": "《情商》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "情商",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2018-02-18-情商.md",
+      "md5": "6e9fbbe3b367b828905c3fb9325631f8",
+      "metrics": {
+        "sentenceAvgLen": 25.4,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 18,
+          "21-30": 22,
+          "30+": 15
+        },
+        "readability": {
+          "chars": 4850,
+          "words": 810,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.7,
+          "humor": 0.1,
+          "critical": 0.3
+        },
+        "rhythm": "平缓而富有节奏",
+        "tropes": [
+          "比喻",
+          "引用",
+          "对比",
+          "排比"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "情商",
+          "情绪",
+          "同理心",
+          "自我意识",
+          "管理情绪"
+        ],
+        "concepts": [
+          "情绪智力",
+          "杏仁核",
+          "涌流状态",
+          "认知重建",
+          "延迟满足"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "总分总",
+        "opening": "情商的提升最重要的在五个方面",
+        "closing": "抛开以自我为中心，培养对差异的宽容和接受"
+      },
+      "depth": "深入",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2018年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2018-年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2018-12-31-2018-年总结/index.md",
+      "md5": "ea0fcffee02361f395f5e8413151a72c",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 1250,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.4,
+          "critical": 0.5
+        },
+        "rhythm": "平实流畅，带有自省节奏",
+        "tropes": [
+          "自嘲",
+          "对比",
+          "隐喻"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "考研",
+          "编程",
+          "读书",
+          "健身",
+          "投资",
+          "反思"
+        ],
+        "concepts": [
+          "个人成长",
+          "自我提升",
+          "生活平衡",
+          "目标追求"
+        ]
+      },
+      "sentiment": {
+        "label": "复杂反思",
+        "score": 0.6
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "犹豫是否总结，最终决定延续传统",
+        "closing": "引用格言表达进取决心"
+      },
+      "depth": "中等深度，包含具体经历和情感反思",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "考研回望",
+      "date": "",
+      "tags": [],
+      "slug": "kao-yan-hui-wang",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2019-04-03-考研回望/index.md",
+      "md5": "be20d87e093366b2b5ea3b153163f368",
+      "metrics": {
+        "sentenceAvgLen": 22.5,
+        "sentenceLenBuckets": {
+          "1-10": 3,
+          "11-20": 8,
+          "21-30": 12,
+          "30+": 7
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 650,
+          "paragraphs": 15
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.9,
+          "humor": 0.2,
+          "critical": 0.1
+        },
+        "rhythm": "平缓而富有哲思",
+        "tropes": [
+          "比喻",
+          "引用",
+          "反问"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "考研",
+          "北邮",
+          "计算机",
+          "努力",
+          "成功"
+        ],
+        "concepts": [
+          "SWOT分析",
+          "西西弗斯神话",
+          "修行"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "回忆-过程-感悟",
+        "opening": "对考研一年的简略回顾",
+        "closing": "人生的哲思，或许就在这个问题里吧"
+      },
+      "depth": "深刻",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2019-08-05-《终身成长》读书笔记",
+      "title": "《终身成长》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2019-08-05-《终身成长》读书笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2019-08-05-《终身成长》读书笔记.md",
+      "md5": "284f624c2893c4667c19025d4b761fb9",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 420,
+          "paragraphs": 35
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.9,
+          "humor": 0.1,
+          "critical": 0.3
+        },
+        "rhythm": "平实流畅，带有反思性节奏",
+        "tropes": [
+          "引用",
+          "对比",
+          "排比",
+          "反问"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "成长型思维",
+          "固定型思维",
+          "终身成长",
+          "努力",
+          "挫折",
+          "学习",
+          "自我提升"
+        ],
+        "concepts": [
+          "思维模式",
+          "自我发展",
+          "失败应对",
+          "能力培养",
+          "领导力",
+          "教育方法"
+        ]
+      },
+      "sentiment": {
+        "label": "积极向上",
+        "score": 0.85
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "总分总结构，先概述核心观点，再分章节解析，最后总结升华",
+        "opening": "整本书讲的都是两种思维和一个观点，固定型思维和成长型思维，终身成长",
+        "closing": "承认并接收不完美的自己，然后去提升改进自己，让自己不断变成一个更优秀的人"
+      },
+      "depth": "深入浅出，结合个人感悟与书中理论，具有实践指导意义",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2019年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2019-年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-01-05-2019-年总结/index.md",
+      "md5": "48e57b9f69068bc289c146f2c7ff2c84",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 1234,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.2,
+          "critical": 0.1
+        },
+        "rhythm": "平缓流畅，带有叙事性和哲理性",
+        "tropes": [
+          "比喻",
+          "引用",
+          "自省",
+          "人生感悟"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "考研",
+          "编程",
+          "读书",
+          "健身",
+          "生活",
+          "投资",
+          "感情",
+          "成长"
+        ],
+        "concepts": [
+          "终身成长",
+          "非暴力沟通",
+          "复利效应",
+          "成长型思维",
+          "人生哲学"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "以回忆和总结的意义开篇",
+        "closing": "以人生方向和自我掌控作结"
+      },
+      "depth": "中等深度，包含个人经历反思和哲理思考",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-01-31-deepin重装指北",
+      "title": "deepin重装指北",
+      "date": "",
+      "tags": [
+        "deepin",
+        "Linux",
+        "系统配置",
+        "开发环境"
+      ],
+      "slug": "deepin重装指北",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-01-31-deepin重装指北.md",
+      "md5": "7c016e755c4d845c55f59267e942cbf1",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 5
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 412,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.15,
+          "humor": 0.05,
+          "critical": 0.1
+        },
+        "rhythm": "技术说明型节奏，代码块与说明文字交替",
+        "tropes": [
+          "技术教程",
+          "命令行操作",
+          "配置指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "deepin",
+          "镜像源",
+          "zsh",
+          "git",
+          "vscode",
+          "Anaconda",
+          "hexo",
+          "SSH"
+        ],
+        "concepts": [
+          "Linux系统配置",
+          "开发环境搭建",
+          "软件安装",
+          "命令行操作"
+        ]
+      },
+      "sentiment": {
+        "label": "中性技术说明",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程指南型",
+        "opening": "修改镜像源",
+        "closing": "vscode配置"
+      },
+      "depth": "详细技术操作指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-04-09-怎样加“杠杆”",
+      "title": "怎样加杠杆",
+      "date": "2020-04-09",
+      "tags": [
+        "杠杆",
+        "投资",
+        "企业",
+        "人生",
+        "资源分配"
+      ],
+      "slug": "how-to-add-leverage",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-04-09-怎样加“杠杆”.md",
+      "md5": "69f00e2df262214e90cec5cedba29576",
+      "metrics": {
+        "sentenceAvgLen": 24.5,
+        "sentenceLenBuckets": {
+          "1-10": 3,
+          "11-20": 8,
+          "21-30": 12,
+          "30+": 7
+        },
+        "readability": {
+          "chars": 1850,
+          "words": 320,
+          "paragraphs": 18
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.7,
+          "humor": 0.1,
+          "critical": 0.3
+        },
+        "rhythm": "中等节奏，段落分明，使用列表和强调突出重点",
+        "tropes": [
+          "比喻",
+          "引用",
+          "举例",
+          "总结"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "杠杆",
+          "固定成本",
+          "资源使用权",
+          "投资",
+          "企业",
+          "人生",
+          "能力"
+        ],
+        "concepts": [
+          "杠杆三要素",
+          "经营杠杆",
+          "财务杠杆",
+          "个人品牌",
+          "人际关系网络"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题引入-概念解析-分领域应用-总结升华",
+        "opening": "通过提问方式引入主题，链接外部文章",
+        "closing": "回归核心要素，强调能力提升的重要性，以励志语句结束"
+      },
+      "depth": "中等深度，结合理论与实例，覆盖多个应用场景，提供实用建议",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-04-12-日程安排总结和思考",
+      "title": "日程安排总结和思考",
+      "date": "",
+      "tags": [],
+      "slug": "2020-04-12-日程安排总结和思考",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-04-12-日程安排总结和思考.md",
+      "md5": "fc1654bff1a4c282db3a3515d4b04f9c",
+      "metrics": {
+        "sentenceAvgLen": 25.4,
+        "sentenceLenBuckets": {
+          "1-10": 2,
+          "11-20": 3,
+          "21-30": 4,
+          "30+": 3
+        },
+        "readability": {
+          "chars": 1024,
+          "words": 512,
+          "paragraphs": 5
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.2,
+          "critical": 0.4
+        },
+        "rhythm": "平缓叙述与反思交替",
+        "tropes": [
+          "个人反思",
+          "生活感悟",
+          "效率方法"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "学习",
+          "放松",
+          "番茄工作法",
+          "效率",
+          "焦虑"
+        ],
+        "concepts": [
+          "工作与生活平衡",
+          "时间管理",
+          "自我提升"
+        ]
+      },
+      "sentiment": {
+        "label": "中性偏反思",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题描述-反思-解决方案",
+        "opening": "感觉自己好像一直没有摆脱一个怪圈",
+        "closing": "其他的还需要看看笔记，再重温一下要点和技巧，后面再复盘吧"
+      },
+      "depth": "中等",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "假如我财务自由了？",
+      "date": "",
+      "tags": [],
+      "slug": "假如我财务自由了？",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-14-假如我财务自由了？/index.md",
+      "md5": "fd246d29c4686340510c0a2a5a140f59",
+      "metrics": {
+        "sentenceAvgLen": 24.5,
+        "sentenceLenBuckets": {
+          "1-10": 3,
+          "11-20": 8,
+          "21-30": 12,
+          "30+": 7
+        },
+        "readability": {
+          "chars": 1850,
+          "words": 980,
+          "paragraphs": 15
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.6,
+          "reflective": 0.8,
+          "humor": 0.3,
+          "critical": 0.4
+        },
+        "rhythm": "平缓叙述与引用交替",
+        "tropes": [
+          "引用他人观点",
+          "个人反思",
+          "生活体验类比"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "财务自由",
+          "快乐",
+          "焦虑",
+          "退休",
+          "价值"
+        ],
+        "concepts": [
+          "习以为常",
+          "持久满足",
+          "逃避问题",
+          "自我设限"
+        ]
+      },
+      "sentiment": {
+        "label": "反思性中立",
+        "score": 0.2
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题引入-分点讨论-总结升华",
+        "opening": "引用他人文章引出财务自由主题",
+        "closing": "以幽默口吻表达对财务自由的向往"
+      },
+      "depth": "中等深度，结合心理学与个人体验探讨生活意义",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-05-18-王二的经济学故事读后感",
+      "title": "《王二的经济学故事》读后感",
+      "date": "",
+      "tags": [],
+      "slug": "王二的经济学故事读后感",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-18-王二的经济学故事读后感.md",
+      "md5": "5428d64b8344c562f8f8541e9f23ff8c",
+      "metrics": {
+        "sentenceAvgLen": 25.4,
+        "sentenceLenBuckets": {
+          "1-10": 2,
+          "11-20": 3,
+          "21-30": 4,
+          "30+": 2
+        },
+        "readability": {
+          "chars": 856,
+          "words": 428,
+          "paragraphs": 4
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.6,
+          "reflective": 0.8,
+          "humor": 0.2,
+          "critical": 0.4
+        },
+        "rhythm": "平缓叙述",
+        "tropes": [
+          "比喻",
+          "个人感悟",
+          "知识分享"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "经济学",
+          "火车票",
+          "公平",
+          "价格调控",
+          "读书乐趣"
+        ],
+        "concepts": [
+          "市场机制",
+          "供需矛盾",
+          "经济效率",
+          "思维拓展"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.85
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "总分总",
+        "opening": "总体收获",
+        "closing": "读书意义升华"
+      },
+      "depth": "中等",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则",
+      "title": "重新认识GTD|如何科学地认识和使用GTD时间管理法则",
+      "date": "",
+      "tags": [],
+      "slug": "2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则.md",
+      "md5": "f5edc0369d375eefe70c24d618711523",
+      "metrics": {
+        "sentenceAvgLen": 28.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 45,
+          "21-30": 38,
+          "30+": 25
+        },
+        "readability": {
+          "chars": 12560,
+          "words": 2150,
+          "paragraphs": 89
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.75,
+          "humor": 0.15,
+          "critical": 0.25
+        },
+        "rhythm": "说明性节奏，段落分明，逐步深入",
+        "tropes": [
+          "方法论解析",
+          "实践指导",
+          "对比分析",
+          "问题解决框架"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "GTD",
+          "时间管理",
+          "执行清单",
+          "收集箱",
+          "回顾",
+          "项目清单",
+          "等待清单",
+          "可能清单"
+        ],
+        "concepts": [
+          "捕获-明晰-组织-回顾-执行",
+          "清空大脑",
+          "下一步行动",
+          "目标导向排序",
+          "负罪感幻觉"
+        ]
+      },
+      "sentiment": {
+        "label": "积极指导",
+        "score": 0.78
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程式结构，分节递进",
+        "opening": "通过重新定义GTD核心理念引入主题",
+        "closing": "以工具选择建议和参考资料收尾"
+      },
+      "depth": "深入实践指导，包含具体操作步骤、常见问题解决方案和进阶技巧",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-05-29-《财务自由之路》读书笔记",
+      "title": "《财务自由之路》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2020-05-29-《财务自由之路》读书笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-29-《财务自由之路》读书笔记.md",
+      "md5": "593511495abeeebbaab05fe60c337a07",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 420,
+          "paragraphs": 35
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.7,
+          "humor": 0.1,
+          "critical": 0.4
+        },
+        "rhythm": "中等节奏，以短句和列表为主，强调重点",
+        "tropes": [
+          "比喻",
+          "引用",
+          "反问",
+          "排比"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "财务自由",
+          "成长",
+          "责任",
+          "目标",
+          "投资",
+          "导师"
+        ],
+        "concepts": [
+          "可控范围",
+          "命运主宰",
+          "创造奇迹",
+          "坚持目标",
+          "生活角度",
+          "投资策略",
+          "导师指导"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段，每段以标题引导，内容为列表和阐述",
+        "opening": "以扩大可控范围引入，强调成长和问题解决",
+        "closing": "以导师指导的总结和比喻结束，强调互助与成功"
+      },
+      "depth": "中等深度，结合个人发展理论与实用建议，覆盖心理、行为和策略层面",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-05-29-《高效学习之道》读书笔记",
+      "title": "《高效学习之道》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2020-05-29-《高效学习之道》读书笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-29-《高效学习之道》读书笔记.md",
+      "md5": "53af2123e16518ff38339564f3c9e3a9",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 420,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.7,
+          "humor": 0.1,
+          "critical": 0.4
+        },
+        "rhythm": "简洁有力，多用短句和列表",
+        "tropes": [
+          "比喻法",
+          "二八法则",
+          "费曼技巧"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "投入",
+          "学习",
+          "阅读",
+          "实践",
+          "记忆"
+        ],
+        "concepts": [
+          "整体性学习",
+          "碎片化阅读",
+          "自我教育",
+          "高效方法"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "分层列表式",
+        "opening": "如何让自己变得更强大",
+        "closing": "重新定义你的大脑"
+      },
+      "depth": "中等",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2020-10-11-hugo博客搭建",
+      "title": "hugo博客搭建",
+      "date": "",
+      "tags": [],
+      "slug": "hugo-blog-setup",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-10-11-hugo博客搭建.md",
+      "md5": "d66627ed2ef2d0cfecb2491042cab4f4",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4562,
+          "words": 758,
+          "paragraphs": 42
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.95,
+          "reflective": 0.05,
+          "humor": 0.0,
+          "critical": 0.0
+        },
+        "rhythm": "指令式节奏",
+        "tropes": [
+          "技术教程",
+          "命令行操作",
+          "配置指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "SSH",
+          "服务器",
+          "安全设置",
+          "ZSH",
+          "Docker",
+          "Git",
+          "防火墙"
+        ],
+        "concepts": [
+          "服务器配置",
+          "密钥认证",
+          "系统安全",
+          "开发环境搭建"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程手册",
+        "opening": "登录服务器",
+        "closing": "Git快捷键配置"
+      },
+      "depth": "实用操作指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2020年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2020-年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-01-04-2020-年总结/index.md",
+      "md5": "9a25b2b46601f78aa454a68d581da59b",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 1234,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.2,
+          "reflective": 0.8,
+          "humor": 0.3,
+          "critical": 0.4
+        },
+        "rhythm": "平实流畅，略带起伏",
+        "tropes": [
+          "个人成长",
+          "自我反思",
+          "生活感悟"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "疫情",
+          "面试",
+          "开发",
+          "读书",
+          "健身",
+          "投资"
+        ],
+        "concepts": [
+          "职业转型",
+          "自我提升",
+          "生活平衡",
+          "感恩心态"
+        ]
+      },
+      "sentiment": {
+        "label": "反思与期待",
+        "score": 0.6
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "又是一年总结时，却感觉只是徒增马齿",
+        "closing": "这个寒假要比高中还要努力！冲！"
+      },
+      "depth": "中等深度，包含具体经历和情感反思",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "《假性亲密关系》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2021-01-29-《假性亲密关系》读书笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-01-29-《假性亲密关系》读书笔记/index.md",
+      "md5": "c4cf7eaa448720ab4205cc316f5b3fb5",
+      "metrics": {
+        "sentenceAvgLen": 24.5,
+        "sentenceLenBuckets": {
+          "1-10": 45,
+          "11-20": 120,
+          "21-30": 85,
+          "30+": 60
+        },
+        "readability": {
+          "chars": 28500,
+          "words": 9500,
+          "paragraphs": 150
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.7,
+          "reflective": 0.8,
+          "humor": 0.1,
+          "critical": 0.4
+        },
+        "rhythm": "平缓而富有哲理性",
+        "tropes": [
+          "比喻",
+          "引用",
+          "设问",
+          "排比"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "假性亲密关系",
+          "沟通",
+          "情感模式",
+          "自我认知",
+          "共情",
+          "成长"
+        ],
+        "concepts": [
+          "情感账户",
+          "非暴力沟通",
+          "原生家庭创伤",
+          "自我探索",
+          "关系建设"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.65
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "分层论述",
+        "opening": "以认真生活的哲学理念引入",
+        "closing": "以自我认知和成长方法收尾"
+      },
+      "depth": "深入探讨亲密关系的心理机制和个人成长路径",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2021-02-06-《有梗》笔记",
+      "title": "《有梗》笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2021-02-06-《有梗》笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-02-06-《有梗》笔记.md",
+      "md5": "655329fb32ed8f90b9cd9baa4afce07f",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 45,
+          "11-20": 60,
+          "21-30": 35,
+          "30+": 20
+        },
+        "readability": {
+          "chars": 4850,
+          "words": 3200,
+          "paragraphs": 85
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.7,
+          "reflective": 0.6,
+          "humor": 0.9,
+          "critical": 0.3
+        },
+        "rhythm": "轻松活泼，节奏明快",
+        "tropes": [
+          "反转",
+          "比喻",
+          "夸张",
+          "谐音",
+          "自嘲"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "幽默",
+          "段子",
+          "脱口秀",
+          "练习",
+          "技巧"
+        ],
+        "concepts": [
+          "后天习得幽默",
+          "幽默结构",
+          "人际沟通",
+          "表演元素"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.8
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "章节式教学",
+        "opening": "以人生不完美引出幽默价值",
+        "closing": "以个人经历强调对事业的坚持"
+      },
+      "depth": "实用指导型",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2021-04-04-gitee部署和配置hexo",
+      "title": "gitee部署和配置hexo",
+      "date": "",
+      "tags": [],
+      "slug": "gitee部署和配置hexo",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-04-gitee部署和配置hexo.md",
+      "md5": "a3af3a43d6024ae3a6706046dc5fb3af",
+      "metrics": {
+        "sentenceAvgLen": 18.6,
+        "sentenceLenBuckets": {
+          "1-10": 3,
+          "11-20": 5,
+          "21-30": 2,
+          "30+": 1
+        },
+        "readability": {
+          "chars": 856,
+          "words": 142,
+          "paragraphs": 12
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.9,
+          "reflective": 0.2,
+          "humor": 0.0,
+          "critical": 0.1
+        },
+        "rhythm": "技术说明型",
+        "tropes": [
+          "技术教程",
+          "问题解决",
+          "代码示例"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "Hexo",
+          "Gitee",
+          "部署",
+          "gitignore",
+          "分支"
+        ],
+        "concepts": [
+          "博客部署",
+          "版本控制",
+          "文件管理"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题-解决方案",
+        "opening": "介绍Gitee部署Hexo博客",
+        "closing": "提供网络图片显示问题的解决方案"
+      },
+      "depth": "中等",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2021-04-08-一加8刷入氧OS",
+      "title": "一加8刷入氧OS",
+      "date": "",
+      "tags": [],
+      "slug": "2021-04-08-一加8刷入氧OS",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-08-一加8刷入氧OS.md",
+      "md5": "5b3c1d7659c182637ec9681944b387cc",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 4,
+          "11-20": 6,
+          "21-30": 3,
+          "30+": 2
+        },
+        "readability": {
+          "chars": 1250,
+          "words": 210,
+          "paragraphs": 15
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.9,
+          "reflective": 0.1,
+          "humor": 0.0,
+          "critical": 0.0
+        },
+        "rhythm": "指令性节奏，步骤分明",
+        "tropes": [
+          "技术教程",
+          "操作指南",
+          "资源链接"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "氧OS",
+          "刷机",
+          "一加8",
+          "驱动",
+          "Recovery"
+        ],
+        "concepts": [
+          "系统刷写",
+          "Android定制",
+          "数据备份"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程式",
+        "opening": "图片展示成果",
+        "closing": "参考链接"
+      },
+      "depth": "实用操作指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "《洞见》读书笔记",
+      "date": "",
+      "tags": [],
+      "slug": "2021-04-11-《洞见》读书笔记",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-11-《洞见》读书笔记/index.md",
+      "md5": "a10e8d7de7a568f665f5d39c166d29e1",
+      "metrics": {
+        "sentenceAvgLen": 24.5,
+        "sentenceLenBuckets": {
+          "1-10": 3,
+          "11-20": 8,
+          "21-30": 12,
+          "30+": 7
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 1234,
+          "paragraphs": 15
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.6,
+          "reflective": 0.9,
+          "humor": 0.2,
+          "critical": 0.4
+        },
+        "rhythm": "平缓而富有哲思",
+        "tropes": [
+          "比喻",
+          "引用",
+          "反问",
+          "自我剖析"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "佛学",
+          "自然选择",
+          "快感机制",
+          "冥想",
+          "幸福"
+        ],
+        "concepts": [
+          "进化心理学",
+          "享乐跑步机",
+          "自我意识",
+          "感觉间离"
+        ]
+      },
+      "sentiment": {
+        "label": "反思与矛盾",
+        "score": 0.3
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "个人感悟与理论探讨交织",
+        "opening": "以书籍封面和阅读缘起引入",
+        "closing": "以渐进式进步和日常幸福收尾"
+      },
+      "depth": "深入探讨人性与存在，结合个人体验与科学理论",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2021年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2021年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2022-01-09-2021年总结/index.md",
+      "md5": "",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4567,
+          "words": 2345,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.4,
+          "critical": 0.2
+        },
+        "rhythm": "平实流畅，略带口语化",
+        "tropes": [
+          "反思",
+          "成长",
+          "感恩",
+          "自省"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "实习",
+          "游泳",
+          "自驾游",
+          "读书",
+          "健身",
+          "投资",
+          "社交"
+        ],
+        "concepts": [
+          "个人成长",
+          "职业发展",
+          "生活体验",
+          "自我反思"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "以生活基调满意开篇",
+        "closing": "以年度总结和未来展望结束"
+      },
+      "depth": "中等深度，包含具体经历和感悟",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2022年总结",
+      "date": "2022-12-31",
+      "tags": [
+        "总结",
+        "回顾",
+        "个人成长"
+      ],
+      "slug": "2022-年回顾",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2022-12-31-2022-年回顾/index.md",
+      "md5": "fcfd0c09c0cf3e98e3bf64e9b1088b6e",
+      "metrics": {
+        "sentenceAvgLen": 24.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 28,
+          "21-30": 35,
+          "30+": 25
+        },
+        "readability": {
+          "chars": 2450,
+          "words": 1560,
+          "paragraphs": 10
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.8,
+          "humor": 0.4,
+          "critical": 0.2
+        },
+        "rhythm": "叙述性节奏，以时间顺序展开，夹杂个人感悟",
+        "tropes": [
+          "个人成长叙事",
+          "生活记录",
+          "年度回顾"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "跨年",
+          "实习",
+          "毕业",
+          "工作",
+          "旅行",
+          "疫情",
+          "播客",
+          "摄影"
+        ],
+        "concepts": [
+          "职场转变",
+          "生活体验",
+          "个人目标",
+          "情感变化"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.7
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "时间线性叙事",
+        "opening": "以跨年活动开篇，引出年度回顾",
+        "closing": "以目标完成清单收尾，展望未来"
+      },
+      "depth": "中等深度，包含个人情感变化和成长反思",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2023-01-25-权限设计",
+      "title": "权限设计",
+      "date": "",
+      "tags": [],
+      "slug": "权限设计",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2023-01-25-权限设计.md",
+      "md5": "cc472f42af258262d6276eda118d9386",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4560,
+          "words": 760,
+          "paragraphs": 42
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.15,
+          "humor": 0.0,
+          "critical": 0.0
+        },
+        "rhythm": "技术说明型",
+        "tropes": [
+          "RBAC模型",
+          "功能权限",
+          "数据权限",
+          "角色设计"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "权限设计",
+          "RBAC",
+          "功能权限",
+          "数据权限",
+          "角色",
+          "用户管理",
+          "系统架构"
+        ],
+        "concepts": [
+          "权限分离",
+          "模块化设计",
+          "用户角色关联",
+          "系统部署模式"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题-解决方案-案例实施",
+        "opening": "权限设计的必要性和基本概念",
+        "closing": "参考链接和延伸阅读"
+      },
+      "depth": "技术实现级",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2023-02-14-hugo使用指北",
+      "title": "Hugo使用指北",
+      "date": "",
+      "tags": [],
+      "slug": "hugo使用指北",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2023-02-14-hugo使用指北.md",
+      "md5": "4dd915a4105f28ca77eefb2df9e7319f",
+      "metrics": {
+        "sentenceAvgLen": 12.4,
+        "sentenceLenBuckets": {
+          "1-10": 8,
+          "11-20": 5,
+          "21-30": 2,
+          "30+": 1
+        },
+        "readability": {
+          "chars": 420,
+          "words": 85,
+          "paragraphs": 8
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.9,
+          "reflective": 0.1,
+          "humor": 0.0,
+          "critical": 0.0
+        },
+        "rhythm": "指令式",
+        "tropes": [
+          "技术指南",
+          "命令行操作",
+          "代码示例"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "Hugo",
+          "新建文章",
+          "草稿",
+          "发布",
+          "本地视图"
+        ],
+        "concepts": [
+          "静态网站生成",
+          "内容管理",
+          "命令行工具"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "步骤指南",
+        "opening": "新建文章",
+        "closing": "参考链接"
+      },
+      "depth": "入门级",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2024-08-19-博客图床搭建",
+      "title": "博客图床搭建",
+      "date": "",
+      "tags": [],
+      "slug": "2024-08-19-博客图床搭建",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2024-08-19-博客图床搭建.md",
+      "md5": "01ae6a97d3fa490f8a92df662e298cf5",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 3
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 412,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.0
+        },
+        "rhythm": "步骤化说明",
+        "tropes": [
+          "技术教程",
+          "操作指南",
+          "工具推荐"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "Cloudflare",
+          "R2",
+          "图床",
+          "PicGo",
+          "API令牌",
+          "存储桶"
+        ],
+        "concepts": [
+          "对象存储",
+          "图片上传",
+          "API配置",
+          "插件安装"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程步骤",
+        "opening": "注册cloudflare账号",
+        "closing": "图片压缩方案比较"
+      },
+      "depth": "实用操作指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2024-08-23-postman使用指北",
+      "title": "Postman使用指北",
+      "date": "",
+      "tags": [],
+      "slug": "2024-08-23-postman使用指北",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2024-08-23-postman使用指北.md",
+      "md5": "f35593479fe257c02e6fe4a46490afe2",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 5
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 412,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.0
+        },
+        "rhythm": "技术说明型节奏，步骤清晰，代码示例与文字说明交替",
+        "tropes": [
+          "技术教程",
+          "代码示例",
+          "工具使用指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "Postman",
+          "cURL",
+          "环境设置",
+          "Pre-request Script",
+          "鉴权",
+          "JSON注释",
+          "Get请求"
+        ],
+        "concepts": [
+          "API测试工具",
+          "请求预处理",
+          "接口鉴权机制",
+          "环境变量管理"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程式结构，分章节讲解功能",
+        "opening": "以粘贴cURL请求功能开篇",
+        "closing": "以参考链接结束"
+      },
+      "depth": "中等深度，涵盖基础功能与高级用法",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2024-12-06-VPS初始化配置",
+      "title": "VPS初始化配置",
+      "date": "",
+      "tags": [
+        "VPS",
+        "服务器配置",
+        "SSH",
+        "安全设置",
+        "软件安装"
+      ],
+      "slug": "vps-initial-configuration",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2024-12-06-VPS初始化配置.md",
+      "md5": "f3585de386d9ba4e2e788d54b59d81c3",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 8560,
+          "words": 1420,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.95,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.0
+        },
+        "rhythm": "指令式节奏，以步骤编号和代码块为主",
+        "tropes": [
+          "技术教程",
+          "命令行操作",
+          "配置指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "SSH",
+          "密钥",
+          "防火墙",
+          "ZSH",
+          "Docker",
+          "Nginx",
+          "Git"
+        ],
+        "concepts": [
+          "服务器安全",
+          "用户管理",
+          "开发环境配置",
+          "服务部署"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程手册式结构",
+        "opening": "直接以登录服务器步骤开始",
+        "closing": "以Git快捷键配置结束"
+      },
+      "depth": "详细操作指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2024-12-10-域名访问博客流程",
+      "title": "域名访问博客流程",
+      "date": "",
+      "tags": [],
+      "slug": "域名访问博客流程",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2024-12-10-域名访问博客流程.md",
+      "md5": "c2020b3a444a8a358dadf080440abf59",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4850,
+          "words": 850,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.1
+        },
+        "rhythm": "技术说明型节奏，步骤清晰，代码块与文字说明交替",
+        "tropes": [
+          "技术教程",
+          "命令行操作",
+          "配置示例",
+          "问题解决"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "域名解析",
+          "Nginx配置",
+          "HTTPS",
+          "SSL证书",
+          "反向代理",
+          "静态文件",
+          "服务器部署"
+        ],
+        "concepts": [
+          "DNS解析",
+          "Web服务器配置",
+          "SSL证书申请",
+          "搜索引擎收录",
+          "文件同步"
+        ]
+      },
+      "sentiment": {
+        "label": "中性偏技术",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程式结构，分步骤说明",
+        "opening": "以博客静态文件传输到服务器开始",
+        "closing": "以搜索引擎收录配置结束，包含对百度的负面评价"
+      },
+      "depth": "中等深度，包含具体技术实现细节但未深入底层原理",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "2024年总结",
+      "date": "",
+      "tags": [],
+      "slug": "2024年总结",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-01-12-2024年总结/index.md",
+      "md5": "d0095c91d87f1162f69211ec600af5a7",
+      "metrics": {
+        "sentenceAvgLen": 18.5,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 18,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4850,
+          "words": 810,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.2,
+          "reflective": 0.8,
+          "humor": 0.3,
+          "critical": 0.4
+        },
+        "rhythm": "平实流畅，带有个人叙事节奏",
+        "tropes": [
+          "年度总结",
+          "自我反思",
+          "成长记录",
+          "生活感悟"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "读书",
+          "工作",
+          "副业",
+          "恋爱",
+          "健康",
+          "投资",
+          "生活"
+        ],
+        "concepts": [
+          "自我成长",
+          "职业发展",
+          "亲密关系",
+          "家庭责任",
+          "健康管理"
+        ]
+      },
+      "sentiment": {
+        "label": "积极反思",
+        "score": 0.7
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "主题分段式",
+        "opening": "以年度总结的难产感引入，引发对自我成长的思考",
+        "closing": "以对未来的希望和积极态度结束"
+      },
+      "depth": "中等深度，包含具体生活细节和情感体验",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2025-02-23-也许你该买份保险",
+      "title": "也许你该买份保险?",
+      "date": "",
+      "tags": [],
+      "slug": "2025-02-23-也许你该买份保险",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-02-23-也许你该买份保险.md",
+      "md5": "f3645c1f373593e5cc9903bffad854af",
+      "metrics": {
+        "sentenceAvgLen": 24.7,
+        "sentenceLenBuckets": {
+          "1-10": 8,
+          "11-20": 12,
+          "21-30": 15,
+          "30+": 10
+        },
+        "readability": {
+          "chars": 3421,
+          "words": 856,
+          "paragraphs": 45
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.7,
+          "humor": 0.1,
+          "critical": 0.3
+        },
+        "rhythm": "平实流畅，段落分明",
+        "tropes": [
+          "反问句",
+          "排比",
+          "引用",
+          "比喻"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "保险",
+          "风险",
+          "医疗险",
+          "意外险",
+          "重疾险",
+          "寿险",
+          "配置"
+        ],
+        "concepts": [
+          "风险兜底",
+          "反人性",
+          "情绪价值",
+          "杠杆率",
+          "个性化配置"
+        ]
+      },
+      "sentiment": {
+        "label": "理性积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题引入-理论阐述-分类说明-建议总结",
+        "opening": "以常见保险负面评价引入个人经历",
+        "closing": "强调保险必要性并附参考资料"
+      },
+      "depth": "中等深度，结合个人体验与专业知识",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2025-04-02-初识MCP",
+      "title": "MCP简介及应用",
+      "date": "",
+      "tags": [],
+      "slug": "初识MCP",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-02-初识MCP.md",
+      "md5": "348674402ccdefc4c2e00e9a37702344",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 25,
+          "21-30": 15,
+          "30+": 8
+        },
+        "readability": {
+          "chars": 4560,
+          "words": 780,
+          "paragraphs": 42
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.15,
+          "humor": 0.05,
+          "critical": 0.1
+        },
+        "rhythm": "技术说明与实例交替",
+        "tropes": [
+          "比喻",
+          "对比",
+          "示例驱动"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "MCP",
+          "API",
+          "协议",
+          "集成",
+          "双向通信"
+        ],
+        "concepts": [
+          "Model Context Protocol",
+          "标准化协议",
+          "动态发现",
+          "SSE",
+          "STDIO"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.75
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "概念-应用-对比-架构-使用",
+        "opening": "概念定义与比喻引入",
+        "closing": "参考资料列表"
+      },
+      "depth": "中等",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2025-04-23-MCP开发指北",
+      "title": "MCP开发指北",
+      "date": "",
+      "tags": [],
+      "slug": "MCP开发指北",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-23-MCP开发指北.md",
+      "md5": "a10c40250b3f4bf5c9c88fee187923a8",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 5
+        },
+        "readability": {
+          "chars": 2856,
+          "words": 487,
+          "paragraphs": 42
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.0
+        },
+        "rhythm": "技术说明型节奏，步骤清晰，代码与说明交替",
+        "tropes": [
+          "技术教程",
+          "代码示例",
+          "调试指南",
+          "多语言对比"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "MCP",
+          "Python",
+          "Golang",
+          "STDIO",
+          "SSE",
+          "调试",
+          "uv",
+          "mcp-go"
+        ],
+        "concepts": [
+          "MCP服务器开发",
+          "跨语言开发",
+          "工具函数实现",
+          "传输协议配置"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程手册型",
+        "opening": "直接切入技术主题，分语言介绍",
+        "closing": "提供参考链接，扩展学习资源"
+      },
+      "depth": "中等深度技术教程",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2025-04-23-开发环境管理",
+      "title": "开发环境管理",
+      "date": "",
+      "tags": [],
+      "slug": "开发环境管理",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-23-开发环境管理.md",
+      "md5": "c7c40ffde90be7e87a5b7e0573f6e94f",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 5
+        },
+        "readability": {
+          "chars": 1456,
+          "words": 243,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.0,
+          "critical": 0.05
+        },
+        "rhythm": "技术说明型",
+        "tropes": [
+          "命令行示例",
+          "工具推荐",
+          "安装指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "nvm",
+          "gvm",
+          "miniconda",
+          "版本管理",
+          "环境切换"
+        ],
+        "concepts": [
+          "开发环境管理",
+          "多语言版本控制",
+          "虚拟环境"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程式",
+        "opening": "问题引入",
+        "closing": "参考链接"
+      },
+      "depth": "实用指南",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "Astro博客使用",
+      "date": "",
+      "tags": [],
+      "slug": "astro博客迁移",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-08-15-astro博客迁移/index.md",
+      "md5": "a3aca7da9274cff443751d8197f52155",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 12,
+          "11-20": 15,
+          "21-30": 8,
+          "30+": 5
+        },
+        "readability": {
+          "chars": 2456,
+          "words": 412,
+          "paragraphs": 28
+        }
+      },
+      "style": {
+        "tone": {
+          "teaching": 0.85,
+          "reflective": 0.1,
+          "humor": 0.05,
+          "critical": 0.0
+        },
+        "rhythm": "技术说明型",
+        "tropes": [
+          "代码示例",
+          "配置说明",
+          "操作指南"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "Astro",
+          "博客",
+          "安装",
+          "目录结构",
+          "文章",
+          "配置"
+        ],
+        "concepts": [
+          "静态站点生成",
+          "Markdown写作",
+          "主题定制",
+          "评论系统"
+        ]
+      },
+      "sentiment": {
+        "label": "中性",
+        "score": 0.1
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "教程手册",
+        "opening": "安装说明",
+        "closing": "定制主题"
+      },
+      "depth": "中级",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    }
+  ]
+}

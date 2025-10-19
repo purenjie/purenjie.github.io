@@ -1,0 +1,68 @@
+{
+  "id": "2024-08-19-博客图床搭建",
+  "title": "博客图床搭建",
+  "date": "",
+  "tags": [],
+  "slug": "2024-08-19-博客图床搭建",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2024-08-19-博客图床搭建.md",
+  "md5": "01ae6a97d3fa490f8a92df662e298cf5",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 3
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 412,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.0
+    },
+    "rhythm": "步骤化说明",
+    "tropes": [
+      "技术教程",
+      "操作指南",
+      "工具推荐"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "Cloudflare",
+      "R2",
+      "图床",
+      "PicGo",
+      "API令牌",
+      "存储桶"
+    ],
+    "concepts": [
+      "对象存储",
+      "图片上传",
+      "API配置",
+      "插件安装"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程步骤",
+    "opening": "注册cloudflare账号",
+    "closing": "图片压缩方案比较"
+  },
+  "depth": "实用操作指南",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

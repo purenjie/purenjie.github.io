@@ -1,0 +1,72 @@
+{
+  "id": "2020-05-29-《财务自由之路》读书笔记",
+  "title": "《财务自由之路》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2020-05-29-《财务自由之路》读书笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-29-《财务自由之路》读书笔记.md",
+  "md5": "593511495abeeebbaab05fe60c337a07",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 420,
+      "paragraphs": 35
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.7,
+      "humor": 0.1,
+      "critical": 0.4
+    },
+    "rhythm": "中等节奏，以短句和列表为主，强调重点",
+    "tropes": [
+      "比喻",
+      "引用",
+      "反问",
+      "排比"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "财务自由",
+      "成长",
+      "责任",
+      "目标",
+      "投资",
+      "导师"
+    ],
+    "concepts": [
+      "可控范围",
+      "命运主宰",
+      "创造奇迹",
+      "坚持目标",
+      "生活角度",
+      "投资策略",
+      "导师指导"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "主题分段，每段以标题引导，内容为列表和阐述",
+    "opening": "以扩大可控范围引入，强调成长和问题解决",
+    "closing": "以导师指导的总结和比喻结束，强调互助与成功"
+  },
+  "depth": "中等深度，结合个人发展理论与实用建议，覆盖心理、行为和策略层面",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

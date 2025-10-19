@@ -194,60 +194,8 @@ const headings = [
     ]}
   />
 
-  <!-- AI博客分析 -->
+  {/* ai-blog-analysis */}
   <h2 id='ai-blog-analysis'>AI博客分析</h2>
-  <p>基于AI对博客文章的深度分析，为您展示我的写作风格、性格特征和内容偏好。</p>
+  <BlogAnalysis />
 
-  <BlogAnalysis
-    analysisData={{
-      summary: {
-        total_articles: 36,
-        total_words: 1546,
-        time_span: '2017-12-31 - 2025-08-15',
-        main_topics: { other: 36 }
-      },
-      writing_style: {
-        vocabulary_richness: 5.4,
-        sentence_complexity: 6.7,
-        emotional_expression: 5.6,
-        structure_organization: 4,
-        overall_style_score: 5.4,
-      },
-      content_analysis: {
-        topic_distribution: {
-          technology: 0.0,
-          life: 0.1,
-          reading: 0.0,
-          summary: 0.0,
-          other: 0.9
-        },
-        keywords: [
-          ['自己', 0.05969228792849881],
-          ['事情', 0.031106812829657743],
-          ['清单', 0.02960725315484533],
-          ['我们', 0.025775132924307984],
-          ['MCP', 0.025463996230217358],
-          ['可以', 0.02460387721175389],
-          ['努力', 0.022450665708471703],
-          ['情绪', 0.022283923369817493],
-          ['一个', 0.021005124156848524],
-          ['需要', 0.020821202677373286]
-        ],
-        emotional_tone: {
-          overall_sentiment: 'positive',
-          emotion_ratios: { positive: 0.295, negative: 0.227, neutral: 0.478 }
-        }
-      },
-      comprehensive_scores: {
-        writing_ability: 5.4,
-        content_quality: 10,
-        personality_balance: 10,
-        overall_score: 8.2,
-        score_interpretation: '良好 - 您的博客写作水平良好，内容质量较高，个性特征明显'
-      },
-      metadata: {
-        generated_at: '2025-08-18T11:09:06.919087'
-      }
-    }}
-  />
 </PageLayout>

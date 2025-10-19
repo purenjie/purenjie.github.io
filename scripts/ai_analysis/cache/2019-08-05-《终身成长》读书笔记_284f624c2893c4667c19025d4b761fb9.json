@@ -1,0 +1,72 @@
+{
+  "id": "2019-08-05-《终身成长》读书笔记",
+  "title": "《终身成长》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2019-08-05-《终身成长》读书笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2019-08-05-《终身成长》读书笔记.md",
+  "md5": "284f624c2893c4667c19025d4b761fb9",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 420,
+      "paragraphs": 35
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.9,
+      "humor": 0.1,
+      "critical": 0.3
+    },
+    "rhythm": "平实流畅，带有反思性节奏",
+    "tropes": [
+      "引用",
+      "对比",
+      "排比",
+      "反问"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "成长型思维",
+      "固定型思维",
+      "终身成长",
+      "努力",
+      "挫折",
+      "学习",
+      "自我提升"
+    ],
+    "concepts": [
+      "思维模式",
+      "自我发展",
+      "失败应对",
+      "能力培养",
+      "领导力",
+      "教育方法"
+    ]
+  },
+  "sentiment": {
+    "label": "积极向上",
+    "score": 0.85
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "总分总结构，先概述核心观点，再分章节解析，最后总结升华",
+    "opening": "整本书讲的都是两种思维和一个观点，固定型思维和成长型思维，终身成长",
+    "closing": "承认并接收不完美的自己，然后去提升改进自己，让自己不断变成一个更优秀的人"
+  },
+  "depth": "深入浅出，结合个人感悟与书中理论，具有实践指导意义",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

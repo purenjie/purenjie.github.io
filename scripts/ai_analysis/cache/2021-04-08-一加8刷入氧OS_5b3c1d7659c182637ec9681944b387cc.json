@@ -1,0 +1,66 @@
+{
+  "id": "2021-04-08-一加8刷入氧OS",
+  "title": "一加8刷入氧OS",
+  "date": "",
+  "tags": [],
+  "slug": "2021-04-08-一加8刷入氧OS",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-08-一加8刷入氧OS.md",
+  "md5": "5b3c1d7659c182637ec9681944b387cc",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 4,
+      "11-20": 6,
+      "21-30": 3,
+      "30+": 2
+    },
+    "readability": {
+      "chars": 1250,
+      "words": 210,
+      "paragraphs": 15
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.9,
+      "reflective": 0.1,
+      "humor": 0.0,
+      "critical": 0.0
+    },
+    "rhythm": "指令性节奏，步骤分明",
+    "tropes": [
+      "技术教程",
+      "操作指南",
+      "资源链接"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "氧OS",
+      "刷机",
+      "一加8",
+      "驱动",
+      "Recovery"
+    ],
+    "concepts": [
+      "系统刷写",
+      "Android定制",
+      "数据备份"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程式",
+    "opening": "图片展示成果",
+    "closing": "参考链接"
+  },
+  "depth": "实用操作指南",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

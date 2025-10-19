@@ -1,0 +1,74 @@
+{
+  "id": "index",
+  "title": "2022年总结",
+  "date": "2022-12-31",
+  "tags": [
+    "总结",
+    "回顾",
+    "个人成长"
+  ],
+  "slug": "2022-年回顾",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2022-12-31-2022-年回顾/index.md",
+  "md5": "fcfd0c09c0cf3e98e3bf64e9b1088b6e",
+  "metrics": {
+    "sentenceAvgLen": 24.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 28,
+      "21-30": 35,
+      "30+": 25
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 1560,
+      "paragraphs": 10
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.8,
+      "humor": 0.4,
+      "critical": 0.2
+    },
+    "rhythm": "叙述性节奏，以时间顺序展开，夹杂个人感悟",
+    "tropes": [
+      "个人成长叙事",
+      "生活记录",
+      "年度回顾"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "跨年",
+      "实习",
+      "毕业",
+      "工作",
+      "旅行",
+      "疫情",
+      "播客",
+      "摄影"
+    ],
+    "concepts": [
+      "职场转变",
+      "生活体验",
+      "个人目标",
+      "情感变化"
+    ]
+  },
+  "sentiment": {
+    "label": "积极反思",
+    "score": 0.7
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "时间线性叙事",
+    "opening": "以跨年活动开篇，引出年度回顾",
+    "closing": "以目标完成清单收尾，展望未来"
+  },
+  "depth": "中等深度，包含个人情感变化和成长反思",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "index",
+  "title": "2019年总结",
+  "date": "",
+  "tags": [],
+  "slug": "2019-年总结",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-01-05-2019-年总结/index.md",
+  "md5": "48e57b9f69068bc289c146f2c7ff2c84",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 18,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 1234,
+      "paragraphs": 28
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.8,
+      "humor": 0.2,
+      "critical": 0.1
+    },
+    "rhythm": "平缓流畅，带有叙事性和哲理性",
+    "tropes": [
+      "比喻",
+      "引用",
+      "自省",
+      "人生感悟"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "考研",
+      "编程",
+      "读书",
+      "健身",
+      "生活",
+      "投资",
+      "感情",
+      "成长"
+    ],
+    "concepts": [
+      "终身成长",
+      "非暴力沟通",
+      "复利效应",
+      "成长型思维",
+      "人生哲学"
+    ]
+  },
+  "sentiment": {
+    "label": "积极反思",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "主题分段式",
+    "opening": "以回忆和总结的意义开篇",
+    "closing": "以人生方向和自我掌控作结"
+  },
+  "depth": "中等深度，包含个人经历反思和哲理思考",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

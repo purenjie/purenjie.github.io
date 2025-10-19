@@ -1,0 +1,68 @@
+{
+  "id": "index",
+  "title": "《洞见》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2021-04-11-《洞见》读书笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-11-《洞见》读书笔记/index.md",
+  "md5": "a10e8d7de7a568f665f5d39c166d29e1",
+  "metrics": {
+    "sentenceAvgLen": 24.5,
+    "sentenceLenBuckets": {
+      "1-10": 3,
+      "11-20": 8,
+      "21-30": 12,
+      "30+": 7
+    },
+    "readability": {
+      "chars": 2456,
+      "words": 1234,
+      "paragraphs": 15
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.6,
+      "reflective": 0.9,
+      "humor": 0.2,
+      "critical": 0.4
+    },
+    "rhythm": "平缓而富有哲思",
+    "tropes": [
+      "比喻",
+      "引用",
+      "反问",
+      "自我剖析"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "佛学",
+      "自然选择",
+      "快感机制",
+      "冥想",
+      "幸福"
+    ],
+    "concepts": [
+      "进化心理学",
+      "享乐跑步机",
+      "自我意识",
+      "感觉间离"
+    ]
+  },
+  "sentiment": {
+    "label": "反思与矛盾",
+    "score": 0.3
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "个人感悟与理论探讨交织",
+    "opening": "以书籍封面和阅读缘起引入",
+    "closing": "以渐进式进步和日常幸福收尾"
+  },
+  "depth": "深入探讨人性与存在，结合个人体验与科学理论",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

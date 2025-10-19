@@ -1,0 +1,67 @@
+{
+  "id": "2020-05-18-王二的经济学故事读后感",
+  "title": "《王二的经济学故事》读后感",
+  "date": "",
+  "tags": [],
+  "slug": "王二的经济学故事读后感",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-18-王二的经济学故事读后感.md",
+  "md5": "5428d64b8344c562f8f8541e9f23ff8c",
+  "metrics": {
+    "sentenceAvgLen": 25.4,
+    "sentenceLenBuckets": {
+      "1-10": 2,
+      "11-20": 3,
+      "21-30": 4,
+      "30+": 2
+    },
+    "readability": {
+      "chars": 856,
+      "words": 428,
+      "paragraphs": 4
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.6,
+      "reflective": 0.8,
+      "humor": 0.2,
+      "critical": 0.4
+    },
+    "rhythm": "平缓叙述",
+    "tropes": [
+      "比喻",
+      "个人感悟",
+      "知识分享"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "经济学",
+      "火车票",
+      "公平",
+      "价格调控",
+      "读书乐趣"
+    ],
+    "concepts": [
+      "市场机制",
+      "供需矛盾",
+      "经济效率",
+      "思维拓展"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.85
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "总分总",
+    "opening": "总体收获",
+    "closing": "读书意义升华"
+  },
+  "depth": "中等",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

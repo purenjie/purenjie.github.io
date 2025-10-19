@@ -1,0 +1,71 @@
+{
+  "id": "2025-04-23-MCP开发指北",
+  "title": "MCP开发指北",
+  "date": "",
+  "tags": [],
+  "slug": "MCP开发指北",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-04-23-MCP开发指北.md",
+  "md5": "a10c40250b3f4bf5c9c88fee187923a8",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 15,
+      "21-30": 8,
+      "30+": 5
+    },
+    "readability": {
+      "chars": 2856,
+      "words": 487,
+      "paragraphs": 42
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.1,
+      "humor": 0.05,
+      "critical": 0.0
+    },
+    "rhythm": "技术说明型节奏，步骤清晰，代码与说明交替",
+    "tropes": [
+      "技术教程",
+      "代码示例",
+      "调试指南",
+      "多语言对比"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "MCP",
+      "Python",
+      "Golang",
+      "STDIO",
+      "SSE",
+      "调试",
+      "uv",
+      "mcp-go"
+    ],
+    "concepts": [
+      "MCP服务器开发",
+      "跨语言开发",
+      "工具函数实现",
+      "传输协议配置"
+    ]
+  },
+  "sentiment": {
+    "label": "中性",
+    "score": 0.1
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程手册型",
+    "opening": "直接切入技术主题，分语言介绍",
+    "closing": "提供参考链接，扩展学习资源"
+  },
+  "depth": "中等深度技术教程",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

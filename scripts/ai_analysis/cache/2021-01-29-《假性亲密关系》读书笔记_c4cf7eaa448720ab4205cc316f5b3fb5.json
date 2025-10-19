@@ -1,0 +1,70 @@
+{
+  "id": "index",
+  "title": "《假性亲密关系》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2021-01-29-《假性亲密关系》读书笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2021-01-29-《假性亲密关系》读书笔记/index.md",
+  "md5": "c4cf7eaa448720ab4205cc316f5b3fb5",
+  "metrics": {
+    "sentenceAvgLen": 24.5,
+    "sentenceLenBuckets": {
+      "1-10": 45,
+      "11-20": 120,
+      "21-30": 85,
+      "30+": 60
+    },
+    "readability": {
+      "chars": 28500,
+      "words": 9500,
+      "paragraphs": 150
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.7,
+      "reflective": 0.8,
+      "humor": 0.1,
+      "critical": 0.4
+    },
+    "rhythm": "平缓而富有哲理性",
+    "tropes": [
+      "比喻",
+      "引用",
+      "设问",
+      "排比"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "假性亲密关系",
+      "沟通",
+      "情感模式",
+      "自我认知",
+      "共情",
+      "成长"
+    ],
+    "concepts": [
+      "情感账户",
+      "非暴力沟通",
+      "原生家庭创伤",
+      "自我探索",
+      "关系建设"
+    ]
+  },
+  "sentiment": {
+    "label": "积极反思",
+    "score": 0.65
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "分层论述",
+    "opening": "以认真生活的哲学理念引入",
+    "closing": "以自我认知和成长方法收尾"
+  },
+  "depth": "深入探讨亲密关系的心理机制和个人成长路径",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

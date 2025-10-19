@@ -1,0 +1,67 @@
+{
+  "id": "index",
+  "title": "假如我财务自由了？",
+  "date": "",
+  "tags": [],
+  "slug": "假如我财务自由了？",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-14-假如我财务自由了？/index.md",
+  "md5": "fd246d29c4686340510c0a2a5a140f59",
+  "metrics": {
+    "sentenceAvgLen": 24.5,
+    "sentenceLenBuckets": {
+      "1-10": 3,
+      "11-20": 8,
+      "21-30": 12,
+      "30+": 7
+    },
+    "readability": {
+      "chars": 1850,
+      "words": 980,
+      "paragraphs": 15
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.6,
+      "reflective": 0.8,
+      "humor": 0.3,
+      "critical": 0.4
+    },
+    "rhythm": "平缓叙述与引用交替",
+    "tropes": [
+      "引用他人观点",
+      "个人反思",
+      "生活体验类比"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "财务自由",
+      "快乐",
+      "焦虑",
+      "退休",
+      "价值"
+    ],
+    "concepts": [
+      "习以为常",
+      "持久满足",
+      "逃避问题",
+      "自我设限"
+    ]
+  },
+  "sentiment": {
+    "label": "反思性中立",
+    "score": 0.2
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题引入-分点讨论-总结升华",
+    "opening": "引用他人文章引出财务自由主题",
+    "closing": "以幽默口吻表达对财务自由的向往"
+  },
+  "depth": "中等深度，结合心理学与个人体验探讨生活意义",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

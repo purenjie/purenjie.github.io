@@ -1,0 +1,69 @@
+{
+  "id": "2018-02-18-情商",
+  "title": "《情商》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "情商",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2018-02-18-情商.md",
+  "md5": "6e9fbbe3b367b828905c3fb9325631f8",
+  "metrics": {
+    "sentenceAvgLen": 25.4,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 18,
+      "21-30": 22,
+      "30+": 15
+    },
+    "readability": {
+      "chars": 4850,
+      "words": 810,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.7,
+      "humor": 0.1,
+      "critical": 0.3
+    },
+    "rhythm": "平缓而富有节奏",
+    "tropes": [
+      "比喻",
+      "引用",
+      "对比",
+      "排比"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "情商",
+      "情绪",
+      "同理心",
+      "自我意识",
+      "管理情绪"
+    ],
+    "concepts": [
+      "情绪智力",
+      "杏仁核",
+      "涌流状态",
+      "认知重建",
+      "延迟满足"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "总分总",
+    "opening": "情商的提升最重要的在五个方面",
+    "closing": "抛开以自我为中心，培养对差异的宽容和接受"
+  },
+  "depth": "深入",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

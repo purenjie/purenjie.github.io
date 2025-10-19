@@ -1,0 +1,72 @@
+{
+  "id": "2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则",
+  "title": "重新认识GTD|如何科学地认识和使用GTD时间管理法则",
+  "date": "",
+  "tags": [],
+  "slug": "2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-24-重新认识-GTD-如何科学地认识和使用-GTD-时间管理法则.md",
+  "md5": "f5edc0369d375eefe70c24d618711523",
+  "metrics": {
+    "sentenceAvgLen": 28.7,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 45,
+      "21-30": 38,
+      "30+": 25
+    },
+    "readability": {
+      "chars": 12560,
+      "words": 2150,
+      "paragraphs": 89
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.85,
+      "reflective": 0.75,
+      "humor": 0.15,
+      "critical": 0.25
+    },
+    "rhythm": "说明性节奏，段落分明，逐步深入",
+    "tropes": [
+      "方法论解析",
+      "实践指导",
+      "对比分析",
+      "问题解决框架"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "GTD",
+      "时间管理",
+      "执行清单",
+      "收集箱",
+      "回顾",
+      "项目清单",
+      "等待清单",
+      "可能清单"
+    ],
+    "concepts": [
+      "捕获-明晰-组织-回顾-执行",
+      "清空大脑",
+      "下一步行动",
+      "目标导向排序",
+      "负罪感幻觉"
+    ]
+  },
+  "sentiment": {
+    "label": "积极指导",
+    "score": 0.78
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "教程式结构，分节递进",
+    "opening": "通过重新定义GTD核心理念引入主题",
+    "closing": "以工具选择建议和参考资料收尾"
+  },
+  "depth": "深入实践指导，包含具体操作步骤、常见问题解决方案和进阶技巧",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

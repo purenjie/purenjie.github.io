@@ -1,0 +1,67 @@
+{
+  "id": "2020-05-29-《高效学习之道》读书笔记",
+  "title": "《高效学习之道》读书笔记",
+  "date": "",
+  "tags": [],
+  "slug": "2020-05-29-《高效学习之道》读书笔记",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-29-《高效学习之道》读书笔记.md",
+  "md5": "53af2123e16518ff38339564f3c9e3a9",
+  "metrics": {
+    "sentenceAvgLen": 18.5,
+    "sentenceLenBuckets": {
+      "1-10": 12,
+      "11-20": 25,
+      "21-30": 15,
+      "30+": 8
+    },
+    "readability": {
+      "chars": 2450,
+      "words": 420,
+      "paragraphs": 45
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.8,
+      "reflective": 0.7,
+      "humor": 0.1,
+      "critical": 0.4
+    },
+    "rhythm": "简洁有力，多用短句和列表",
+    "tropes": [
+      "比喻法",
+      "二八法则",
+      "费曼技巧"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "投入",
+      "学习",
+      "阅读",
+      "实践",
+      "记忆"
+    ],
+    "concepts": [
+      "整体性学习",
+      "碎片化阅读",
+      "自我教育",
+      "高效方法"
+    ]
+  },
+  "sentiment": {
+    "label": "积极",
+    "score": 0.75
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "分层列表式",
+    "opening": "如何让自己变得更强大",
+    "closing": "重新定义你的大脑"
+  },
+  "depth": "中等",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}
