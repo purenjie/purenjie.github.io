@@ -104,14 +104,16 @@ def _calculate_sentiment_dist(articles: List[ArticleAnalysis]) -> Dict[str, floa
 
 
 def _calculate_timeline_depth(articles: List[ArticleAnalysis]) -> List[Dict[str, str]]:
-    """Build timeline of article depth by date."""
+    """Build timeline of article depth by date or ID."""
     timeline = []
     for a in articles:
-        if a.date and a.depth:
-            timeline.append({"date": a.date, "depth": a.depth})
+        if a.depth:
+            # Use date if available, otherwise use article ID as fallback
+            date_key = a.date if a.date else a.id
+            timeline.append({"date": date_key, "depth": a.depth})
     
-    # Sort by date
-    timeline.sort(key=lambda x: x["date"] if x["date"] else "")
+    # Sort by date (articles with actual dates first, then by ID)
+    timeline.sort(key=lambda x: (x["date"] if x["date"] and len(x["date"]) == 10 else f"9999-{x['date']}", x["date"]))
     return timeline
 
 

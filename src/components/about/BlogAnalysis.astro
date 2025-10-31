@@ -132,18 +132,20 @@ const dataUrl = '/data/blog-analysis.json'
       }
 
       const timeline = get('timeline-depth')
-      if (timeline && Array.isArray(data.summary?.timelineDepth)) {
+      if (timeline && Array.isArray(data.summary?.timelineDepth) && data.summary.timelineDepth.length > 0) {
         const x = data.summary.timelineDepth.map((d)=> (d && d.date) || '')
         const y = data.summary.timelineDepth.map((d)=>{
-          if (d.depth==='intro') return 1
-          if (d.depth==='application') return 2
-          if (d.depth==='principle') return 3
-          return 0
+          const depth = (d && d.depth) || ''
+          // Map Chinese depth descriptions to numeric values
+          if (depth.includes('深入') || depth.includes('深刻')) return 3
+          if (depth.includes('中等') || depth.includes('中级')) return 2
+          if (depth.includes('入门') || depth.includes('简单') || depth.includes('基础')) return 1
+          return 2 // default to medium
         })
         timeline.setOption({
           xAxis: { type:'category', data: x },
           yAxis: { type:'value', min:0, max:3 },
-          series: [{ type:'line', data: y }],
+          series: [{ type:'line', data: y, smooth: true }],
           tooltip: { trigger:'axis' }
         })
       }
@@ -159,10 +161,52 @@ const dataUrl = '/data/blog-analysis.json'
           })
         }
         const items = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,60).map(([name,value])=>({ name, value }))
-        wc.setOption({
-          tooltip: {},
-          series: [{ type: 'bar', data: items }]
-        })
+        
+        // Try wordCloud first, fallback to bar chart if not available
+        const hasWordCloud = echarts.graphic && echarts.graphic.RadialGradient
+        if (hasWordCloud && items.length > 0) {
+          wc.setOption({
+            tooltip: { show: true },
+            series: [{
+              type: 'wordCloud',
+              shape: 'circle',
+              sizeRange: [12, 60],
+              rotationRange: [-90, 90],
+              rotationStep: 45,
+              gridSize: 8,
+              drawOutOfBound: false,
+              layoutAnimation: true,
+              textStyle: {
+                fontFamily: 'sans-serif',
+                fontWeight: 'bold',
+                color: function () {
+                  return 'rgb(' + [
+                    Math.round(Math.random() * 160 + 50),
+                    Math.round(Math.random() * 160 + 50),
+                    Math.round(Math.random() * 160 + 50)
+                  ].join(',') + ')'
+                }
+              },
+              data: items
+            }]
+          })
+        } else {
+          // Fallback to horizontal bar chart
+          wc.setOption({
+            tooltip: { trigger: 'axis' },
+            grid: { left: 80, right: 20, top: 20, bottom: 20 },
+            xAxis: { type: 'value' },
+            yAxis: { 
+              type: 'category', 
+              data: items.slice(0, 20).map(([name]) => name).reverse(),
+              axisLabel: { interval: 0 }
+            },
+            series: [{ 
+              type: 'bar', 
+              data: items.slice(0, 20).map(([, value]) => value).reverse()
+            }]
+          })
+        }
       }
     })()
   </script>
