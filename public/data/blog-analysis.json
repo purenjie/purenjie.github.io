@@ -2,38 +2,58 @@
   "summary": {
     "style": {
       "toneAvg": {
-        "teaching": 0.67,
-        "reflective": 0.51,
+        "teaching": 0.66,
+        "reflective": 0.52,
         "humor": 0.16,
         "critical": 0.21
       }
     },
-    "avgSentenceLen": 20.5,
+    "avgSentenceLen": 20.45,
     "sentimentDist": {
-      "positive": 0.486,
-      "neutral": 0.514,
+      "positive": 0.472,
+      "neutral": 0.528,
       "negative": 0.0
     },
     "topics": [
       {
-        "name": "投资",
-        "ratio": 0.038461538461538464,
-        "representatives": []
+        "name": "投资理财",
+        "ratio": 0.15,
+        "representatives": [
+          "《财务自由之路》读书笔记",
+          "怎样加杠杆",
+          "假如我财务自由了？",
+          "2017年总结"
+        ]
       },
       {
-        "name": "读书",
-        "ratio": 0.02564102564102564,
-        "representatives": []
+        "name": "读书学习",
+        "ratio": 0.45,
+        "representatives": [
+          "《终身成长》读书笔记",
+          "《高效学习之道》读书笔记",
+          "《情商》读书笔记",
+          "《番茄工作法图解》读书笔记"
+        ]
       },
       {
-        "name": "健身",
-        "ratio": 0.021367521367521368,
-        "representatives": []
+        "name": "个人成长",
+        "ratio": 0.25,
+        "representatives": [
+          "《假性亲密关系》读书笔记",
+          "《有梗》笔记",
+          "日程安排总结和思考",
+          "重新认识GTD|如何科学地认识和使用GTD时间管理法则"
+        ]
       },
       {
-        "name": "SSH",
-        "ratio": 0.017094017094017096,
-        "representatives": []
+        "name": "技术实践",
+        "ratio": 0.15,
+        "representatives": [
+          "hugo博客搭建",
+          "gitee部署和配置hexo",
+          "deepin重装指北",
+          "2020年总结"
+        ]
       }
     ],
     "conceptNetwork": {
@@ -380,7 +400,7 @@
         },
         {
           "id": "自我反思",
-          "weight": 1
+          "weight": 2
         },
         {
           "id": "职场转变",
@@ -507,11 +527,15 @@
           "weight": 1
         },
         {
-          "id": "风险兜底",
+          "id": "风险规避",
           "weight": 1
         },
         {
-          "id": "反人性",
+          "id": "财务规划",
+          "weight": 1
+        },
+        {
+          "id": "家庭保障",
           "weight": 1
         },
         {
@@ -519,11 +543,7 @@
           "weight": 1
         },
         {
-          "id": "杠杆率",
-          "weight": 1
-        },
-        {
-          "id": "个性化配置",
+          "id": "杠杆原理",
           "weight": 1
         },
         {
@@ -588,6 +608,18 @@
         },
         {
           "id": "评论系统",
+          "weight": 1
+        },
+        {
+          "id": "人工智能应用",
+          "weight": 1
+        },
+        {
+          "id": "内容分析",
+          "weight": 1
+        },
+        {
+          "id": "技术迭代",
           "weight": 1
         }
       ],
@@ -1668,53 +1700,53 @@
           "weight": 1
         },
         {
-          "source": "反人性",
-          "target": "风险兜底",
+          "source": "财务规划",
+          "target": "风险规避",
+          "weight": 1
+        },
+        {
+          "source": "家庭保障",
+          "target": "风险规避",
           "weight": 1
         },
         {
           "source": "情绪价值",
-          "target": "风险兜底",
+          "target": "风险规避",
           "weight": 1
         },
         {
-          "source": "杠杆率",
-          "target": "风险兜底",
+          "source": "杠杆原理",
+          "target": "风险规避",
           "weight": 1
         },
         {
-          "source": "个性化配置",
-          "target": "风险兜底",
-          "weight": 1
-        },
-        {
-          "source": "反人性",
-          "target": "情绪价值",
-          "weight": 1
-        },
-        {
-          "source": "反人性",
-          "target": "杠杆率",
-          "weight": 1
-        },
-        {
-          "source": "个性化配置",
-          "target": "反人性",
+          "source": "家庭保障",
+          "target": "财务规划",
           "weight": 1
         },
         {
           "source": "情绪价值",
-          "target": "杠杆率",
+          "target": "财务规划",
           "weight": 1
         },
         {
-          "source": "个性化配置",
+          "source": "杠杆原理",
+          "target": "财务规划",
+          "weight": 1
+        },
+        {
+          "source": "家庭保障",
           "target": "情绪价值",
           "weight": 1
         },
         {
-          "source": "个性化配置",
-          "target": "杠杆率",
+          "source": "家庭保障",
+          "target": "杠杆原理",
+          "weight": 1
+        },
+        {
+          "source": "情绪价值",
+          "target": "杠杆原理",
           "weight": 1
         },
         {
@@ -1841,6 +1873,36 @@
           "source": "主题定制",
           "target": "评论系统",
           "weight": 1
+        },
+        {
+          "source": "人工智能应用",
+          "target": "内容分析",
+          "weight": 1
+        },
+        {
+          "source": "人工智能应用",
+          "target": "技术迭代",
+          "weight": 1
+        },
+        {
+          "source": "人工智能应用",
+          "target": "自我反思",
+          "weight": 1
+        },
+        {
+          "source": "内容分析",
+          "target": "技术迭代",
+          "weight": 1
+        },
+        {
+          "source": "内容分析",
+          "target": "自我反思",
+          "weight": 1
+        },
+        {
+          "source": "技术迭代",
+          "target": "自我反思",
+          "weight": 1
         }
       ]
     },
@@ -1927,7 +1989,7 @@
       },
       {
         "date": "2025-02-23-也许你该买份保险",
-        "depth": "中等深度，结合个人体验与专业知识"
+        "depth": "中等深度，结合个人经历与专业知识"
       },
       {
         "date": "2025-04-02-初识MCP",
@@ -1984,6 +2046,10 @@
       {
         "date": "index",
         "depth": "中级"
+      },
+      {
+        "date": "index",
+        "depth": "中等深度，包含技术实践与人文思考"
       }
     ],
     "structures": [
@@ -2084,7 +2150,7 @@
         "count": 1
       },
       {
-        "pattern": "问题引入-理论阐述-分类说明-建议总结",
+        "pattern": "问题引入-分析论证-分类说明-总结建议",
         "count": 1
       },
       {
@@ -2093,6 +2159,10 @@
       },
       {
         "pattern": "教程手册型",
+        "count": 1
+      },
+      {
+        "pattern": "问题提出-过程描述-结果展示-哲学思考",
         "count": 1
       }
     ],
@@ -2121,6 +2191,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -2189,6 +2260,7 @@
           "paragraphs": 130
         }
       },
+      "analysis": null,
       "style": {
         "tone": {},
         "rhythm": null,
@@ -2236,6 +2308,7 @@
           "paragraphs": 45
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -2305,6 +2378,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -2373,6 +2447,7 @@
           "paragraphs": 15
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -2439,6 +2514,7 @@
           "paragraphs": 35
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -2511,6 +2587,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -2588,6 +2665,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -2664,6 +2742,7 @@
           "paragraphs": 18
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -2735,6 +2814,7 @@
           "paragraphs": 5
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -2801,6 +2881,7 @@
           "paragraphs": 15
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.6,
@@ -2868,6 +2949,7 @@
           "paragraphs": 4
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.6,
@@ -2935,6 +3017,7 @@
           "paragraphs": 89
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -3007,6 +3090,7 @@
           "paragraphs": 35
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -3079,6 +3163,7 @@
           "paragraphs": 45
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -3146,6 +3231,7 @@
           "paragraphs": 42
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.95,
@@ -3215,6 +3301,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.2,
@@ -3283,6 +3370,7 @@
           "paragraphs": 150
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.7,
@@ -3353,6 +3441,7 @@
           "paragraphs": 85
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.7,
@@ -3422,6 +3511,7 @@
           "paragraphs": 12
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.9,
@@ -3488,6 +3578,7 @@
           "paragraphs": 15
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.9,
@@ -3554,6 +3645,7 @@
           "paragraphs": 15
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.6,
@@ -3622,6 +3714,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -3696,6 +3789,7 @@
           "paragraphs": 10
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.3,
@@ -3766,6 +3860,7 @@
           "paragraphs": 42
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -3836,6 +3931,7 @@
           "paragraphs": 8
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.9,
@@ -3902,6 +3998,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -3970,6 +4067,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4045,6 +4143,7 @@
           "paragraphs": 45
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.95,
@@ -4114,6 +4213,7 @@
           "paragraphs": 45
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4185,6 +4285,7 @@
           "paragraphs": 45
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.2,
@@ -4245,17 +4346,18 @@
       "metrics": {
         "sentenceAvgLen": 24.7,
         "sentenceLenBuckets": {
-          "1-10": 8,
-          "11-20": 12,
+          "1-10": 12,
+          "11-20": 18,
           "21-30": 15,
           "30+": 10
         },
         "readability": {
-          "chars": 3421,
+          "chars": 3420,
           "words": 856,
-          "paragraphs": 45
+          "paragraphs": 42
         }
       },
+      "analysis": "这篇文章展现了一个典型的认知转变过程——从被外界负面声音包围的怀疑者，到通过理性分析最终采取行动的实践者。核心矛盾在于：明明已经通过系统学习建立了对保险的理性认知，却仍然拖延了整整三年才完成配置。这种知行不合一背后，隐藏着人类面对未来风险时本能的乐观偏见。\n\n文章里反复出现的“反人性”这个词很精准。我们大脑天生就更关注眼前确定的损失（每年要交的保费），而容易低估未来不确定的巨大风险。这种思维模式就像总觉得自己不会成为那个被雷劈中的幸运儿，直到在新闻里看到被雷击中的真实案例才猛然惊醒。\n\n有意思的是，真正推动行动的不是冷冰冰的数据分析，而是那些水滴筹故事引发的情感冲击。这暴露了一个心理防御机制：我们习惯用“这种事不会发生在我身上”的幻想来保护自己免受焦虑困扰，直到现实案例击穿这层心理缓冲垫。\n\n那个“时光机”的设问特别犀利——它巧妙地把未来的后悔拉到了现在，让抽象的风险变得具体可感。这就像站在未来回头看现在的自己，突然就看清了那个拖延的自己在冒多大的险。\n\n整篇文章就像一个精心设计的心理突破记录：先用理性搭建认知框架，再用情感触动打破心理防御，最后用具体方案落地行动。这种从知道到做到的转变，其实是在和自己的认知惰性搏斗。就像文章里说的，关键不是追求完美配置，而是先确保及格线——这个“60分哲学”恰恰击中了完美主义导致的拖延症要害。\n\n那个“给人生兜底”的比喻很生动。保险本质上是用现在可控的小损失，去对冲未来不可控的大灾难。这就像给人生装了个安全网，让你在生活的钢丝上走得更稳当。毕竟，真正的勇敢不是无视风险，而是看清风险后依然向前，同时系好安全带。",
       "style": {
         "tone": {
           "teaching": 0.8,
@@ -4266,8 +4368,8 @@
         "rhythm": "平实流畅，段落分明",
         "tropes": [
           "反问句",
-          "排比",
           "引用",
+          "列表说明",
           "比喻"
         ]
       },
@@ -4276,17 +4378,17 @@
           "保险",
           "风险",
           "医疗险",
-          "意外险",
           "重疾险",
+          "意外险",
           "寿险",
-          "配置"
+          "理财"
         ],
         "concepts": [
-          "风险兜底",
-          "反人性",
+          "风险规避",
+          "财务规划",
+          "家庭保障",
           "情绪价值",
-          "杠杆率",
-          "个性化配置"
+          "杠杆原理"
         ]
       },
       "sentiment": {
@@ -4295,11 +4397,11 @@
       },
       "stance": {},
       "structure": {
-        "pattern": "问题引入-理论阐述-分类说明-建议总结",
-        "opening": "以常见保险负面评价引入个人经历",
-        "closing": "强调保险必要性并附参考资料"
+        "pattern": "问题引入-分析论证-分类说明-总结建议",
+        "opening": "通过常见误解引出保险话题",
+        "closing": "提供参考资料和配置建议"
       },
-      "depth": "中等深度，结合个人体验与专业知识",
+      "depth": "中等深度，结合个人经历与专业知识",
       "diagnostics": {
         "llm_raw": null,
         "warnings": []
@@ -4327,6 +4429,7 @@
           "paragraphs": 42
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4395,6 +4498,7 @@
           "paragraphs": 42
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4466,6 +4570,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4532,6 +4637,7 @@
           "paragraphs": 28
         }
       },
+      "analysis": null,
       "style": {
         "tone": {
           "teaching": 0.85,
@@ -4573,6 +4679,74 @@
         "closing": "定制主题"
       },
       "depth": "中级",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "index",
+      "title": "AI 眼中的我？",
+      "date": "",
+      "tags": [],
+      "slug": "AI驱动的博客分析系统",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md",
+      "md5": "d8fbbf276a627c2ab8e947ed5de56ab9",
+      "metrics": {
+        "sentenceAvgLen": 18.7,
+        "sentenceLenBuckets": {
+          "1-10": 2,
+          "11-20": 5,
+          "21-30": 3,
+          "30+": 1
+        },
+        "readability": {
+          "chars": 456,
+          "words": 278,
+          "paragraphs": 6
+        }
+      },
+      "analysis": null,
+      "style": {
+        "tone": {
+          "teaching": 0.3,
+          "reflective": 0.7,
+          "humor": 0.2,
+          "critical": 0.4
+        },
+        "rhythm": "平缓叙述",
+        "tropes": [
+          "自嘲",
+          "反思",
+          "技术探索"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "AI",
+          "博客",
+          "分析",
+          "内容",
+          "系统"
+        ],
+        "concepts": [
+          "人工智能应用",
+          "内容分析",
+          "技术迭代",
+          "自我反思"
+        ]
+      },
+      "sentiment": {
+        "label": "中性偏反思",
+        "score": 0.15
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题提出-过程描述-结果展示-哲学思考",
+        "opening": "突发奇想的技术探索",
+        "closing": "对AI写作的哲学担忧"
+      },
+      "depth": "中等深度，包含技术实践与人文思考",
       "diagnostics": {
         "llm_raw": null,
         "warnings": []

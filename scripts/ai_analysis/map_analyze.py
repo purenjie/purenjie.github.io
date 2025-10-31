@@ -28,6 +28,15 @@ from .utils import (
 logger = logging.getLogger(__name__)
 
 
+def _build_analysis_prompt(content: str):
+    system_prompt = (
+        "你是一个10年资深专业的心理咨询师，深耕认知行为分析法，对精神分析也有涉猎，擅长使用认知心理治疗法和家庭系统排序治疗法。总结用户提交的内容，把其中反复提及的相关内容进行主题提炼，找到用户的核心矛盾和困境；需要考虑用户的思考过程和情绪反刍，以及行为上表现出来的一致性，如果出现矛盾的地方，总结其思考模式，尝试探索其底层心理防御机制，总结和反馈这一矛盾，引导其思考；最后使用一个核心意象进行破题，隐喻其行为模式，可以引用用户描述过/经历过的场景，目的是能让用户有醍醐灌顶的感受。反馈的结果，要求用大白话，语言犀利直接但善良的风格，像良师益友一样描述，避免教条说教，必须避免使用列表和晦涩的比喻。不要用“你”，用“这篇文章”作为第一人称，下面是内容: "
+    )
+    return [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": content},
+    ]
+
 def _build_map_prompt(meta: Dict, content: str, schema_hint: Dict) -> List[dict]:
     system_prompt = (
         "你是一个精确的文学和技术风格分析师。 给定一个中文博客文章块和元数据，生成符合模式的严格的 JSON。 不要包含解释。只输出 JSON，回复内容必须使用中文。下面是我的内容: "
@@ -92,7 +101,6 @@ def analyze_single_article(path: Path) -> ArticleAnalysis:
         schema_hint,
     )
     raw = call_llm(messages, temperature=0.5)
-    
     # Parse LLM response
     try:
         parsed_data = json.loads(raw)
@@ -100,6 +108,10 @@ def analyze_single_article(path: Path) -> ArticleAnalysis:
         logger.warning(f"Failed to parse LLM JSON: {e} {raw}")
         # Fallback to minimal data
         parsed_data = {}
+
+    analysis_messages = _build_analysis_prompt(body)
+    analysis_raw = call_llm(analysis_messages, temperature=0.7)
+    parsed_data["analysis"] = analysis_raw
 
     # Fill required fields with defaults
     parsed_data.setdefault("id", article_id)

@@ -42,7 +42,6 @@ def call_llm(
         "temperature": temperature,
     }
 
-    logger.debug(f"LLM call: model={model or TEXT_MODEL}")
     resp = requests.post(
         f"{BASE_URL}/chat/completions",
         headers=headers,
@@ -51,6 +50,7 @@ def call_llm(
     )
     resp.raise_for_status()
     result = resp.json()
+    logger.debug(f"LLM call: model={model or TEXT_MODEL}, messages={messages}, result={resp.text}")
     
     try:
         content = result["choices"][0]["message"]["content"].strip()
@@ -68,7 +68,7 @@ def call_llm(
                 lines = lines[:-1]
             content = "\n".join(lines).strip()
         
-        logger.debug(f"LLM response: {len(content)} chars, finish_reason={finish_reason}")
+        logger.debug(f"LLM response: {content}, finish_reason={finish_reason}")
         if finish_reason == "length":
             logger.warning("LLM response was truncated (finish_reason=length)")
         

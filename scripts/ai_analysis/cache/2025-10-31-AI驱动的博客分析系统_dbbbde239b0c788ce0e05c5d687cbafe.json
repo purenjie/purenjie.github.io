@@ -1,0 +1,67 @@
+{
+  "id": "index",
+  "title": "AI 眼中的我？",
+  "date": "",
+  "tags": [],
+  "slug": "AI驱动的博客分析系统",
+  "path": "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md",
+  "md5": "d8fbbf276a627c2ab8e947ed5de56ab9",
+  "metrics": {
+    "sentenceAvgLen": 18.7,
+    "sentenceLenBuckets": {
+      "1-10": 2,
+      "11-20": 5,
+      "21-30": 3,
+      "30+": 1
+    },
+    "readability": {
+      "chars": 456,
+      "words": 278,
+      "paragraphs": 6
+    }
+  },
+  "style": {
+    "tone": {
+      "teaching": 0.3,
+      "reflective": 0.7,
+      "humor": 0.2,
+      "critical": 0.4
+    },
+    "rhythm": "平缓叙述",
+    "tropes": [
+      "自嘲",
+      "反思",
+      "技术探索"
+    ]
+  },
+  "content": {
+    "keywords": [
+      "AI",
+      "博客",
+      "分析",
+      "内容",
+      "系统"
+    ],
+    "concepts": [
+      "人工智能应用",
+      "内容分析",
+      "技术迭代",
+      "自我反思"
+    ]
+  },
+  "sentiment": {
+    "label": "中性偏反思",
+    "score": 0.15
+  },
+  "stance": {},
+  "structure": {
+    "pattern": "问题提出-过程描述-结果展示-哲学思考",
+    "opening": "突发奇想的技术探索",
+    "closing": "对AI写作的哲学担忧"
+  },
+  "depth": "中等深度，包含技术实践与人文思考",
+  "diagnostics": {
+    "llm_raw": null,
+    "warnings": []
+  }
+}

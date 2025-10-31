@@ -52,6 +52,7 @@ class ArticleAnalysis(BaseModel):
     md5: str
 
     metrics: Metrics = Field(default_factory=Metrics)
+    analysis: Optional[str] = None
     style: Style = Field(default_factory=Style)
     content: ContentInfo = Field(default_factory=ContentInfo)
     sentiment: Sentiment = Field(default_factory=Sentiment)

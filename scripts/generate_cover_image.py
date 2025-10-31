@@ -202,9 +202,11 @@ def generate_image(description: str) -> str:
         "Authorization": f"Bearer {DOUBAO_API_KEY}"
     }
     
+    prompt = f"基于以下描述，生成一张封面图片，用更具创意的画面来表达：{description}"
+
     data = {
         "model": IMAGE_MODEL,
-        "prompt": description,
+        "prompt": prompt,
         "response_format": "url",
         "size": IMAGE_SIZE,
         "guidance_scale": 2.5,
