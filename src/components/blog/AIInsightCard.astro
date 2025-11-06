@@ -1,0 +1,346 @@
+---
+/**
+ * AI Insight Card Component
+ * 
+ * A collapsible card that displays AI-generated analysis of blog posts
+ * Features:
+ * - Collapsed state: Shows quick tags (sentiment, tone, depth)
+ * - Expanded state: Full analysis text with keywords and concepts
+ * - Smooth animations and responsive design
+ */
+
+import type { AIAnalysisData } from '@/utils/loadAIAnalysis'
+
+interface Props {
+  analysis?: string
+  sentiment?: AIAnalysisData['sentiment']
+  style?: AIAnalysisData['style']
+  depth?: string
+  keywords?: string[]
+  concepts?: string[]
+  primaryColor?: string
+}
+
+const {
+  analysis,
+  sentiment,
+  style,
+  depth,
+  keywords = [],
+  concepts = [],
+  primaryColor = 'hsl(var(--primary))'
+} = Astro.props
+
+// Get emoji for sentiment
+const getSentimentEmoji = (label?: string): string => {
+  if (!label) return '🤔'
+  const lower = label.toLowerCase()
+  if (lower.includes('积极') || lower.includes('positive')) return '😊'
+  if (lower.includes('消极') || lower.includes('negative')) return '😔'
+  if (lower.includes('中性') || lower.includes('neutral')) return '😐'
+  return '🤔'
+}
+
+// Get main tones (those with weight > 0.6)
+const mainTones = style?.tone 
+  ? Object.entries(style.tone)
+      .filter(([_, weight]) => weight >= 0.6)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 2)
+  : []
+
+// Tone labels mapping
+const toneLabels: Record<string, string> = {
+  'teaching': '📖 教学性',
+  'reflective': '🤔 反思性',
+  'humor': '😄 幽默感',
+  'critical': '🔍 批判性',
+  'narrative': '📝 叙事性',
+  'analytical': '📊 分析性'
+}
+
+// Split analysis text into paragraphs
+const analysisParagraphs = analysis ? analysis.split('\n\n').filter(p => p.trim()) : []
+---
+
+{analysis && (
+
+<div 
+  class="ai-insight-card animate mt-6 rounded-2xl border-2 overflow-hidden transition-all duration-300"
+  style={`--primary-color: ${primaryColor}`}
+  id="ai-insight-card"
+>
+  <!-- Collapsed State -->
+  <div class="collapsed-view p-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" style={`color: ${primaryColor}`} fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+        </svg>
+        <h3 class="text-base font-medium" style={`color: ${primaryColor}`}>AI 深度洞察</h3>
+      </div>
+      <button 
+        class="toggle-btn flex items-center gap-2 px-3 py-1.5 rounded-lg border bg-muted/30 transition-all duration-200"
+        style={`border-color: ${primaryColor}40; color: ${primaryColor}`}
+        aria-label="展开AI洞察"
+      >
+        <span class="toggle-text text-sm font-medium">展开详情</span>
+        <svg class="toggle-icon w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Expanded State -->
+  <div class="expanded-view overflow-hidden" style="max-height: 0; opacity: 0;">
+    <div class="p-6 pt-4">
+      <!-- Analysis Text with improved typography -->
+      <div class="analysis-text mb-6">
+        {analysisParagraphs.map((paragraph, index) => (
+          <p class={`mb-4 text-muted-foreground leading-relaxed ${index === 0 ? 'first-paragraph' : ''}`}>
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <!-- Keywords and Concepts with improved design -->
+      {(keywords.length > 0 || concepts.length > 0) && (
+        <div class="tags-section pt-5 border-t space-y-6">
+          {keywords.length > 0 && (
+            <div class="tag-group">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                <span class="text-sm font-medium text-muted-foreground">关键词</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                {keywords.map((keyword) => (
+                  <span class="keyword-tag px-3 py-1 rounded-full text-sm transition-all duration-200" style={`background: ${primaryColor}15; color: ${primaryColor}`}>
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {concepts.length > 0 && (
+            <div class="tag-group">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+                <span class="text-sm font-medium text-muted-foreground">核心概念</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                {concepts.map((concept) => (
+                  <span class="concept-tag px-3 py-1 rounded-full text-sm transition-all duration-200" style={`background: ${primaryColor}15; color: ${primaryColor}`}>
+                    {concept}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .ai-insight-card {
+    background: hsl(var(--muted) / 0.3);
+    border-color: hsl(var(--border));
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+
+  .ai-insight-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 1rem;
+    padding: 2px;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color, hsl(var(--primary))) 0%,
+      transparent 50%,
+      var(--primary-color, hsl(var(--primary))) 100%
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  .ai-insight-card:hover::before {
+    opacity: 0.5;
+  }
+
+  .ai-insight-card.expanded {
+    box-shadow: 0 8px 32px -8px var(--primary-color, hsl(var(--primary) / 0.2));
+  }
+
+  .ai-insight-card.expanded .collapsed-view {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .ai-insight-card.expanded .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Toggle button styles */
+  .toggle-btn {
+    box-shadow: 0 1px 3px var(--primary-color, hsl(var(--primary))) / 0.1;
+  }
+
+  .toggle-btn:hover {
+    background: var(--primary-color, hsl(var(--primary))) / 0.1 !important;
+    box-shadow: 0 2px 8px var(--primary-color, hsl(var(--primary))) / 0.25;
+    filter: brightness(1.1);
+  }
+
+  .toggle-btn:active {
+    transform: scale(0.98);
+  }
+
+  .expanded-view {
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  }
+
+  .ai-insight-card.expanded .expanded-view {
+    max-height: 2000px !important;
+    opacity: 1 !important;
+  }
+
+  /* Analysis text styling */
+  .analysis-text {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .analysis-text .first-paragraph {
+    position: relative;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--primary-color, hsl(var(--primary)));
+    border-left-color: var(--primary-color, hsl(var(--primary) / 0.3));
+  }
+
+  .analysis-text p {
+    text-indent: 2em;
+  }
+
+  .analysis-text .first-paragraph {
+    text-indent: 0;
+  }
+
+  /* Tag hover effects */
+  .keyword-tag:hover,
+  .concept-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--primary-color, hsl(var(--primary) / 0.2));
+    filter: brightness(1.1);
+    cursor: default;
+  }
+
+  .tag-group {
+    animation: fadeInUp 0.3s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Subtle pulse animation for toggle button */
+  @keyframes subtlePulse {
+    0%, 100% {
+      box-shadow: 0 1px 3px var(--primary-color, hsl(var(--primary))) / 0.1;
+    }
+    50% {
+      box-shadow: 0 2px 8px var(--primary-color, hsl(var(--primary))) / 0.25;
+    }
+  }
+
+  .ai-insight-card:not(.expanded) .toggle-btn {
+    animation: subtlePulse 2.5s ease-in-out infinite;
+  }
+
+  .ai-insight-card:not(.expanded) .toggle-btn:hover {
+    animation: none;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .collapsed-view {
+      padding: 1rem;
+    }
+
+    .analysis-text {
+      font-size: 0.9rem;
+    }
+
+    .toggle-btn {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .toggle-text {
+      display: none;
+    }
+
+    .ai-insight-card:not(.expanded) .toggle-btn::after {
+      content: '展开';
+      font-size: 0.75rem;
+      margin-right: 0.25rem;
+    }
+
+    .ai-insight-card.expanded .toggle-btn::after {
+      content: '收起';
+      font-size: 0.75rem;
+      margin-right: 0.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Add interactive behavior
+  const card = document.getElementById('ai-insight-card')
+  
+  if (card) {
+    const toggleBtn = card.querySelector('.toggle-btn')
+    const toggleText = card.querySelector('.toggle-text')
+    
+    const toggleCard = () => {
+      card.classList.toggle('expanded')
+      const isExpanded = card.classList.contains('expanded')
+      
+      // Update aria-label and button text based on state
+      if (isExpanded) {
+        toggleBtn?.setAttribute('aria-label', '收起AI洞察')
+        if (toggleText) toggleText.textContent = '收起'
+      } else {
+        toggleBtn?.setAttribute('aria-label', '展开AI洞察')
+        if (toggleText) toggleText.textContent = '展开详情'
+      }
+    }
+    
+    // Click on toggle button
+    toggleBtn?.addEventListener('click', (e) => {
+      e.stopPropagation()
+      toggleCard()
+    })
+  }
+</script>
+
+)}
+

@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from 'astro:content'
 
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import PostLayout from '@/layouts/BlogPost.astro'
+import { loadAIAnalysis } from '@/utils/loadAIAnalysis'
 
 export const prerender = true
 
@@ -20,8 +21,11 @@ type Props = {
 
 const { post } = Astro.props
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
+
+// Load AI analysis data for this post
+const aiAnalysis = loadAIAnalysis(post.id)
 ---
 
-<PostLayout {post} {headings} {remarkPluginFrontmatter}>
+<PostLayout {post} {headings} {remarkPluginFrontmatter} {aiAnalysis}>
   <Content />
 </PostLayout>
