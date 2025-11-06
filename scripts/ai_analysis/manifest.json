@@ -36,7 +36,7 @@
     "/Users/renjie.pu/blog/src/content/blog/2025-04-23-MCP开发指北.md": "2025-04-23-MCP开发指北_a10c40250b3f4bf5c9c88fee187923a8.json",
     "/Users/renjie.pu/blog/src/content/blog/2025-04-23-开发环境管理.md": "2025-04-23-开发环境管理_c7c40ffde90be7e87a5b7e0573f6e94f.json",
     "/Users/renjie.pu/blog/src/content/blog/2025-08-15-astro博客迁移/index.md": "2025-08-15-astro博客迁移_a3aca7da9274cff443751d8197f52155.json",
-    "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md": "2025-10-31-AI驱动的博客分析系统_dbbbde239b0c788ce0e05c5d687cbafe.json"
+    "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md": "2025-10-31-AI驱动的博客分析系统_d8fbbf276a627c2ab8e947ed5de56ab9.json"
   },
   "history": [
     {
@@ -78,6 +78,70 @@
     {
       "path": "/Users/renjie.pu/blog/src/content/blog/2025-02-23-也许你该买份保险.md",
       "md5": "f3645c1f373593e5cc9903bffad854af"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md",
+      "md5": "d8fbbf276a627c2ab8e947ed5de56ab9"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-01-12-2024年总结/index.md",
+      "md5": "d0095c91d87f1162f69211ec600af5a7"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2017-12-31-2017-年总结/index.md",
+      "md5": "f1e4f04d56f6a2a1632d754e23167edb"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2018-12-31-2018-年总结/index.md",
+      "md5": "ea0fcffee02361f395f5e8413151a72c"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2019-04-03-考研回望/index.md",
+      "md5": "be20d87e093366b2b5ea3b153163f368"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-01-05-2019-年总结/index.md",
+      "md5": "48e57b9f69068bc289c146f2c7ff2c84"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-04-09-怎样加“杠杆”.md",
+      "md5": "69f00e2df262214e90cec5cedba29576"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-14-假如我财务自由了？/index.md",
+      "md5": "fd246d29c4686340510c0a2a5a140f59"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2020-05-18-王二的经济学故事读后感.md",
+      "md5": "5428d64b8344c562f8f8541e9f23ff8c"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-01-04-2020-年总结/index.md",
+      "md5": "9a25b2b46601f78aa454a68d581da59b"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2021-04-11-《洞见》读书笔记/index.md",
+      "md5": "a10e8d7de7a568f665f5d39c166d29e1"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2022-01-09-2021年总结/index.md",
+      "md5": "57a1190f8b2409b81aa308f4b0d0a696"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2022-12-31-2022-年回顾/index.md",
+      "md5": "fcfd0c09c0cf3e98e3bf64e9b1088b6e"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2025-10-31-AI驱动的博客分析系统/index.md",
+      "md5": "d8fbbf276a627c2ab8e947ed5de56ab9"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2017-12-31-2017-年总结/index.md",
+      "md5": "f1e4f04d56f6a2a1632d754e23167edb"
+    },
+    {
+      "path": "/Users/renjie.pu/blog/src/content/blog/2017-12-31-2017-年总结/index.md",
+      "md5": "f1e4f04d56f6a2a1632d754e23167edb"
     }
   ]
 }

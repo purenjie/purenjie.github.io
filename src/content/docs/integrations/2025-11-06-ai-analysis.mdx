@@ -89,6 +89,18 @@ python scripts/ai_analysis/run.py --dry-run
 python scripts/ai_analysis/run.py --target "src/content/blog/your-article.md" --force
 ```
 
+### 5. manifest.json 和 cache 文件
+
+manifest.json 和 cache 文件存储在 `scripts/ai_analysis` 目录下。
+
+```bash
+# 查看 manifest.json
+cat scripts/ai_analysis/manifest.json
+
+# 查看 cache 文件
+cat scripts/ai_analysis/cache/2025-02-23-也许你该买份保险_f3645c1f373593e5cc9903bffad854af.json
+```
+
 ## 系统架构
 
 整个系统采用经典的 **Map-Reduce** 架构：

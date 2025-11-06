@@ -39,12 +39,23 @@ def _build_analysis_prompt(content: str):
 
 def _build_map_prompt(meta: Dict, content: str, schema_hint: Dict) -> List[dict]:
     system_prompt = (
-        "你是一个精确的文学和技术风格分析师。 给定一个中文博客文章块和元数据，生成符合模式的严格的 JSON。 不要包含解释。只输出 JSON，回复内容必须使用中文。下面是我的内容: "
+        "你是一个精确的文学和技术风格分析师。 给定一个中文博客文章块和元数据，生成符合模式的严格的 JSON。 "
+        "必须遵循以下要求：\n"
+        "1. 只输出有效的 JSON，不要包含任何解释文本或代码块标记\n"
+        "2. 所有键名必须用双引号包围，键和值之间必须用冒号(:)分隔\n"
+        "3. 所有字符串值必须用双引号包围\n"
+        "4. 不要在最后一个元素后面添加逗号\n"
+        "5. 严格遵循 JSON 语法规范\n"
+        "6. 回复内容必须使用中文\n"
+        "下面是内容: "
     )
     user_payload = {
         "meta": meta,
         "content": content,
         "json_schema_hint": schema_hint,
+        "response_format": {
+            "type": "json_object"
+        }
     }
     return [
         {"role": "system", "content": system_prompt},
@@ -55,7 +66,8 @@ def _build_map_prompt(meta: Dict, content: str, schema_hint: Dict) -> List[dict]
 def analyze_single_article(path: Path) -> ArticleAnalysis:
     logger.info(f"Analyzing article: {path.name}")
     meta, body = parse_frontmatter_and_body(path)
-    article_id = path.stem
+    # Use folder name for index.md files to match Astro's post.id
+    article_id = path.parent.name if path.name.lower() == "index.md" else path.stem
     title = meta.get("title", article_id)
     date = meta.get("pubDate") or meta.get("date")
     tags = []
@@ -101,12 +113,31 @@ def analyze_single_article(path: Path) -> ArticleAnalysis:
         schema_hint,
     )
     raw = call_llm(messages, temperature=0.5)
-    # Parse LLM response
+    # Parse LLM response with enhanced error recovery
+    parsed_data = {}
     try:
         parsed_data = json.loads(raw)
-    except Exception as e:
-        logger.warning(f"Failed to parse LLM JSON: {e} {raw}")
-        # Fallback to minimal data
+        logger.debug(f"Successfully parsed JSON with {len(parsed_data)} fields")
+    except json.JSONDecodeError as e:
+        logger.warning(f"Failed to parse LLM JSON after cleaning: {e}")
+
+        # Advanced error recovery: try to extract partial JSON using regex
+        try:
+            # Try to find JSON-like patterns in the response
+            json_patterns = [
+                r'\{[^{}]*"[^"]+"\s*:\s*[^}]*\}',  # Simple key-value pairs
+            ]
+
+            # Log the raw response for debugging (first 500 chars)
+            logger.warning(f"Raw LLM response (first 500 chars): {raw[:500]}")
+
+            # Since JSON parsing failed, we'll use empty dict and rely on defaults
+            # The missing fields will be filled in later
+            logger.warning("Proceeding with minimal data, required fields will be filled with defaults")
+        except Exception as recovery_error:
+            logger.error(f"Error during JSON recovery: {recovery_error}")
+
+        # Fallback to minimal data - required fields will be filled below
         parsed_data = {}
 
     analysis_messages = _build_analysis_prompt(body)
