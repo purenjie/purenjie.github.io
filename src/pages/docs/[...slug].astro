@@ -1,0 +1,45 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+
+import { getCollection } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+export const prerender = true
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs')
+  return docs.map((doc) => ({
+    params: { slug: doc.id },
+    props: { doc }
+  }))
+}
+
+type Props = {
+  doc: CollectionEntry<'docs'>
+}
+
+const { doc } = Astro.props
+const { Content, headings } = await render(doc)
+
+const meta = {
+  title: doc.data.title,
+  description: doc.data.description
+}
+---
+
+<BaseLayout {meta}>
+  <main class='mt-6 lg:mt-10'>
+    <div class='animate'>
+      <a href='/docs' class='inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors'>
+        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' class='stroke-muted-foreground'><line x1='19' y1='12' x2='5' y2='12'></line><polyline points='12 19 5 12 12 5'></polyline></svg>
+        Back to Docs
+      </a>
+      <h1 class='mt-6 mb-2 text-3xl font-medium'>{doc.data.title}</h1>
+      {doc.data.description && <p class='text-muted-foreground'>{doc.data.description}</p>}
+    </div>
+
+    <div class='animate mt-8 max-w-none md:min-w-[45ch] prose prose-base text-muted-foreground'>
+      <Content />
+    </div>
+  </main>
+</BaseLayout>

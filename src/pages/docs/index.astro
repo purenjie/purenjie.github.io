@@ -1,39 +1,123 @@
 ---
-import { Button, Icon } from 'astro-pure/user'
+import { Button, CardList, Icon, Timeline } from 'astro-pure/user'
 import { cn } from 'astro-pure/utils'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { integ } from '@/site-config'
 
-import DocsContents from './DocsContents.astro'
-
 const meta = {
-  title: 'Docs',
-  description: 'Docs content documentation'
+  title: 'Docs & Change Log',
+  description: '博客文档和更新历史'
 }
+
+// Change Log
+const changelogEvents = [
+  {
+    date: '2025-11-06',
+    content: '文章增加 AI 洞察功能<br/>• 集成 AI 驱动的博客分析系统<br/>• 7种可视化图表：雷达图、词云、概念网络等<br/>• 支持 Map-Reduce 并行处理架构'
+  },
+  {
+    date: '2025-08-15',
+    content: '修改博客字体<br/>• 集成霞鹜文楷字体，提升中文显示效果<br/>• 集成 Satoshi 英文字体<br/>• 配置多字体回退策略<br/>• 优化字体预加载性能'
+  },
+  {
+    date: '2025-08-15',
+    content: '添加封面图生成器<br/>• 基于 AI 的博客封面图自动生成<br/>• 集成火山引擎豆包 API<br/>• 支持多种艺术风格<br/>• 情绪感知和视觉转化能力'
+  },
+  {
+    date: '2025-08-01',
+    content: '博客框架调整为 Astro<br/>• 初始化 Astro 项目<br/>• 配置 UnoCSS 原子化 CSS<br/>• 设置内容集合和类型安全<br/>• 搭建页面路由结构'
+  },
+  {
+    date: '2017-12-31',
+    content: '博客上线<br/>• 基于 Hexo 框架'
+  }
+]
+
+// 参考文档数据
+const referenceDocs = [
+  {
+    title: 'AI 博客分析系统',
+    description: 'AI 驱动的博客内容分析工具，支持多维度可视化和智能洞察',
+    icon: '🤖',
+    link: '/docs/integrations/2025-11-06-ai-analysis'
+  },
+  {
+    title: '博客封面图生成器',
+    description: '基于 AI 的博客封面图自动生成工具，支持多种艺术风格',
+    icon: '🎨',
+    link: '/docs/integrations/2025-08-15-cover-image'
+  },
+  {
+    title: '字体使用指南',
+    description: '博客字体系统配置指南，包括霞鹜文楷和 Satoshi 字体的使用方法',
+    icon: '🔤',
+    link: '/docs/integrations/2025-08-15-fonts-usage'
+  }
+]
 ---
 
 <PageLayout {meta}>
   <Button title='Back' href='/' style='back' />
   <main class='mt-6 lg:mt-10'>
     <div id='content-header' class='animate'>
-      <h1 class='mb-6 text-3xl font-medium'>Docs of Astro Theme Pure</h1>
+      <h1 class='mb-6 text-3xl font-medium'>Docs & Change Log</h1>
     </div>
 
     <div id='content' class={cn('animate mt-8 max-w-none md:min-w-[45ch]', integ.typography.class)}>
-      <h2 class='text-xl font-medium'>Theme documentation</h2>
-      <DocsContents title={false} />
+      <!-- Docs 部分 -->
+      <section>
+        <h2 class='text-2xl font-semibold mb-6 flex items-center gap-2'>
+          <Icon name='document' class='w-6 h-6' />
+          Docs
+        </h2>
+        <div class='not-prose'>
+          <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            {
+              referenceDocs.map((doc) => (
+                <a
+                  href={doc.link}
+                  class='group block relative rounded-xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:border-primary/50 hover:shadow-md hover:shadow-primary/5 p-5 focus:outline-none focus:ring-2 focus:ring-primary/20'
+                >
+                  <div class='flex flex-col gap-3'>
+                    <div class='flex items-center gap-3'>
+                      <div class='text-2xl'>{doc.icon}</div>
+                      <h4 class='text-lg font-semibold text-foreground group-hover:text-primary transition-colors'>
+                        {doc.title}
+                      </h4>
+                    </div>
+                    <p class='text-sm text-muted-foreground leading-relaxed'>
+                      {doc.description}
+                    </p>
+                    <div class='flex items-center gap-2 mt-auto pt-2 text-primary group-hover:translate-x-1 transition-transform'>
+                      <span class='text-sm font-medium'>查看详情</span>
+                      <svg
+                        class='w-4 h-4'
+                        fill='none'
+                        stroke='currentColor'
+                        stroke-width='2'
+                        viewBox='0 0 24 24'
+                      >
+                        <path d='M9 5l7 7-7 7' stroke-linecap='round' stroke-linejoin='round' />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
 
-      <h2 class='text-xl font-medium'>Feedback</h2>
-      <p>
-        If you have any problems, you can check <a
-          href='https://github.com/cworld1/astro-theme-pure/issues'
-          target='_blank'>Github Issues</a
-        > for community support.
-      </p>
-      <h2 class='text-xl font-medium'>News Describe (Alpha)</h2>
-      <p>
-        <a href='/docs/rss.xml' target='_blank'><Icon name='rss' /> </a>
-      </p>
+      <!-- Change Log 部分 -->
+      <section class='mb-12'>
+        <h2 class='text-2xl font-semibold mb-6 flex items-center gap-2'>
+          <Icon name='time' class='w-6 h-6' />
+          Change Log
+        </h2>
+        <div class='bg-card rounded-lg p-6 border'>
+          <Timeline events={changelogEvents} />
+        </div>
+      </section>
     </div>
   </main>
 </PageLayout>
