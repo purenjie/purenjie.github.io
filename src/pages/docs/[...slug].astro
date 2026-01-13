@@ -19,7 +19,7 @@ type Props = {
 }
 
 const { doc } = Astro.props
-const { Content, headings } = await render(doc)
+const { Content } = await render(doc)
 
 const meta = {
   title: doc.data.title,

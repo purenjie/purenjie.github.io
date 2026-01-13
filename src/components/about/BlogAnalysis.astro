@@ -1,6 +1,5 @@
 ---
 // Blog analysis visualization using ECharts (client-side script)
-const dataUrl = '/data/blog-analysis.json'
 ---
 
 <section id="ai-blog-analysis" class="space-y-8">
@@ -53,8 +52,7 @@ const dataUrl = '/data/blog-analysis.json'
       const data = await res.json().catch(() => null)
       if (!data) return
 
-      /** @param {string} id */
-      const get = (id) => {
+      const get = (id: string) => {
         const el = document.getElementById(id)
         if (!el) return null
         const chart = echarts.init(el)
@@ -76,8 +74,7 @@ const dataUrl = '/data/blog-analysis.json'
       const bar = get('sentence-bar')
       if (bar && Array.isArray(data.perArticle)) {
         const buckets = ['1-10','11-20','21-30','30+']
-      /** @type {{ '1-10': number; '11-20': number; '21-30': number; '30+': number }} */
-      const sum = { '1-10':0,'11-20':0,'21-30':0,'30+':0 }
+      const sum: Record<'1-10' | '11-20' | '21-30' | '30+', number> = { '1-10':0,'11-20':0,'21-30':0,'30+':0 }
       data.perArticle.forEach((a)=>{
         const b = (a && a.metrics && a.metrics.sentenceLenBuckets) || {}
         buckets.forEach((k)=> { sum[k] = (sum[k]||0) + (b[k]||0) })
@@ -152,8 +149,7 @@ const dataUrl = '/data/blog-analysis.json'
 
       const wc = get('word-cloud')
       if (wc) {
-        /** @type {Record<string, number>} */
-        const freq = {}
+        const freq: Record<string, number> = {}
         if (Array.isArray(data.perArticle)) {
           data.perArticle.forEach((a)=>{
             const kws = (a && a.content && a.content.keywords) || []

@@ -23,41 +23,10 @@ interface Props {
 
 const {
   analysis,
-  sentiment,
-  style,
-  depth,
   keywords = [],
   concepts = [],
   primaryColor = 'hsl(var(--primary))'
 } = Astro.props
-
-// Get emoji for sentiment
-const getSentimentEmoji = (label?: string): string => {
-  if (!label) return '🤔'
-  const lower = label.toLowerCase()
-  if (lower.includes('积极') || lower.includes('positive')) return '😊'
-  if (lower.includes('消极') || lower.includes('negative')) return '😔'
-  if (lower.includes('中性') || lower.includes('neutral')) return '😐'
-  return '🤔'
-}
-
-// Get main tones (those with weight > 0.6)
-const mainTones = style?.tone 
-  ? Object.entries(style.tone)
-      .filter(([_, weight]) => weight >= 0.6)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 2)
-  : []
-
-// Tone labels mapping
-const toneLabels: Record<string, string> = {
-  'teaching': '📖 教学性',
-  'reflective': '🤔 反思性',
-  'humor': '😄 幽默感',
-  'critical': '🔍 批判性',
-  'narrative': '📝 叙事性',
-  'analytical': '📊 分析性'
-}
 
 // Split analysis text into paragraphs
 const analysisParagraphs = analysis ? analysis.split('\n\n').filter(p => p.trim()) : []

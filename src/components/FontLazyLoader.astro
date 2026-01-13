@@ -7,8 +7,8 @@
     // 定义字体配置
     const fontConfigs = {
       chinese: {
-        name: 'LXGWWenKai',
-        url: '/fonts/LXGWWenKaiLite-Light.woff2',
+        name: 'CangErJinKai',
+        url: '/fonts/仓耳今楷04-W04-subset.woff2',
         loaded: false
       },
       satoshi: {
@@ -18,55 +18,71 @@
       }
     };
 
+    // Reason: 检查中文内容并立即加载中文字体，避免延迟
     function checkChineseContent() {
       const textContent = document.body.textContent || '';
       const hasChinese = /[\u4e00-\u9fff]/.test(textContent);
       if (hasChinese) {
         loadFont('chinese');
       }
+      return hasChinese;
     }
 
-    function loadOnInteraction() {
-      const events = ['scroll', 'click', 'touchstart', 'keydown'];
-      const handler = function() {
-        loadFont('satoshi');
-        events.forEach(function(event) {
-          document.removeEventListener(event, handler);
-        });
-      };
-
-      events.forEach(function(event) {
-        document.addEventListener(event, handler, { 
-          once: true, 
-          passive: true 
-        });
-      });
+    // Reason: 使用 requestIdleCallback 在浏览器空闲时加载字体，不阻塞主线程
+    function loadOnIdle() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          loadFont('satoshi');
+        }, { timeout: 2000 });
+      } else {
+        setTimeout(function() {
+          loadFont('satoshi');
+        }, 1000);
+      }
     }
 
+    // Reason: 减少延迟加载时间从3秒到1.5秒，提升体验
     function deferredLoad() {
-      // 3秒后加载所有字体
       setTimeout(function() {
         Object.keys(fontConfigs).forEach(function(key) {
           loadFont(key);
         });
-      }, 3000);
+      }, 1500);
     }
 
-    function loadFont(fontKey) {
+    // Reason: 添加超时机制和重试逻辑，提升字体加载成功率
+    function loadFont(fontKey, retryCount) {
+      retryCount = retryCount || 0;
       const fontInfo = fontConfigs[fontKey];
       if (!fontInfo || fontInfo.loaded) return;
 
       try {
         if ('FontFace' in window) {
           const font = new FontFace(fontInfo.name, 'url(' + fontInfo.url + ')');
-          font.load().then(function(loadedFont) {
-            document.fonts.add(loadedFont);
-            fontInfo.loaded = true;
-            document.documentElement.classList.add(fontKey + '-font-loaded');
-            console.log('✅ Font loaded: ' + fontInfo.name);
-          }).catch(function(error) {
-            console.warn('❌ Font loading failed: ' + fontInfo.name, error);
+
+          // 设置10秒超时
+          const timeoutPromise = new Promise(function(_, reject) {
+            setTimeout(function() {
+              reject(new Error('Font load timeout'));
+            }, 10000);
           });
+
+          Promise.race([font.load(), timeoutPromise])
+            .then(function(loadedFont) {
+              document.fonts.add(loadedFont);
+              fontInfo.loaded = true;
+              document.documentElement.classList.add(fontKey + '-font-loaded');
+              console.log('✅ Font loaded: ' + fontInfo.name);
+            })
+            .catch(function(error) {
+              console.warn('❌ Font loading failed: ' + fontInfo.name, error);
+              // 重试一次
+              if (retryCount < 1) {
+                setTimeout(function() {
+                  loadFont(fontKey, retryCount + 1);
+                }, 2000);
+              }
+            });
         }
       } catch (error) {
         console.warn('❌ Font loading error: ' + fontInfo.name, error);
@@ -79,14 +95,16 @@
         return;
       }
 
-      // 检查是否需要中文字体
-      checkChineseContent();
+      // 立即检查并加载中文字体
+      const hasChinese = checkChineseContent();
 
-      // 用户交互时加载
-      loadOnInteraction();
+      // 使用空闲时间加载英文字体
+      loadOnIdle();
 
-      // 延迟加载策略
-      deferredLoad();
+      // 延迟加载策略作为兜底
+      if (!hasChinese) {
+        deferredLoad();
+      }
     }
 
     // 页面加载完成后初始化
@@ -112,12 +130,12 @@
   
   /* 中文字体加载完成 */
   html.chinese-font-loaded {
-    font-family: 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+    font-family: 'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
   }
-  
+
   /* 所有字体加载完成 */
   html.satoshi-font-loaded.chinese-font-loaded {
-    font-family: 'LXGWWenKai', 'Satoshi', 'PingFang SC', sans-serif;
+    font-family: 'CangErJinKai', 'Satoshi', 'PingFang SC', sans-serif;
   }
   
   /* 加载动画效果 */

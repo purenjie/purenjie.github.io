@@ -14,34 +14,45 @@
   font-display: swap;
 }
 
-/* 霞鹜文楷字体配置 */
+/* 仓耳今楷字体配置（子集版本）
+ * Reason: 使用子集字体(1.02MB)替代完整字体(8.41MB)，减小87.9%体积
+ * 包含博客实际使用的2031个汉字 + 常用字，确保绝大多数内容正常渲染
+ */
 @font-face {
-  font-family: 'LXGWWenKai';
-  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-family: 'CangErJinKai';
+  src: url('/fonts/仓耳今楷04-W04-subset.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+  unicode-range:
+    U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF,
+    U+F900-FAFF, U+2F800-2FA1F;
 }
 
 /* 为了向前兼容，也添加normal权重 */
 @font-face {
-  font-family: 'LXGWWenKai';
-  src: url('/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+  font-family: 'CangErJinKai';
+  src: url('/fonts/仓耳今楷04-W04-subset.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+  unicode-range:
+    U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF,
+    U+F900-FAFF, U+2F800-2FA1F;
 }
 
 /* 字体回退策略 */
 html {
-  font-family: 'LXGWWenKai', 'Satoshi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family:
+    'CangErJinKai', 'Satoshi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'WenQuanYi Micro Hei', sans-serif;
 }
 
 /* 中文字体优化 */
 body {
-  font-family: 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family:
+    'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',
+    sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,12 +61,17 @@ body {
 /* 英文字体回退 */
 body :lang(en),
 body :lang(en) * {
-  font-family: 'Satoshi', 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family:
+    'Satoshi', 'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'WenQuanYi Micro Hei', sans-serif;
 }
 
 /* 代码字体保持等宽 */
-code, pre {
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
+code,
+pre {
+  font-family:
+    'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas',
+    'DejaVu Sans Mono', monospace;
 }
 
 /* Theme */
