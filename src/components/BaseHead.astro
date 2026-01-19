@@ -25,23 +25,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
 <link rel='manifest' href='/favicon/site.webmanifest' />
 
-{/* Font preloads - 只预加载小体积的英文字体 */}
-<link rel='preload' href='/fonts/Satoshi-Variable.woff2' as='font' type='font/woff2' crossorigin />
-<link
-  rel='preload'
-  href='/fonts/Satoshi-VariableItalic.woff2'
-  as='font'
-  type='font/woff2'
-  crossorigin
-/>
-{
-  /*
-  中文字体使用子集版本(1.02MB)，比完整版本(8.41MB)减小87.9%
-  使用prefetch在空闲时预加载，配合font-display: swap优化体验
-  Reason: prefetch利用浏览器空闲时间加载，不阻塞关键渲染路径
-*/
-}
-<link rel='prefetch' href='/fonts/仓耳今楷04-W04-subset.woff2' as='font' type='font/woff2' crossorigin />
+{/* Font preloads */}
+<link rel='preload' href='/fonts/cang-er-jin-kai.woff2' as='font' type='font/woff2' crossorigin />
 
 {/* Canonical URL */}
 <link rel='canonical' href={canonicalURL} />

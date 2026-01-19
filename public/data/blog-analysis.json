@@ -2,60 +2,56 @@
   "summary": {
     "style": {
       "toneAvg": {
-        "teaching": 0.66,
-        "reflective": 0.5,
+        "teaching": 0.67,
+        "reflective": 0.49,
         "humor": 0.15,
         "critical": 0.19
       }
     },
-    "avgSentenceLen": 20.94,
+    "avgSentenceLen": 20.95,
     "sentimentDist": {
-      "positive": 0.559,
-      "neutral": 0.441,
+      "positive": 0.571,
+      "neutral": 0.429,
       "negative": 0.0
     },
     "topics": [
       {
-        "name": "投资理财",
-        "ratio": 0.0375,
+        "name": "个人成长与年度总结",
+        "ratio": 0.28,
+        "representatives": [
+          "2017年总结",
+          "2018年总结",
+          "2019年总结",
+          "2020年总结"
+        ]
+      },
+      {
+        "name": "学习方法与效率提升",
+        "ratio": 0.24,
+        "representatives": [
+          "《番茄工作法图解》读书笔记",
+          "重新认识GTD|如何科学地认识和使用GTD时间管理法则",
+          "《高效学习之道》读书笔记",
+          "日程安排总结和思考"
+        ]
+      },
+      {
+        "name": "投资理财与财务思维",
+        "ratio": 0.2,
         "representatives": [
           "《财务自由之路》读书笔记",
           "怎样加杠杆",
-          "假如我财务自由了？",
-          "2017年总结",
-          "2018年总结"
+          "《王二的经济学故事》读后感",
+          "假如我财务自由了？"
         ]
       },
       {
-        "name": "读书学习",
-        "ratio": 0.029166666666666667,
+        "name": "技能实践与技术探索",
+        "ratio": 0.16,
         "representatives": [
-          "《终身成长》读书笔记",
-          "《高效学习之道》读书笔记",
-          "《情商》读书笔记",
-          "《番茄工作法图解》读书笔记",
-          "《王二的经济学故事》读后感"
-        ]
-      },
-      {
-        "name": "健康生活",
-        "ratio": 0.020833333333333332,
-        "representatives": [
-          "2017年总结",
-          "2018年总结",
-          "2019年总结",
-          "2020年总结",
-          "健身"
-        ]
-      },
-      {
-        "name": "考研历程",
-        "ratio": 0.020833333333333332,
-        "representatives": [
-          "考研回望",
-          "2018年总结",
-          "2019年总结",
-          "考研"
+          "deepin重装指北",
+          "hugo博客搭建",
+          "gitee部署和配置hexo"
         ]
       }
     ],
@@ -595,6 +591,22 @@
         },
         {
           "id": "创作价值",
+          "weight": 1
+        },
+        {
+          "id": "字体优化",
+          "weight": 1
+        },
+        {
+          "id": "CDN加速",
+          "weight": 1
+        },
+        {
+          "id": "静态网站托管",
+          "weight": 1
+        },
+        {
+          "id": "域名解析",
           "weight": 1
         }
       ],
@@ -1833,6 +1845,36 @@
           "source": "创作价值",
           "target": "技术迭代",
           "weight": 1
+        },
+        {
+          "source": "CDN加速",
+          "target": "字体优化",
+          "weight": 1
+        },
+        {
+          "source": "字体优化",
+          "target": "静态网站托管",
+          "weight": 1
+        },
+        {
+          "source": "域名解析",
+          "target": "字体优化",
+          "weight": 1
+        },
+        {
+          "source": "CDN加速",
+          "target": "静态网站托管",
+          "weight": 1
+        },
+        {
+          "source": "CDN加速",
+          "target": "域名解析",
+          "weight": 1
+        },
+        {
+          "source": "域名解析",
+          "target": "静态网站托管",
+          "weight": 1
         }
       ]
     },
@@ -1966,6 +2008,10 @@
         "depth": "中等深度，结合技术实践与人文思考"
       },
       {
+        "date": "2026-01-19-博客迁移到cloudflare",
+        "depth": "中等"
+      },
+      {
         "date": "index",
         "depth": "深入探讨亲密关系的心理机制和个人成长路径"
       },
@@ -2077,6 +2123,10 @@
       },
       {
         "pattern": "问题提出-过程描述-结果展示-哲学思考",
+        "count": 1
+      },
+      {
+        "pattern": "问题-解决-过程",
         "count": 1
       }
     ],
@@ -4636,6 +4686,76 @@
         "closing": "存在主义疑问收尾"
       },
       "depth": "中等深度，结合技术实践与人文思考",
+      "diagnostics": {
+        "llm_raw": null,
+        "warnings": []
+      }
+    },
+    {
+      "id": "2026-01-19-博客迁移到cloudflare",
+      "title": "博客迁移到cloudflare",
+      "date": "",
+      "tags": [],
+      "slug": "博客迁移到cloudflare",
+      "path": "/Users/renjie.pu/blog/src/content/blog/2026-01-19-博客迁移到cloudflare/index.md",
+      "md5": "3eb33db2fe2b562913218f5c5ce8aa78",
+      "metrics": {
+        "sentenceAvgLen": 21.5,
+        "sentenceLenBuckets": {
+          "1-10": 2,
+          "11-20": 6,
+          "21-30": 4,
+          "30+": 3
+        },
+        "readability": {
+          "chars": 1200,
+          "words": 200,
+          "paragraphs": 15
+        }
+      },
+      "analysis": "这篇文章表面在讲技术迁移，实则展现了一种典型的完美主义思维模式——从字体加载的毫秒之差，到服务器稳定性的长远忧虑，每一步都在追求更优解。核心矛盾在于：明明已经实现了功能（博客能访问），却总被“不够完美”的细节牵动注意力，陷入持续优化的循环。\n\n这种思维模式背后，可能隐藏着对失控的深层焦虑——就像担心服务器过期一样，总想提前消除所有潜在风险。但有趣的是，当找到CloudFlare这个“赛博大善人”时，文章立刻表现出如释重负的轻松感，这恰恰暴露了防御机制：通过不断寻找外部完美方案，来缓解内心对不确定性的不安。\n\n文章里有个很妙的隐喻：那个被AI压缩后却漏掉几个字的字体文件，就像人生中那些无论如何优化都会存在的“不完美像素”。我们总想通过技术手段把它们全部修平，但真正的流畅感，有时候恰恰来自学会与那百分之五的毛边共存。迁移到CloudFlare不是终点，而是开始接受——有些加载速度，值得等待；有些控制权，放手反而更稳。",
+      "style": {
+        "tone": {
+          "teaching": 0.8,
+          "reflective": 0.3,
+          "humor": 0.1,
+          "critical": 0.0
+        },
+        "rhythm": "平实流畅，带有技术说明的节奏",
+        "tropes": [
+          "技术教程",
+          "问题解决",
+          "迁移记录"
+        ]
+      },
+      "content": {
+        "keywords": [
+          "博客",
+          "迁移",
+          "cloudflare",
+          "CDN",
+          "字体",
+          "部署",
+          "域名"
+        ],
+        "concepts": [
+          "字体优化",
+          "CDN加速",
+          "静态网站托管",
+          "域名解析"
+        ]
+      },
+      "sentiment": {
+        "label": "积极",
+        "score": 0.7
+      },
+      "stance": {},
+      "structure": {
+        "pattern": "问题-解决-过程",
+        "opening": "以字体加载慢的问题引入，引出迁移到Cloudflare的缘由",
+        "closing": "以域名迁移完成作为结尾，未做总结性陈述"
+      },
+      "depth": "中等",
       "diagnostics": {
         "llm_raw": null,
         "warnings": []

@@ -204,9 +204,33 @@ export default defineConfig({
   theme: {
     colors: themeColors,
     fontFamily: {
-      'wenkai': ['LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif'],
-      'satoshi': ['Satoshi', 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif'],
-      'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', 'monospace']
+      wenkai: [
+        'CangErJinKai',
+        'PingFang SC',
+        'Hiragino Sans GB',
+        'Microsoft YaHei',
+        'WenQuanYi Micro Hei',
+        'sans-serif'
+      ],
+      satoshi: [
+        'CangErJinKai',
+        'PingFang SC',
+        'Hiragino Sans GB',
+        'Microsoft YaHei',
+        'WenQuanYi Micro Hei',
+        'sans-serif'
+      ],
+      mono: [
+        'SF Mono',
+        'Monaco',
+        'Inconsolata',
+        'Roboto Mono',
+        'Source Code Pro',
+        'Menlo',
+        'Consolas',
+        'DejaVu Sans Mono',
+        'monospace'
+      ]
     }
   },
   // https://unocss.dev/guide/extracting#limitations
