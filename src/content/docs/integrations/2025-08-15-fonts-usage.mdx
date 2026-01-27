@@ -1,40 +1,33 @@
 ---
 title: '字体使用指南'
-description: '博客字体系统配置指南，包括霞鹜文楷和 Satoshi 字体的使用方法'
+description: '博客字体系统配置指南，使用仓耳今楷04-W04字体支持中英文混排'
 order: 3
 ---
 
 ## 概述
 
-本博客已集成霞鹜文楷字体，提供优秀的中文显示效果。字体系统采用中英文字体混合策略，确保在不同语言环境下都有最佳的显示效果。
+本博客已集成仓耳今楷04-W04字体，提供优秀的中英文显示效果。字体系统采用统一字体策略，确保中英文混排时有最佳的视觉一致性。
 
 ## 字体配置
 
 ### 字体文件
-- **霞鹜文楷 (LXGWWenKai)**: 中文字体，基于 Fontworks 的 Klee One 字体衍生
-- **Satoshi**: 英文字体，现代化的无衬线字体
+- **仓耳今楷04-W04 (CangErJinKai)**: 中英文通用字体，优雅的楷体风格
 - **等宽字体**: 代码显示专用字体
 
 ### 字体特性
-- 霞鹜文楷：优雅的楷体风格，适合中文阅读
-- Satoshi：清晰易读，适合英文内容
+- 仓耳今楷04-W04：优雅的楷体风格，支持中英文混排
+- 字体来源：[仓耳字库](https://tsanger.cn/product/43)
 - 支持字体回退，确保在不同系统下都有良好显示
+- 使用 WOFF2 格式，优化加载性能
 
 ## 使用方法
 
 ### 1. CSS 类方式
 
-#### 中文字体
+#### 通用字体（中英文混排）
 ```css
-.chinese-text {
-  font-family: 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-}
-```
-
-#### 英文字体
-```css
-.english-text {
-  font-family: 'Satoshi', 'LXGWWenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+.text-content {
+  font-family: 'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 }
 ```
 
@@ -49,11 +42,8 @@ order: 3
 
 #### 字体族类
 ```html
-<!-- 使用霞鹜文楷字体 -->
-<div class="font-wenkai">这是中文内容</div>
-
-<!-- 使用 Satoshi 字体 -->
-<div class="font-satoshi">This is English content</div>
+<!-- 使用仓耳今楷字体（中英文混排） -->
+<div class="font-wenkai">这是中文内容 This is English content</div>
 
 <!-- 使用等宽字体 -->
 <div class="font-mono">console.log('Hello World');</div>
@@ -63,9 +53,8 @@ order: 3
 ```html
 <!-- 中英文混合内容 -->
 <article class="font-wenkai">
-  <h1>文章标题</h1>
-  <p>这是中文段落内容。</p>
-  <p class="font-satoshi">This is an English paragraph.</p>
+  <h1>文章标题 Article Title</h1>
+  <p>这是中文段落内容。This is an English paragraph.</p>
   <pre class="font-mono"><code>const message = "Hello 世界";</code></pre>
 </article>
 ```
@@ -80,21 +69,22 @@ const fontClass = 'font-wenkai'
 ---
 
 <div class={fontClass}>
-  <h2>组件标题</h2>
-  <p>组件内容使用霞鹜文楷字体显示。</p>
+  <h2>组件标题 Component Title</h2>
+  <p>组件内容使用仓耳今楷字体显示，支持中英文混排。</p>
 </div>
 ```
 
-#### 动态字体切换
+#### 代码块字体
 ```astro
 ---
-// 根据语言动态选择字体
-const isChinese = true
-const fontClass = isChinese ? 'font-wenkai' : 'font-satoshi'
+// 代码块使用等宽字体
 ---
 
-<div class={fontClass}>
-  {isChinese ? '中文内容' : 'English Content'}
+<div class="font-wenkai">
+  <p>正文使用仓耳今楷字体</p>
+  <pre class="font-mono"><code>// 代码使用等宽字体
+const greeting = "Hello 世界";
+console.log(greeting);</code></pre>
 </div>
 ```
 
@@ -103,32 +93,32 @@ const fontClass = isChinese ? 'font-wenkai' : 'font-satoshi'
 ### 1. 字体预加载
 字体已在 `BaseHead.astro` 中配置预加载：
 ```html
-<link rel='preload' href='/fonts/LXGWWenKai-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='/fonts/cang-er-jin-kai.woff2' as='font' type='font/woff2' crossorigin />
 ```
 
 ### 2. 字体回退策略
 使用 `font-display: swap` 确保字体加载过程中有良好的用户体验：
 ```css
 @font-face {
-  font-family: 'LXGWWenKai';
-  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-family: 'CangErJinKai';
+  src: url('/fonts/cang-er-jin-kai.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
   font-display: swap;
 }
 ```
 
-### 3. Unicode 范围限制
-中文字体只在需要的字符范围内加载：
-```css
-unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
-```
+### 3. 字体格式优化
+- 使用 WOFF2 格式，相比 TTF 格式有更好的压缩率
+- 支持可变字重（300-900），单一文件支持多种字重
+- 文件大小约 8.6MB，包含完整的中英文字符集
 
 ## 最佳实践
 
 ### 1. 字体选择原则
-- **中文内容**: 优先使用 `font-wenkai` 或 `font-wenkai` 类
-- **英文内容**: 使用 `font-satoshi` 类
+- **中英文混排内容**: 使用 `font-wenkai` 类（默认字体）
 - **代码内容**: 使用 `font-mono` 类
-- **混合内容**: 根据主要语言选择字体，次要语言使用内联样式覆盖
+- **统一体验**: 仓耳今楷字体支持中英文，无需切换字体
 
 ### 2. 响应式字体
 ```css
@@ -166,50 +156,65 @@ p, div {
 ## 故障排除
 
 ### 1. 字体不显示
-- 检查字体文件是否正确放置在 `public/fonts/` 目录
+- 检查字体文件 `cang-er-jin-kai.woff2` 是否正确放置在 `public/fonts/` 目录
 - 确认 CSS 中的字体路径是否正确
 - 检查浏览器开发者工具中的网络请求
+- 确认字体文件格式为 WOFF2
 
 ### 2. 字体加载缓慢
-- 确认字体预加载配置是否正确
-- 考虑使用字体子集化减少文件大小
+- 确认字体预加载配置是否正确（在 `BaseHead.astro` 中）
 - 检查网络连接和服务器响应时间
+- 考虑使用 CDN 加速字体加载
+- 确认使用了 `font-display: swap` 策略
 
 ### 3. 字体回退问题
-- 确认字体回退链配置正确
+- 确认字体回退链配置正确（PingFang SC → Hiragino Sans GB → Microsoft YaHei）
 - 测试在不同系统环境下的显示效果
 - 检查字体文件的兼容性
 
 ## 扩展和自定义
 
 ### 1. 添加新字体
-1. 将字体文件放入 `public/fonts/` 目录
+1. 将字体文件（推荐 WOFF2 格式）放入 `public/fonts/` 目录
 2. 在 `src/assets/styles/app.css` 中添加 `@font-face` 声明
 3. 在 `uno.config.ts` 中添加字体族配置
-4. 更新字体回退策略
+4. 在 `BaseHead.astro` 中添加字体预加载配置
+5. 更新字体回退策略
 
 ### 2. 字体子集化
-使用工具如 `fonttools` 创建字体子集：
+使用工具如 `fonttools` 创建字体子集以减少文件大小：
 ```bash
 # 安装 fonttools
-npm install --save-dev fonttools
+pip install fonttools brotli
 
-# 创建字体子集
-pyftsubset LXGWWenKai-Regular.ttf --text-file=chars.txt --output-file=LXGWWenKai-Subset.ttf
+# 创建字体子集（仅包含使用的字符）
+pyftsubset cang-er-jin-kai.woff2 \
+  --text-file=chars.txt \
+  --output-file=cang-er-jin-kai-subset.woff2 \
+  --flavor=woff2
 ```
 
-### 3. CDN 分发
-考虑使用 CDN 分发字体文件以提升加载速度：
+### 3. 配置示例
+完整的字体配置示例（`src/assets/styles/app.css`）：
 ```css
 @font-face {
-  font-family: 'LXGWWenKai';
-  src: url('https://cdn.example.com/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-family: 'CangErJinKai';
+  src: url('/fonts/cang-er-jin-kai.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB',
+               'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 }
 ```
 
 ## 参考资源
 
-- [霞鹜文楷字体项目](https://github.com/lxgw/LxgwWenKai)
+- [仓耳今楷04-W04 字体](https://tsanger.cn/product/43) - 仓耳字库官方网站
 - [字体加载性能优化指南](https://web.dev/font-display/)
 - [UnoCSS 字体配置文档](https://unocss.dev/config/theme#fontfamily)
 - [CSS 字体回退策略](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
+- [WOFF2 字体格式](https://www.w3.org/TR/WOFF2/) - W3C 规范

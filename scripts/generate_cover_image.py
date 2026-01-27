@@ -29,12 +29,12 @@ from urllib.parse import urlparse
 
 import requests
 
-
 # API配置常量
+# https://ark.cn-beijing.volces.com/api/v3/images/generations
 ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
-TEXT_MODEL = "doubao-seed-1-6-251015"
-IMAGE_MODEL = "doubao-seedream-3-0-t2i-250415"
-IMAGE_SIZE = "1024x1024"
+TEXT_MODEL = "doubao-seed-1-8-251228"
+IMAGE_MODEL = "doubao-seedream-4-5-251128"
+IMAGE_SIZE = "1K"  # Reason: API expects "1K", "2K", etc., not "1024x1024" format
 
 # 获取API密钥
 DOUBAO_API_KEY = os.getenv("DOUBAO_API_KEY")
@@ -47,67 +47,70 @@ if not DOUBAO_API_KEY:
 def find_article_path(article_title: str) -> Optional[Path]:
     """
     根据文章标题查找对应的文章路径
-    
+
     Args:
         article_title: 文章标题
-        
+
     Returns:
         文章路径，如果未找到返回None
     """
     blog_dir = Path("src/content/blog")
-    
+
     if not blog_dir.exists():
         print(f"错误：博客目录 {blog_dir} 不存在")
         return None
-    
+
     # 查找包含文章标题的目录
     for item in blog_dir.iterdir():
         if item.is_dir() and article_title in item.name:
             index_file = item / "index.md"
             if index_file.exists():
                 return index_file
-    
+
     # 如果没有找到，尝试查找直接匹配的目录
-    potential_dirs = [d for d in blog_dir.iterdir() 
-                     if d.is_dir() and article_title.lower() in d.name.lower()]
-    
+    potential_dirs = [
+        d
+        for d in blog_dir.iterdir()
+        if d.is_dir() and article_title.lower() in d.name.lower()
+    ]
+
     if potential_dirs:
         index_file = potential_dirs[0] / "index.md"
         if index_file.exists():
             return index_file
-    
+
     return None
 
 
 def read_article_content(article_title: str) -> str:
     """
     读取文章内容
-    
+
     Args:
         article_title: 文章标题
-        
+
     Returns:
         文章内容字符串
     """
     article_path = find_article_path(article_title)
-    
+
     if not article_path:
         raise FileNotFoundError(f"未找到文章: {article_title}")
-    
+
     print(f"找到文章文件: {article_path}")
-    
+
     try:
-        with open(article_path, 'r', encoding='utf-8') as f:
+        with open(article_path, "r", encoding="utf-8") as f:
             content = f.read()
-        
+
         # 移除frontmatter（---之间的内容）
-        content = re.sub(r'^---.*?---\s*', '', content, flags=re.DOTALL)
-        
+        content = re.sub(r"^---.*?---\s*", "", content, flags=re.DOTALL)
+
         # 移除过多的空行
-        content = re.sub(r'\n\s*\n', '\n\n', content)
-        
+        content = re.sub(r"\n\s*\n", "\n\n", content)
+
         return content.strip()
-    
+
     except Exception as e:
         raise Exception(f"读取文章失败: {e}")
 
@@ -115,10 +118,10 @@ def read_article_content(article_title: str) -> str:
 def generate_description(content: str) -> str:
     """
     调用文本API生成适合AI绘图的描述
-    
+
     Args:
         content: 文章内容
-        
+
     Returns:
         生成的图片描述
     """
@@ -142,45 +145,42 @@ def generate_description(content: str) -> str:
 文章内容：
 {文章内容}
 """
-    
+
     user_prompt = f"文章内容：\n{content[:1500]}..."  # 限制长度避免超出token限制
-    
+
     # 构建请求
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {DOUBAO_API_KEY}"
+        "Authorization": f"Bearer {DOUBAO_API_KEY}",
     }
-    
+
     data = {
         "model": TEXT_MODEL,
         "messages": [
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
+            {"role": "user", "content": user_prompt},
         ],
         "max_tokens": 512,
-        "temperature": 0.8
+        "temperature": 0.8,
     }
-    
+
     print("正在生成图片描述...")
-    
+
     try:
         response = requests.post(
-            f"{ARK_BASE_URL}/chat/completions",
-            headers=headers,
-            json=data,
-            timeout=30
+            f"{ARK_BASE_URL}/chat/completions", headers=headers, json=data, timeout=30
         )
-        
+
         response.raise_for_status()
         result = response.json()
-        
+
         if "choices" in result and len(result["choices"]) > 0:
             description = result["choices"][0]["message"]["content"].strip()
             print(f"生成的描述: {description}")
             return description
         else:
             raise Exception("API响应格式异常")
-    
+
     except requests.exceptions.RequestException as e:
         raise Exception(f"文本API调用失败: {e}")
     except json.JSONDecodeError as e:
@@ -190,49 +190,47 @@ def generate_description(content: str) -> str:
 def generate_image(description: str) -> str:
     """
     调用图像API生成图片
-    
+
     Args:
         description: 图片描述
-        
+
     Returns:
         图片URL
     """
     headers = {
-        "Content-Type": "application/json", 
-        "Authorization": f"Bearer {DOUBAO_API_KEY}"
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {DOUBAO_API_KEY}",
     }
-    
+
     prompt = f"基于以下描述，生成一张封面图片，用更具创意的画面来表达：{description}"
 
+    # Reason: Match API specification from error message example
     data = {
         "model": IMAGE_MODEL,
         "prompt": prompt,
+        "sequential_image_generation": "disabled",
         "response_format": "url",
         "size": IMAGE_SIZE,
-        "guidance_scale": 2.5,
-        "watermark": False
+        "watermark": False,
     }
-    
+
     print("正在生成封面图片...")
-    
+
     try:
         response = requests.post(
-            f"{ARK_BASE_URL}/images/generations",
-            headers=headers,
-            json=data,
-            timeout=60
+            f"{ARK_BASE_URL}/images/generations", headers=headers, json=data, timeout=60
         )
-        
+
         response.raise_for_status()
         result = response.json()
-        
+
         if "data" in result and len(result["data"]) > 0:
             image_url = result["data"][0]["url"]
             print(f"图片生成成功: {image_url}")
             return image_url
         else:
             raise Exception("API响应格式异常")
-    
+
     except requests.exceptions.RequestException as e:
         raise Exception(f"图像API调用失败: {e}")
     except json.JSONDecodeError as e:
@@ -242,11 +240,11 @@ def generate_image(description: str) -> str:
 def download_and_save_image(image_url: str, article_title: str) -> bool:
     """
     下载图片并保存到文章目录
-    
+
     Args:
         image_url: 图片URL
         article_title: 文章标题
-        
+
     Returns:
         是否保存成功
     """
@@ -255,30 +253,32 @@ def download_and_save_image(image_url: str, article_title: str) -> bool:
     if not article_path:
         print(f"错误：未找到文章目录")
         return False
-    
+
     # 确定保存路径
     article_dir = article_path.parent
-    
+
     # 从URL获取文件扩展名，默认使用jpg
     parsed_url = urlparse(image_url)
-    file_extension = os.path.splitext(parsed_url.path)[1] or '.jpg'
+    file_extension = os.path.splitext(parsed_url.path)[1] or ".jpg"
     save_path = article_dir / f"cover{file_extension}"
-    
+
     print(f"正在下载图片到: {save_path}")
-    
+
     try:
         # 下载图片
         response = requests.get(image_url, timeout=30)
         response.raise_for_status()
-        
+
         # 保存文件
-        with open(save_path, 'wb') as f:
+        with open(save_path, "wb") as f:
             f.write(response.content)
-        
+
         print(f"✅ 封面图片保存成功: {save_path}")
-        print(f"📝 建议在文章frontmatter中添加: heroImage: {{ src: './cover{file_extension}', color: '#9698C1' }}")
+        print(
+            f"📝 建议在文章frontmatter中添加: heroImage: {{ src: './cover{file_extension}', color: '#9698C1' }}"
+        )
         return True
-    
+
     except requests.exceptions.RequestException as e:
         print(f"下载图片失败: {e}")
         return False
@@ -290,57 +290,57 @@ def download_and_save_image(image_url: str, article_title: str) -> bool:
 def main():
     """主函数"""
     parser = argparse.ArgumentParser(
-        description='博客封面图生成工具',
+        description="博客封面图生成工具",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 使用示例:
   python generate_cover_image.py "astro博客迁移"
-  
+
 环境变量:
   ARK_API_KEY - 火山引擎API密钥
-        """
+        """,
     )
-    
+
     # 必需参数
-    parser.add_argument('title', help='文章标题（目录名称的一部分）')
-    
+    parser.add_argument("title", help="文章标题（目录名称的一部分）")
+
     args = parser.parse_args()
-    
+
     # 参数验证
     if not args.title.strip():
         print("错误：文章标题不能为空")
         sys.exit(1)
-    
+
     title = args.title.strip()
-    
+
     print(f"🎨 开始为文章生成封面图: {title}")
     print("=" * 50)
-    
+
     try:
         # 步骤1：读取文章内容
         print("📖 步骤1: 读取文章内容...")
         content = read_article_content(title)
         if len(content) < 100:
             print("⚠️  警告：文章内容较短，可能影响描述生成质量")
-        
+
         # 步骤2：生成图片描述
         print("\n🤖 步骤2: 生成图片描述...")
         description = generate_description(content)
-        
+
         # 步骤3：生成图片
         print("\n🎨 步骤3: 生成封面图片...")
         image_url = generate_image(description)
-        
+
         # 步骤4：下载保存图片
         print("\n💾 步骤4: 下载并保存图片...")
         success = download_and_save_image(image_url, title)
-        
+
         if success:
             print("\n🎉 封面图生成完成！")
         else:
             print("\n❌ 封面图生成失败！")
             sys.exit(1)
-    
+
     except Exception as e:
         print(f"\n❌ 处理过程中发生错误: {e}")
         sys.exit(1)
