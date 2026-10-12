@@ -90,28 +90,45 @@ console.log(greeting);</code></pre>
 
 ## 性能优化
 
-### 1. 字体预加载
-字体已在 `BaseHead.astro` 中配置预加载：
-```html
-<link rel='preload' href='/fonts/cang-er-jin-kai.woff2' as='font' type='font/woff2' crossorigin />
+### 静态字体分包
+
+页面使用 `public/fonts/jinkai/` 下的 WOFF2 分包。`app.css` 在构建时合并
+`fonts.generated.css`，浏览器根据 `unicode-range` 请求当前页面需要的分包。
+不再预加载完整字体，也不通过 JavaScript 延迟切换字体。
+
+字符分组固定保存在 `scripts/font-subsets.json`，参考
+[tw93 的分组](https://weekly.tw93.fun/fonts/jinkai.css)，记录了来源和快照哈希。
+这里只参考字符范围，输出字形全部来自本地仓耳今楷 04 W04。
+原字体中未被这些分组覆盖的字符，按码点排序，每 188 个字符生成一个补充包。
+生成过程不访问 tw93 网站，普通新增文章无需重新分包。
+
+### 显示与字重
+
+使用 `font-display: swap`：下载期间显示后备字体，成功后使用今楷。
+慢网下仍可能发生字体替换。后备字体优先 STKaiti、KaiTi，再使用系统黑体。
+原字体是固定字重 400；标题的较粗字重由浏览器合成，并非可变字体。
+
+### 生成与缓存
+
+安装 uv 后，在仓库根目录运行：
+
+```bash
+npm run fonts:generate
+uv run --with 'fonttools[woff]==4.60.2' python scripts/test_subset_font.py
+npm run build
 ```
 
-### 2. 字体回退策略
-使用 `font-display: swap` 确保字体加载过程中有良好的用户体验：
-```css
-@font-face {
-  font-family: 'CangErJinKai';
-  src: url('/fonts/cang-er-jin-kai.woff2') format('woff2');
-  font-weight: 300 900;
-  font-style: normal;
-  font-display: swap;
-}
-```
+`subset_font.py` 固定 fontTools/Brotli 版本，读取
+`public/fonts/cang-er-jin-kai.woff2`，同时生成字体、CSS 和体积/覆盖清单
+`public/fonts/jinkai/manifest.json`。生成结果需要随代码提交。
+脚本验证声明字符均存在、CSS 范围不重叠、完整覆盖原字体，失败时不发布新产物。
+为支持双向排版，字体文件可附带镜像标点字形，但不扩大该包的 CSS 字符范围。
+旧哈希文件保留，避免缓存的旧 CSS 引用失效；需清理时先确认旧页面缓存已经过期。
 
-### 3. 字体格式优化
-- 使用 WOFF2 格式，相比 TTF 格式有更好的压缩率
-- 支持可变字重（300-900），单一文件支持多种字重
-- 文件大小约 8.6MB，包含完整的中英文字符集
+分包文件名包含内容哈希。`public/_headers` 为 `/fonts/jinkai/*.woff2` 配置一年不可变浏览器缓存，
+不覆盖未带哈希的 `manifest.json`。此文件由 Cloudflare Pages 处理；GitHub Pages 不应用这项规则。
+部署后仍需检查线上响应头是否生效，参考 [Cloudflare Pages 文档](https://developers.cloudflare.com/pages/configuration/headers/)。
+原始整包作为生成源保留，页面不引用它。
 
 ## 最佳实践
 
@@ -156,19 +173,19 @@ p, div {
 ## 故障排除
 
 ### 1. 字体不显示
-- 检查字体文件 `cang-er-jin-kai.woff2` 是否正确放置在 `public/fonts/` 目录
+- 检查 `public/fonts/jinkai/` 中生成的文件是否完整、请求是否返回 200
 - 确认 CSS 中的字体路径是否正确
 - 检查浏览器开发者工具中的网络请求
 - 确认字体文件格式为 WOFF2
 
 ### 2. 字体加载缓慢
-- 确认字体预加载配置是否正确（在 `BaseHead.astro` 中）
+- 检查是否只请求所需分包，是否仍存在整包字体请求
 - 检查网络连接和服务器响应时间
 - 考虑使用 CDN 加速字体加载
 - 确认使用了 `font-display: swap` 策略
 
 ### 3. 字体回退问题
-- 确认字体回退链配置正确（PingFang SC → Hiragino Sans GB → Microsoft YaHei）
+- 确认字体回退链配置正确（STKaiti → KaiTi → PingFang SC → Hiragino Sans GB → Microsoft YaHei）
 - 测试在不同系统环境下的显示效果
 - 检查字体文件的兼容性
 
@@ -178,36 +195,22 @@ p, div {
 1. 将字体文件（推荐 WOFF2 格式）放入 `public/fonts/` 目录
 2. 在 `src/assets/styles/app.css` 中添加 `@font-face` 声明
 3. 在 `uno.config.ts` 中添加字体族配置
-4. 在 `BaseHead.astro` 中添加字体预加载配置
+4. 根据实际首屏测量结果决定是否预加载，避免预加载全部分包
 5. 更新字体回退策略
 
-### 2. 字体子集化
-使用工具如 `fonttools` 创建字体子集以减少文件大小：
-```bash
-# 安装 fonttools
-pip install fonttools brotli
+### 2. 调整现有分包
 
-# 创建字体子集（仅包含使用的字符）
-pyftsubset cang-er-jin-kai.woff2 \
-  --text-file=chars.txt \
-  --output-file=cang-er-jin-kai-subset.woff2 \
-  --flavor=woff2
-```
+修改固定字符分组清单后运行 `npm run fonts:generate`。不要手动编辑生成的 CSS，
+也不要只保留当前文章使用的字符，以免后续文章出现生僻字时失去字体覆盖。
 
-### 3. 配置示例
-完整的字体配置示例（`src/assets/styles/app.css`）：
+### 3. 配置入口
+
 ```css
-@font-face {
-  font-family: 'CangErJinKai';
-  src: url('/fonts/cang-er-jin-kai.woff2') format('woff2');
-  font-weight: 300 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import './fonts.generated.css';
 
 html, body {
-  font-family: 'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB',
-               'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: 'CangErJinKai', 'STKaiti', 'KaiTi', 'PingFang SC',
+               'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 ```
 

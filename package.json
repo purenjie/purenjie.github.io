@@ -4,6 +4,7 @@
   "version": "4.0.6",
   "scripts": {
     "dev": "astro dev",
+    "fonts:generate": "uv run scripts/subset_font.py",
     "dev:check": "astro check --watch & astro dev",
     "build": "astro-pure check && astro check && astro build",
     "preview": "astro preview",

@@ -1,27 +1,17 @@
-/* Font */
-/* 仓耳今楷字体配置
- * Reason: 使用单一字体支持中英文混排，简洁统一
- */
-@font-face {
-  font-family: 'CangErJinKai';
-  src: url('/fonts/cang-er-jin-kai.woff2') format('woff2');
-  font-weight: 300 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import './fonts.generated.css';
 
 /* 字体回退策略 */
 html {
   font-family:
-    'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',
-    sans-serif;
+    'CangErJinKai', 'STKaiti', 'KaiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'WenQuanYi Micro Hei', sans-serif;
 }
 
 /* 中文字体优化 */
 body {
   font-family:
-    'CangErJinKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',
-    sans-serif;
+    'CangErJinKai', 'STKaiti', 'KaiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'WenQuanYi Micro Hei', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

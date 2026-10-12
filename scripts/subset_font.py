@@ -1,104 +1,156 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-字体子集化脚本
-使用 fonttools 提取指定字符集，减小字体文件体积
-"""
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["fonttools[woff]==4.60.2", "brotli==1.2.0"]
+# ///
+"""Generate static JinKai subsets offline: uv run scripts/subset_font.py."""
 
-import sys
+import hashlib
+import json
+import re
+from io import BytesIO
 from pathlib import Path
+from tempfile import TemporaryDirectory
+
 from fontTools import subset
+from fontTools.ttLib import TTFont
+from fontTools.unicodedata import mirrored
 
-def create_font_subset(input_font, output_font, chars_file):
-    """
-    创建字体子集
+ROOT = Path(__file__).resolve().parent.parent
+SOURCE = ROOT / "public/fonts/cang-er-jin-kai.woff2"
+GROUPS = ROOT / "scripts/font-subsets.json"
+OUTPUT = ROOT / "public/fonts/jinkai"
+CSS = ROOT / "src/assets/styles/fonts.generated.css"
 
-    Args:
-        input_font: 输入字体文件路径
-        output_font: 输出字体文件路径
-        chars_file: 字符列表文件路径
 
-    Reason: 使用 fonttools.subset 进行字体子集化，保留指定字符
-    """
-    print(f"📖 读取字符列表: {chars_file}")
+def parse_ranges(value):
+    result = set()
+    for token in value.split(","):
+        token = token.strip().upper()
+        if not re.fullmatch(r"U\+[0-9A-F]{1,6}(?:-[0-9A-F]{1,6})?", token):
+            raise ValueError(f"Invalid Unicode range: {token}")
+        bounds = token[2:].split("-")
+        start, end = int(bounds[0], 16), int(bounds[-1], 16)
+        if start > end or end > 0x10FFFF:
+            raise ValueError(f"Invalid Unicode range: {token}")
+        result.update(range(start, end + 1))
+    return result
 
-    # 读取字符列表
-    with open(chars_file, 'r', encoding='utf-8') as f:
-        chars = f.read()
 
-    print(f"✅ 加载了 {len(chars)} 个字符")
-    print(f"📝 输入字体: {input_font}")
-    print(f"💾 输出字体: {output_font}")
+def format_ranges(codepoints):
+    ranges = []
+    for cp in sorted(codepoints):
+        if ranges and cp == ranges[-1][1] + 1:
+            ranges[-1][1] = cp
+        else:
+            ranges.append([cp, cp])
+    return ", ".join(
+        f"U+{start:X}" if start == end else f"U+{start:X}-{end:X}"
+        for start, end in ranges
+    )
 
-    # 创建子集化选项
-    options = subset.Options()
 
-    # Reason: 保留字体提示信息，提升渲染质量
-    options.hinting = True
+def partition(available, config):
+    groups, assigned, declared, names = [], set(), set(), set()
+    for group in config["groups"]:
+        name = group["id"]
+        if not re.fullmatch(r"subset-\d+", name) or name in names:
+            raise ValueError(f"Invalid or duplicate group: {name}")
+        names.add(name)
+        requested = parse_ranges(group["unicode_range"])
+        if declared & requested:
+            raise ValueError(f"Overlapping character groups: {name}")
+        declared.update(requested)
+        chars = available & requested
+        if chars:
+            groups.append((name, chars))
+            assigned.update(chars)
+    remaining = sorted(available - assigned)
+    size = config["remainder_chunk_size"]
+    if not isinstance(size, int) or size < 1:
+        raise ValueError("remainder_chunk_size must be a positive integer")
+    for index, offset in enumerate(range(0, len(remaining), size)):
+        groups.append((f"extra-{index:03d}", set(remaining[offset:offset + size])))
+    return groups
 
-    # Reason: 保留字形名称，便于调试
-    options.glyph_names = True
-
-    # Reason: 保留推荐的表，确保字体功能完整
-    options.recommended_glyphs = True
-
-    # Reason: 保留布局特性，支持复杂文本渲染
-    options.layout_features = ['*']
-
-    # Reason: 去除未使用的表，减小文件体积
-    options.drop_tables = ['DSIG']
-
-    # 创建 Subsetter 对象
-    font = subset.load_font(input_font, options)
-    subsetter = subset.Subsetter(options=options)
-
-    # 添加字符到子集
-    subsetter.populate(text=chars)
-
-    print("🔨 开始生成字体子集...")
-
-    # 执行子集化
-    subsetter.subset(font)
-
-    # 保存子集字体
-    subset.save_font(font, output_font, options)
-
-    print("✅ 字体子集化完成！")
-
-    # 显示文件大小对比
-    input_size = Path(input_font).stat().st_size / (1024 * 1024)
-    output_size = Path(output_font).stat().st_size / (1024 * 1024)
-    reduction = (1 - output_size / input_size) * 100
-
-    print(f"\n📊 文件大小对比:")
-    print(f"  原始文件: {input_size:.2f} MB")
-    print(f"  子集文件: {output_size:.2f} MB")
-    print(f"  减小: {reduction:.1f}%")
 
 def main():
-    """
-    主函数：执行字体子集化
-    """
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent
+    config = json.loads(GROUPS.read_text())
+    source_bytes = SOURCE.read_bytes()
+    source = TTFont(BytesIO(source_bytes), recalcTimestamp=False)
+    available = set(source.getBestCmap())
+    groups = partition(available, config)
+    # Decode WOFF2 once; each subset reads the same uncompressed source tables.
+    source.flavor = None
+    sfnt = BytesIO()
+    source.save(sfnt)
+    source_sfnt = sfnt.getvalue()
+    options = subset.Options()
+    options.layout_features = ["*"]
+    # Preserve copyright, attribution and licensing metadata in every subset.
+    options.name_IDs = ["*"]
+    options.name_languages = ["*"]
+    options.name_legacy = True
+    options.recalc_timestamp = False
+    css = ["/* Generated by scripts/subset_font.py. Do not edit. */"]
+    manifest = {
+        "source_sha256": hashlib.sha256(source_bytes).hexdigest(),
+        "grouping_sha256": hashlib.sha256(GROUPS.read_bytes()).hexdigest(),
+        "source_codepoints": len(available),
+        "subsets": [],
+    }
+    covered = set()
+    # Validate every generated font before publishing any output.
+    with TemporaryDirectory(prefix="jinkai-") as temporary:
+        stage = Path(temporary)
+        for index, (name, chars) in enumerate(groups):
+            print(f"Generating {index + 1}/{len(groups)}: {name}", flush=True)
+            font = TTFont(BytesIO(source_sfnt), recalcTimestamp=False)
+            worker = subset.Subsetter(options=options)
+            worker.populate(unicodes=chars)
+            worker.subset(font)
+            font.flavor = "woff2"
+            buffer = BytesIO()
+            font.save(buffer)
+            data = buffer.getvalue()
+            with TTFont(BytesIO(data)) as check:
+                actual = set(check.getBestCmap())
+            # fontTools includes mirrored punctuation for bidirectional shaping.
+            # Keep those glyphs, but CSS ownership stays with the original group.
+            expected = chars | ({mirrored(cp) for cp in chars} & available)
+            if actual != expected or covered & chars:
+                raise ValueError(f"Incorrect coverage: {name}")
+            covered.update(chars)
+            filename = f"{name}.{hashlib.sha256(data).hexdigest()[:16]}.woff2"
+            (stage / filename).write_bytes(data)
+            unicode_range = format_ranges(chars)
+            css.append(
+                "@font-face {\n"
+                "  font-family: 'CangErJinKai';\n"
+                f"  src: url('/fonts/jinkai/{filename}') format('woff2');\n"
+                "  font-weight: 400;\n"
+                "  font-style: normal;\n"
+                "  font-display: swap;\n"
+                f"  unicode-range: {unicode_range};\n"
+                "}"
+            )
+            manifest["subsets"].append({
+                "file": filename, "bytes": len(data),
+                "codepoints": len(chars), "support_codepoints": len(actual - chars),
+                "unicode_range": unicode_range,
+            })
+        if covered != available:
+            raise ValueError("Generated fonts do not cover the source font")
+        OUTPUT.mkdir(parents=True, exist_ok=True)
+        for file in stage.iterdir():
+            (OUTPUT / file.name).write_bytes(file.read_bytes())
+        (OUTPUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+        CSS.write_text("\n\n".join(css) + "\n")
+    sizes = [entry["bytes"] for entry in manifest["subsets"]]
+    print(f"Generated {len(sizes)} subsets covering {len(covered)} codepoints; "
+          f"total {sum(sizes):,} bytes; largest {max(sizes):,} bytes.")
+    print("Old hashed files are retained so cached CSS can still resolve them.")
 
-    # 输入输出路径
-    input_font = project_root / 'public' / 'fonts' / '仓耳今楷04-W04.woff2'
-    output_font = project_root / 'public' / 'fonts' / '仓耳今楷04-W04-subset.woff2'
-    chars_file = script_dir / 'chinese_chars.txt'
 
-    # 检查文件是否存在
-    if not input_font.exists():
-        print(f"❌ 错误: 输入字体文件不存在: {input_font}")
-        sys.exit(1)
-
-    if not chars_file.exists():
-        print(f"❌ 错误: 字符列表文件不存在: {chars_file}")
-        print("请先运行 extract_chinese_chars.py 生成字符列表")
-        sys.exit(1)
-
-    # 执行子集化
-    create_font_subset(str(input_font), str(output_font), str(chars_file))
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

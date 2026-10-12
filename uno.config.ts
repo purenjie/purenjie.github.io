@@ -206,6 +206,8 @@ export default defineConfig({
     fontFamily: {
       wenkai: [
         'CangErJinKai',
+        'STKaiti',
+        'KaiTi',
         'PingFang SC',
         'Hiragino Sans GB',
         'Microsoft YaHei',
@@ -214,6 +216,8 @@ export default defineConfig({
       ],
       satoshi: [
         'CangErJinKai',
+        'STKaiti',
+        'KaiTi',
         'PingFang SC',
         'Hiragino Sans GB',
         'Microsoft YaHei',
